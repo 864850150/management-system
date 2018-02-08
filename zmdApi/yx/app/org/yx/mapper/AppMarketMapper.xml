@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AppMarketMapper">
+
+	<!-- 登录 -->
+	<select id="toLogin" parameterType="pd" resultType="pd">
+		select
+		*
+		from
+		user
+		where
+		mobile = #{MOBILE}
+	</select>
+
+	<!--通过content查询 -->
+	<select id="findProject" parameterType="pd" resultType="pd">
+		select
+		*
+		from
+		project
+		where 1 = 1
+		and (NAME LIKE CONCAT(CONCAT('%', #{CONTENT}), '%')
+		OR
+		PROJECT_NO LIKE CONCAT(CONCAT('%', #{CONTENT}), '%'))
+		and project_no
+		not in
+		(select project_id from user_project where USER_ID = #{USER_ID}
+		and
+		CITY LIKE CONCAT(CONCAT('%', #{CITY}), '%') )
+		and STATE = '00'
+	</select>
+	<!--通过city查询 -->
+	<select id="findInfoByCity" parameterType="pd" resultType="pd">
+		select
+		s.ID as SESSIONID,
+		s.USER_ID,
+		s.PROJECT_ID,
+		s.CC_NUM,
+		s.P_NUM,
+		s.P_NUMD,
+		s.S_NUM,
+		s.OPERTIME,
+		s.STARTDATE,
+		s.ENDDATE,
+		s.CITY,
+		p.ID,
+		p.NAME,
+		p.PROJECT_NO,
+		p.PM,
+		p.P_TYPE,
+		p.CUSTOMER,
+		p.STATUS,
+		p.STATE,
+		(select name
+		from user u where u.id = s.USER_ID) AS USERNAME
+		from
+		session s,project p
+		where
+		s.PROJECT_ID = p.project_no
+		and p.STATE ='00'
+		and s.STATE='00'
+		and s.CITY LIKE CONCAT(CONCAT('%', #{CITY}), '%')
+	</select>
+	<!--通过CITY查询-findProAndSession -->
+	<select id="findProAndSession" parameterType="page" resultType="pd">
+		SELECT
+		p.ID,
+		p.NAME,
+		p.PROJECT_NO,
+		p.PM,
+		p.P_TYPE,
+		p.CUSTOMER,
+		p.STATUS,
+		p.STATE,
+		t.*
+		from project p LEFT JOIN (
+		select
+		(select name from user u where u.id = s.USER_ID) AS USERNAME,
+		s.ID as SESSIONID,
+		s.USER_ID,
+		s.PROJECT_ID,
+		s.CC_NUM,
+		s.P_NUM,
+		s.P_NUMD,
+		s.S_NUM,
+		s.OPERTIME,
+		s.STARTDATE,
+		s.ENDDATE,
+		s.CITY
+		from
+		session s
+		where
+		s.CITY LIKE CONCAT(CONCAT('%', #{pd.CITY}), '%') and s.STATE='00' and s.STARTDATE=#{pd.STARTDATE} and s.ENDDATE=#{pd.ENDDATE}
+		) t on p.project_no = t.PROJECT_ID order by t.SESSIONID DESC
+		LIMIT
+		#{pd.startPItem} , #{pd.pageSize}
+	</select>
+	<!--通过CITY查询-findAllCount -->
+	<select id="findAllCount" parameterType="page" resultType="pd">
+		SELECT
+		count(p.ID) as zs
+		from project p LEFT JOIN (
+		select
+		(select name from user u where u.id = s.USER_ID) AS USERNAME,
+		s.ID as SESSIONID,
+		s.USER_ID,
+		s.PROJECT_ID,
+		s.CC_NUM,
+		s.P_NUM,
+		s.P_NUMD,
+		s.S_NUM,
+		s.OPERTIME,
+		s.STARTDATE,
+		s.ENDDATE,
+		s.CITY
+		from
+		session s
+		where
+		s.CITY LIKE CONCAT(CONCAT('%', #{pd.CITY}), '%') and s.STATE='00'
+		) t on p.project_no = t.PROJECT_ID
+	</select>
+	<!--通过findProId查询 -->
+	<select id="findProId" parameterType="pd" resultType="pd">
+		select
+		p.ID,
+		p.NAME,
+		p.PROJECT_NO,
+		p.PM,
+		p.P_TYPE,
+		p.CUSTOMER,
+		p.STATE,
+		u.USER_ID
+		from
+		project p,user_project u
+		where p.project_no = u.PROJECT_ID
+		and u.CITY LIKE CONCAT(CONCAT('%', #{CITY}), '%')
+		and p.project_no = #{PROJECT_ID}
+		and u.USER_ID = #{USER_ID}
+		and p.STATE = '00'
+	</select>
+	<!--通过user_id查询 -->
+	<select id="findUserPros" parameterType="pd" resultType="pd">
+		select
+		*
+		from
+		user_project u,project p
+		where u.PROJECT_ID = p.project_no
+		and
+		u.USER_ID = #{USER_ID}
+		and u.CITY LIKE
+		CONCAT(CONCAT('%', #{CITY}), '%')
+		and p.STATE = '00'
+	</select>
+	
+	<!--findUPS -->
+	<select id="findUPS" parameterType="pd" resultType="pd">
+		select pj.*,s.CC_NUM,s.P_NUM,s.P_NUMD,s.S_NUM from 
+		(select j.PROJECT_NO,p.USER_ID,j.PM,j.CUSTOMER,j.P_TYPE,j.`NAME`,
+		j.ID AS PROJECT_ID,p.CITY from user_project p left join project j 
+		on p.PROJECT_ID = j.PROJECT_NO WHERE p.USER_ID = #{USER_ID} and p.CITY = #{CITY}) pj
+		left join session s on pj.PROJECT_NO = s.PROJECT_ID and pj.CITY = 
+		s.CITY and pj.USER_ID = s.USER_ID AND s.STATE = '00' and s.STARTDATE = #{STARTDATE}
+		 group by pj.PROJECT_NO,pj.CITY
+	</select>
+
+	<!-- 保存user_project -->
+	<insert id="saveSupport" parameterType="pd">
+		insert into user_project(
+		USER_ID,
+		PROJECT_ID,
+		CITY
+		) values (
+		#{USER_ID},
+		#{PROJECT_ID},
+		#{CITY}
+		)
+	</insert>
+
+	<!-- 删除user_project -->
+	<delete id="deleteSupport" parameterType="pd">
+		delete from
+		user_project
+		where USER_ID = #{USER_ID} and PROJECT_ID = #{PROJECT_ID}
+		and CITY = #{CITY}
+	</delete>
+
+	<!-- findSupport -->
+	<select id="findSupport" parameterType="pd" resultType="pd">
+		select
+		*
+		from
+		user_project
+		WHERE USER_ID=#{USER_ID} and PROJECT_ID=#{PROJECT_ID} and CITY =
+		#{CITY}
+	</select>
+	<!-- findSession -->
+	<select id="findSession" parameterType="pd" resultType="pd">
+		select
+		ID
+		as SESSIONID,
+		USER_ID,
+		PROJECT_ID,
+		CC_NUM,
+		P_NUM,
+		P_NUMD,
+		S_NUM,
+		OPERTIME
+		from
+		session
+		WHERE USER_ID=#{USER_ID} and PROJECT_ID=#{PROJECT_ID} and
+		CITY = #{CITY}
+		and STARTDATE=#{STARTDATE} and ENDDATE=#{ENDDATE} and STATE='00'
+	</select>
+	<!-- 改变状态为01 删除 -->
+	<update id="changeState" parameterType="pd">
+		update session
+		set
+			STATE=#{STATE}
+		where
+			USER_ID = #{USER_ID} and PROJECT_ID = #{PROJECT_ID} and CITY = #{CITY}
+	</update>
+	<!-- 保存session -->
+	<insert id="saveSession" parameterType="pd">
+		insert into session(
+		USER_ID,
+		PROJECT_ID,
+		CC_NUM,
+		P_NUM,
+		P_NUMD,
+		S_NUM,
+		STARTDATE,
+		ENDDATE,
+		STATE,
+		CITY
+		)
+		values (
+		#{USER_ID},
+		#{PROJECT_ID},
+		#{CC_NUM},
+		#{P_NUM},
+		#{P_NUMD},
+		#{S_NUM},
+		#{STARTDATE},
+		#{ENDDATE},
+		#{STATE},
+		#{CITY}
+		)
+	</insert>
+
+	<!-- 编辑session -->
+	<update id="editSession" parameterType="pd">
+		update session
+		set
+		USER_ID = #{USER_ID},
+		PROJECT_ID = #{PROJECT_ID},
+		CC_NUM = #{CC_NUM},
+		P_NUM = #{P_NUM},
+		P_NUMD = #{P_NUMD},
+		S_NUM = #{S_NUM},
+		STARTDATE = #{STARTDATE},
+		ENDDATE = #{ENDDATE},
+		CITY = #{CITY}
+		WHERE USER_ID=#{USER_ID} and
+		PROJECT_ID=#{PROJECT_ID} and
+		CITY = #{CITY}
+		and STARTDATE=#{STARTDATE}
+		and ENDDATE=#{ENDDATE}
+		and STATE=#{STATE}
+	</update>
+
+</mapper>

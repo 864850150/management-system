@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WxPayMapper">
+	
+
+	
+	<!-- 新增订单支付信息 -->
+	<insert id="saveOrderPay" parameterType="pd">
+		insert into s_app_order_pay(
+			ID,
+			USER_ID,
+			ORDER_NO,
+			PAY_TYPE,
+			PAY_STATE,
+			PAY_TOTALPRICE,
+			CREATE_DATE
+		) values (
+			#{ID},
+			#{USER_ID},
+			#{ORDER_NO},
+			#{PAY_TYPE},
+			#{PAY_STATE},
+			#{PAY_TOTALPRICE},
+			NOW()
+		)
+	</insert>
+
+	
+	
+</mapper>

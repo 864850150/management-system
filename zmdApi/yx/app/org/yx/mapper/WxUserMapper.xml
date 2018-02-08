@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WxUserMapper">
+
+	
+	<!-- 查询用户收货地址列表 -->
+	<select id="findUserAddressList" parameterType="pd" resultType="pd">
+		select
+			ID,SHOP_USERNAME,SHOP_PHONE,SHOP_AREA,SHOP_ADDRESS,IS_DEFAULT
+		from
+		s_app_user_address where USER_ID=#{USER_ID}
+	</select>
+	
+	<!-- 查询用户默认收货收货地址 -->
+	<select id="findUserDefaultAddress" parameterType="pd" resultType="pd">
+		select
+			ID,SHOP_USERNAME,SHOP_PHONE,concat(SHOP_AREA,SHOP_ADDRESS) SHOP_ADDRESS
+		from
+		s_app_user_address where IS_DEFAULT='01' and USER_ID=#{USER_ID}
+	</select>
+	
+	<!-- 新增用户收货地址信息 -->
+	<insert id="saveAddress" parameterType="pd">
+		insert into s_app_user_address(
+			ID,
+			USER_ID,
+			SHOP_USERNAME,
+			SHOP_PHONE,
+			SHOP_AREA,
+			SHOP_ADDRESS,
+			IS_DEFAULT,
+			CREATE_DATE
+		) values (
+			#{ID},
+			#{USER_ID},
+			#{SHOP_USERNAME},
+			#{SHOP_PHONE},
+			#{SHOP_AREA},
+			#{SHOP_ADDRESS},
+			'01',
+			NOW()
+		)
+	</insert>
+	
+	
+	<!-- 编辑用户收货地址信息 -->
+	<update id="editAddress" parameterType="pd">
+		update s_app_user_address
+			set
+			SHOP_USERNAME=#{SHOP_USERNAME},
+			SHOP_PHONE=#{SHOP_PHONE},
+			SHOP_AREA=#{SHOP_AREA},
+			SHOP_ADDRESS=#{SHOP_ADDRESS}
+		where ID=#{ID}
+	</update>
+	
+	
+	<!--修改用户默认地址为非默认-->
+	<update id="editAddressis" parameterType="pd">
+		update s_app_user_address set IS_DEFAULT='00' where IS_DEFAULT='01' and USER_ID=#{USER_ID}
+	</update>
+	
+	<!--设置默认地址-->
+	<update id="editIsdefault" parameterType="pd">
+		update s_app_user_address set IS_DEFAULT='01'  where ID=#{ID} and USER_ID=#{USER_ID}
+	</update>
+	
+	<!--删除地址-->
+	<delete id="delAddress" parameterType="pd">
+		delete from s_app_user_address where ID=#{ID}
+	</delete>
+</mapper>
