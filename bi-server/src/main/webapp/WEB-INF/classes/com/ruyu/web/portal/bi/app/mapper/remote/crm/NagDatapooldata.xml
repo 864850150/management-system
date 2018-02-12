@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NagDatapooldata">
+	    <resultMap id="nagDatapooldata" type="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooldata">
+                  <result column="DPD_ID" property="Id" />
+ 		          <result column="DPD_DP_ID" property="dpdDpId" />
+ 		          <result column="DPD_CM_ID" property="dpdCmId" />
+ 		          <result column="DPD_CM_NAME" property="dpdCmName" />
+ 		          <result column="DPD_DIALTEL" property="dpdDialtel" />
+ 		          <result column="DPD_U_ID" property="dpdUId" />
+ 		          <result column="DPD_AGENTID" property="dpdAgentid" />
+ 		          <result column="DPD_AGENTNAME" property="dpdAgentname" />
+ 		          <result column="DPD_AGENTPARTMENT" property="dpdAgentpartment" />
+ 		          <result column="DPD_DIALSTATE" property="dpdDialstate" />
+ 		          <result column="DPD_DIALSTATESTR" property="dpdDialstatestr" />
+ 		          <result column="DPD_DIALSTARTTIME" property="dpdDialstarttime" />
+ 		          <result column="DPD_DIALENDTIME" property="dpdDialendtime" />
+ 		          <result column="DPD_RECORDFILE" property="dpdRecordfile" />
+ 		          <result column="DPD_TALKLENGTH" property="dpdTalklength" />
+ 		          <result column="DPD_OFFICIALLENGTH" property="dpdOfficiallength" />
+ 		          <result column="DPD_NEXTCALLTIME" property="dpdNextcalltime" />
+ 		          <result column="DPD_CALLRESULT" property="dpdCallresult" />
+ 		          <result column="DPD_SUMMARY" property="dpdSummary" />
+ 		          <result column="DPD_DIALTIMES" property="dpdDialtimes" />
+ 		          <result column="DPD_STRING1" property="dpdString1" />
+ 		          <result column="DPD_STRING2" property="dpdString2" />
+ 		          <result column="DPD_STRING3" property="dpdString3" />
+ 		          <result column="DPD_STRING4" property="dpdString4" />
+ 		          <result column="DPD_STRING5" property="dpdString5" />
+ 		          <result column="DPD_STRING6" property="dpdString6" />
+ 		          <result column="DPD_STRING7" property="dpdString7" />
+ 		          <result column="DPD_STRING8" property="dpdString8" />
+ 		          <result column="DPD_STRING9" property="dpdString9" />
+ 		          <result column="DPD_STRING10" property="dpdString10" />
+ 		          <result column="DPD_NUMBER1" property="dpdNumber1" />
+ 		          <result column="DPD_NUMBER2" property="dpdNumber2" />
+ 		          <result column="DPD_NUMBER3" property="dpdNumber3" />
+ 		          <result column="DPD_NUMBER4" property="dpdNumber4" />
+ 		          <result column="DPD_NUMBER5" property="dpdNumber5" />
+ 		          <result column="DPD_NUMBER6" property="dpdNumber6" />
+ 		          <result column="DPD_DATE1" property="dpdDate1" />
+ 		          <result column="DPD_DATE2" property="dpdDate2" />
+ 		          <result column="DPD_DATE3" property="dpdDate3" />
+ 		          <result column="DPD_DATE4" property="dpdDate4" />
+ 		          <result column="DPD_DATE5" property="dpdDate5" />
+ 		          <result column="DPD_COMMENT1" property="dpdComment1" />
+ 		          <result column="DPD_COMMENT2" property="dpdComment2" />
+ 		          <result column="DPD_COMMENT3" property="dpdComment3" />
+ 		          <result column="DPD_COMMENT4" property="dpdComment4" />
+ 		          <result column="DPD_COMMENT5" property="dpdComment5" />
+ 		          <result column="DPD_CREATEDATE" property="dpdCreatedate" />
+ 		          <result column="DPD_ACTSTATE" property="dpdActstate" />
+ 		          <result column="DPD_ACT_U_ID" property="dpdActUId" />
+ 		          <result column="DPD_ACTDATE" property="dpdActdate" />
+ 		          <result column="DPD_AUDITSTATE" property="dpdAuditstate" />
+ 		          <result column="DPD_GID" property="dpdGid" />
+ 		          <result column="DPD_BATCH" property="dpdBatch" />
+ 		          <result column="DPD_ALLOCDATE" property="dpdAllocdate" />
+ 		          <result column="DPD_ALLOCDAYNUM" property="dpdAllocdaynum" />
+ 		          <result column="DPD_AUDITSTATESTR" property="dpdAuditstatestr" />
+ 		          <result column="DPD_QR_ID" property="dpdQrId" />
+ 		          <result column="DPD_Q_ID" property="dpdQId" />
+ 		          <result column="DPD_CT_ID" property="dpdCtId" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           DPD_ID,
+ 		           DPD_DP_ID,
+ 		           DPD_CM_ID,
+ 		           DPD_CM_NAME,
+ 		           DPD_DIALTEL,
+ 		           DPD_U_ID,
+ 		           DPD_AGENTID,
+ 		           DPD_AGENTNAME,
+ 		           DPD_AGENTPARTMENT,
+ 		           DPD_DIALSTATE,
+ 		           DPD_DIALSTATESTR,
+ 		           DPD_DIALSTARTTIME,
+ 		           DPD_DIALENDTIME,
+ 		           DPD_RECORDFILE,
+ 		           DPD_TALKLENGTH,
+ 		           DPD_OFFICIALLENGTH,
+ 		           DPD_NEXTCALLTIME,
+ 		           DPD_CALLRESULT,
+ 		           DPD_SUMMARY,
+ 		           DPD_DIALTIMES,
+ 		           DPD_STRING1,
+ 		           DPD_STRING2,
+ 		           DPD_STRING3,
+ 		           DPD_STRING4,
+ 		           DPD_STRING5,
+ 		           DPD_STRING6,
+ 		           DPD_STRING7,
+ 		           DPD_STRING8,
+ 		           DPD_STRING9,
+ 		           DPD_STRING10,
+ 		           DPD_NUMBER1,
+ 		           DPD_NUMBER2,
+ 		           DPD_NUMBER3,
+ 		           DPD_NUMBER4,
+ 		           DPD_NUMBER5,
+ 		           DPD_NUMBER6,
+ 		           DPD_DATE1,
+ 		           DPD_DATE2,
+ 		           DPD_DATE3,
+ 		           DPD_DATE4,
+ 		           DPD_DATE5,
+ 		           DPD_COMMENT1,
+ 		           DPD_COMMENT2,
+ 		           DPD_COMMENT3,
+ 		           DPD_COMMENT4,
+ 		           DPD_COMMENT5,
+ 		           DPD_CREATEDATE,
+ 		           DPD_ACTSTATE,
+ 		           DPD_ACT_U_ID,
+ 		           DPD_ACTDATE,
+ 		           DPD_AUDITSTATE,
+ 		           DPD_GID,
+ 		           DPD_BATCH,
+ 		           DPD_ALLOCDATE,
+ 		           DPD_ALLOCDAYNUM,
+ 		           DPD_AUDITSTATESTR,
+ 		           DPD_QR_ID,
+ 		           DPD_Q_ID,
+ 		           DPD_CT_ID,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooldata">
+		INSERT INTO NAG_DATAPOOLDATA (  			
+							DPD_DP_ID ,						
+							DPD_CM_ID ,						
+							DPD_CM_NAME ,											
+							DPD_U_ID ,						
+							DPD_AGENTID ,						
+							DPD_AGENTNAME ,									
+							DPD_GID 						
+											
+		) VALUES (			
+							#{dpdDpId,jdbcType=NUMERIC},						
+							#{dpdCmId,jdbcType=VARCHAR},						
+							#{dpdCmName,jdbcType=VARCHAR},
+							#{dpdUId,jdbcType=NUMERIC},						
+							#{dpdAgentid,jdbcType=VARCHAR},						
+							#{dpdAgentname,jdbcType=VARCHAR},
+							#{dpdGid,jdbcType=NUMERIC}						
+											
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooldata">
+		UPDATE NAG_DATAPOOLDATA	
+		<set>
+			 <if test="Id != null">DPD_ID=#{Id},</if>
+			 <if test="dpdDpId != null">DPD_DP_ID=#{dpdDpId},</if>
+			 <if test="dpdCmId != null">DPD_CM_ID=#{dpdCmId},</if>
+			 <if test="dpdCmName != null">DPD_CM_NAME=#{dpdCmName},</if>
+			 <if test="dpdDialtel != null">DPD_DIALTEL=#{dpdDialtel},</if>
+			 <if test="dpdUId != null">DPD_U_ID=#{dpdUId},</if>
+			 <if test="dpdAgentid != null">DPD_AGENTID=#{dpdAgentid},</if>
+			 <if test="dpdAgentname != null">DPD_AGENTNAME=#{dpdAgentname},</if>
+			 <if test="dpdAgentpartment != null">DPD_AGENTPARTMENT=#{dpdAgentpartment},</if>
+			 <if test="dpdDialstate != null">DPD_DIALSTATE=#{dpdDialstate},</if>
+			 <if test="dpdDialstatestr != null">DPD_DIALSTATESTR=#{dpdDialstatestr},</if>
+			 <if test="dpdDialstarttime != null">DPD_DIALSTARTTIME=#{dpdDialstarttime},</if>
+			 <if test="dpdDialendtime != null">DPD_DIALENDTIME=#{dpdDialendtime},</if>
+			 <if test="dpdRecordfile != null">DPD_RECORDFILE=#{dpdRecordfile},</if>
+			 <if test="dpdTalklength != null">DPD_TALKLENGTH=#{dpdTalklength},</if>
+			 <if test="dpdOfficiallength != null">DPD_OFFICIALLENGTH=#{dpdOfficiallength},</if>
+			 <if test="dpdNextcalltime != null">DPD_NEXTCALLTIME=#{dpdNextcalltime},</if>
+			 <if test="dpdCallresult != null">DPD_CALLRESULT=#{dpdCallresult},</if>
+			 <if test="dpdSummary != null">DPD_SUMMARY=#{dpdSummary},</if>
+			 <if test="dpdDialtimes != null">DPD_DIALTIMES=#{dpdDialtimes},</if>
+			 <if test="dpdString1 != null">DPD_STRING1=#{dpdString1},</if>
+			 <if test="dpdString2 != null">DPD_STRING2=#{dpdString2},</if>
+			 <if test="dpdString3 != null">DPD_STRING3=#{dpdString3},</if>
+			 <if test="dpdString4 != null">DPD_STRING4=#{dpdString4},</if>
+			 <if test="dpdString5 != null">DPD_STRING5=#{dpdString5},</if>
+			 <if test="dpdString6 != null">DPD_STRING6=#{dpdString6},</if>
+			 <if test="dpdString7 != null">DPD_STRING7=#{dpdString7},</if>
+			 <if test="dpdString8 != null">DPD_STRING8=#{dpdString8},</if>
+			 <if test="dpdString9 != null">DPD_STRING9=#{dpdString9},</if>
+			 <if test="dpdString10 != null">DPD_STRING10=#{dpdString10},</if>
+			 <if test="dpdNumber1 != null">DPD_NUMBER1=#{dpdNumber1},</if>
+			 <if test="dpdNumber2 != null">DPD_NUMBER2=#{dpdNumber2},</if>
+			 <if test="dpdNumber3 != null">DPD_NUMBER3=#{dpdNumber3},</if>
+			 <if test="dpdNumber4 != null">DPD_NUMBER4=#{dpdNumber4},</if>
+			 <if test="dpdNumber5 != null">DPD_NUMBER5=#{dpdNumber5},</if>
+			 <if test="dpdNumber6 != null">DPD_NUMBER6=#{dpdNumber6},</if>
+			 <if test="dpdDate1 != null">DPD_DATE1=#{dpdDate1},</if>
+			 <if test="dpdDate2 != null">DPD_DATE2=#{dpdDate2},</if>
+			 <if test="dpdDate3 != null">DPD_DATE3=#{dpdDate3},</if>
+			 <if test="dpdDate4 != null">DPD_DATE4=#{dpdDate4},</if>
+			 <if test="dpdDate5 != null">DPD_DATE5=#{dpdDate5},</if>
+			 <if test="dpdComment1 != null">DPD_COMMENT1=#{dpdComment1},</if>
+			 <if test="dpdComment2 != null">DPD_COMMENT2=#{dpdComment2},</if>
+			 <if test="dpdComment3 != null">DPD_COMMENT3=#{dpdComment3},</if>
+			 <if test="dpdComment4 != null">DPD_COMMENT4=#{dpdComment4},</if>
+			 <if test="dpdComment5 != null">DPD_COMMENT5=#{dpdComment5},</if>
+			 <if test="dpdCreatedate != null">DPD_CREATEDATE=#{dpdCreatedate},</if>
+			 <if test="dpdActstate != null">DPD_ACTSTATE=#{dpdActstate},</if>
+			 <if test="dpdActUId != null">DPD_ACT_U_ID=#{dpdActUId},</if>
+			 <if test="dpdActdate != null">DPD_ACTDATE=#{dpdActdate},</if>
+			 <if test="dpdAuditstate != null">DPD_AUDITSTATE=#{dpdAuditstate},</if>
+			 <if test="dpdGid != null">DPD_GID=#{dpdGid},</if>
+			 <if test="dpdBatch != null">DPD_BATCH=#{dpdBatch},</if>
+			 <if test="dpdAllocdate != null">DPD_ALLOCDATE=#{dpdAllocdate},</if>
+			 <if test="dpdAllocdaynum != null">DPD_ALLOCDAYNUM=#{dpdAllocdaynum},</if>
+			 <if test="dpdAuditstatestr != null">DPD_AUDITSTATESTR=#{dpdAuditstatestr},</if>
+			 <if test="dpdQrId != null">DPD_QR_ID=#{dpdQrId},</if>
+			 <if test="dpdQId != null">DPD_Q_ID=#{dpdQId},</if>
+			 <if test="dpdCtId != null">DPD_CT_ID=#{dpdCtId}</if>
+ 	</set>
+		WHERE
+			DPD_ID=#{Id} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Long">
+        DELETE FROM NAG_DATAPOOLDATA	 WHERE 			DPD_ID=#{Id}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooldata">
+        DELETE FROM NAG_DATAPOOLDATA	 
+         <where>   
+		       <if test="Id != null">DPD_ID = #{Id}</if>  
+        		       <if test="dpdDpId != null">and DPD_DP_ID = #{dpdDpId}</if> 
+	    		       <if test="dpdCmId != null">and DPD_CM_ID = #{dpdCmId}</if> 
+	    		       <if test="dpdCmName != null">and DPD_CM_NAME = #{dpdCmName}</if> 
+	    		       <if test="dpdDialtel != null">and DPD_DIALTEL = #{dpdDialtel}</if> 
+	    		       <if test="dpdUId != null">and DPD_U_ID = #{dpdUId}</if> 
+	    		       <if test="dpdAgentid != null">and DPD_AGENTID = #{dpdAgentid}</if> 
+	    		       <if test="dpdAgentname != null">and DPD_AGENTNAME = #{dpdAgentname}</if> 
+	    		       <if test="dpdAgentpartment != null">and DPD_AGENTPARTMENT = #{dpdAgentpartment}</if> 
+	    		       <if test="dpdDialstate != null">and DPD_DIALSTATE = #{dpdDialstate}</if> 
+	    		       <if test="dpdDialstatestr != null">and DPD_DIALSTATESTR = #{dpdDialstatestr}</if> 
+	    		       <if test="dpdDialstarttime != null">and DPD_DIALSTARTTIME = #{dpdDialstarttime}</if> 
+	    		       <if test="dpdDialendtime != null">and DPD_DIALENDTIME = #{dpdDialendtime}</if> 
+	    		       <if test="dpdRecordfile != null">and DPD_RECORDFILE = #{dpdRecordfile}</if> 
+	    		       <if test="dpdTalklength != null">and DPD_TALKLENGTH = #{dpdTalklength}</if> 
+	    		       <if test="dpdOfficiallength != null">and DPD_OFFICIALLENGTH = #{dpdOfficiallength}</if> 
+	    		       <if test="dpdNextcalltime != null">and DPD_NEXTCALLTIME = #{dpdNextcalltime}</if> 
+	    		       <if test="dpdCallresult != null">and DPD_CALLRESULT = #{dpdCallresult}</if> 
+	    		       <if test="dpdSummary != null">and DPD_SUMMARY = #{dpdSummary}</if> 
+	    		       <if test="dpdDialtimes != null">and DPD_DIALTIMES = #{dpdDialtimes}</if> 
+	    		       <if test="dpdString1 != null">and DPD_STRING1 = #{dpdString1}</if> 
+	    		       <if test="dpdString2 != null">and DPD_STRING2 = #{dpdString2}</if> 
+	    		       <if test="dpdString3 != null">and DPD_STRING3 = #{dpdString3}</if> 
+	    		       <if test="dpdString4 != null">and DPD_STRING4 = #{dpdString4}</if> 
+	    		       <if test="dpdString5 != null">and DPD_STRING5 = #{dpdString5}</if> 
+	    		       <if test="dpdString6 != null">and DPD_STRING6 = #{dpdString6}</if> 
+	    		       <if test="dpdString7 != null">and DPD_STRING7 = #{dpdString7}</if> 
+	    		       <if test="dpdString8 != null">and DPD_STRING8 = #{dpdString8}</if> 
+	    		       <if test="dpdString9 != null">and DPD_STRING9 = #{dpdString9}</if> 
+	    		       <if test="dpdString10 != null">and DPD_STRING10 = #{dpdString10}</if> 
+	    		       <if test="dpdNumber1 != null">and DPD_NUMBER1 = #{dpdNumber1}</if> 
+	    		       <if test="dpdNumber2 != null">and DPD_NUMBER2 = #{dpdNumber2}</if> 
+	    		       <if test="dpdNumber3 != null">and DPD_NUMBER3 = #{dpdNumber3}</if> 
+	    		       <if test="dpdNumber4 != null">and DPD_NUMBER4 = #{dpdNumber4}</if> 
+	    		       <if test="dpdNumber5 != null">and DPD_NUMBER5 = #{dpdNumber5}</if> 
+	    		       <if test="dpdNumber6 != null">and DPD_NUMBER6 = #{dpdNumber6}</if> 
+	    		       <if test="dpdDate1 != null">and DPD_DATE1 = #{dpdDate1}</if> 
+	    		       <if test="dpdDate2 != null">and DPD_DATE2 = #{dpdDate2}</if> 
+	    		       <if test="dpdDate3 != null">and DPD_DATE3 = #{dpdDate3}</if> 
+	    		       <if test="dpdDate4 != null">and DPD_DATE4 = #{dpdDate4}</if> 
+	    		       <if test="dpdDate5 != null">and DPD_DATE5 = #{dpdDate5}</if> 
+	    		       <if test="dpdComment1 != null">and DPD_COMMENT1 = #{dpdComment1}</if> 
+	    		       <if test="dpdComment2 != null">and DPD_COMMENT2 = #{dpdComment2}</if> 
+	    		       <if test="dpdComment3 != null">and DPD_COMMENT3 = #{dpdComment3}</if> 
+	    		       <if test="dpdComment4 != null">and DPD_COMMENT4 = #{dpdComment4}</if> 
+	    		       <if test="dpdComment5 != null">and DPD_COMMENT5 = #{dpdComment5}</if> 
+	    		       <if test="dpdCreatedate != null">and DPD_CREATEDATE = #{dpdCreatedate}</if> 
+	    		       <if test="dpdActstate != null">and DPD_ACTSTATE = #{dpdActstate}</if> 
+	    		       <if test="dpdActUId != null">and DPD_ACT_U_ID = #{dpdActUId}</if> 
+	    		       <if test="dpdActdate != null">and DPD_ACTDATE = #{dpdActdate}</if> 
+	    		       <if test="dpdAuditstate != null">and DPD_AUDITSTATE = #{dpdAuditstate}</if> 
+	    		       <if test="dpdGid != null">and DPD_GID = #{dpdGid}</if> 
+	    		       <if test="dpdBatch != null">and DPD_BATCH = #{dpdBatch}</if> 
+	    		       <if test="dpdAllocdate != null">and DPD_ALLOCDATE = #{dpdAllocdate}</if> 
+	    		       <if test="dpdAllocdaynum != null">and DPD_ALLOCDAYNUM = #{dpdAllocdaynum}</if> 
+	    		       <if test="dpdAuditstatestr != null">and DPD_AUDITSTATESTR = #{dpdAuditstatestr}</if> 
+	    		       <if test="dpdQrId != null">and DPD_QR_ID = #{dpdQrId}</if> 
+	    		       <if test="dpdQId != null">and DPD_Q_ID = #{dpdQId}</if> 
+	    		       <if test="dpdCtId != null">and DPD_CT_ID = #{dpdCtId}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="nagDatapooldata">
+		SELECT 
+			DPD_ID as "Id" ,			
+			DPD_DP_ID as "dpdDpId" ,			
+			DPD_CM_ID as "dpdCmId" ,			
+			DPD_CM_NAME as "dpdCmName" ,			
+			DPD_DIALTEL as "dpdDialtel" ,			
+			DPD_U_ID as "dpdUId" ,			
+			DPD_AGENTID as "dpdAgentid" ,			
+			DPD_AGENTNAME as "dpdAgentname" ,			
+			DPD_AGENTPARTMENT as "dpdAgentpartment" ,			
+			DPD_DIALSTATE as "dpdDialstate" ,			
+			DPD_DIALSTATESTR as "dpdDialstatestr" ,			
+			DPD_DIALSTARTTIME as "dpdDialstarttime" ,			
+			DPD_DIALENDTIME as "dpdDialendtime" ,			
+			DPD_RECORDFILE as "dpdRecordfile" ,			
+			DPD_TALKLENGTH as "dpdTalklength" ,			
+			DPD_OFFICIALLENGTH as "dpdOfficiallength" ,			
+			DPD_NEXTCALLTIME as "dpdNextcalltime" ,			
+			DPD_CALLRESULT as "dpdCallresult" ,			
+			DPD_SUMMARY as "dpdSummary" ,			
+			DPD_DIALTIMES as "dpdDialtimes" ,			
+			DPD_STRING1 as "dpdString1" ,			
+			DPD_STRING2 as "dpdString2" ,			
+			DPD_STRING3 as "dpdString3" ,			
+			DPD_STRING4 as "dpdString4" ,			
+			DPD_STRING5 as "dpdString5" ,			
+			DPD_STRING6 as "dpdString6" ,			
+			DPD_STRING7 as "dpdString7" ,			
+			DPD_STRING8 as "dpdString8" ,			
+			DPD_STRING9 as "dpdString9" ,			
+			DPD_STRING10 as "dpdString10" ,			
+			DPD_NUMBER1 as "dpdNumber1" ,			
+			DPD_NUMBER2 as "dpdNumber2" ,			
+			DPD_NUMBER3 as "dpdNumber3" ,			
+			DPD_NUMBER4 as "dpdNumber4" ,			
+			DPD_NUMBER5 as "dpdNumber5" ,			
+			DPD_NUMBER6 as "dpdNumber6" ,			
+			DPD_DATE1 as "dpdDate1" ,			
+			DPD_DATE2 as "dpdDate2" ,			
+			DPD_DATE3 as "dpdDate3" ,			
+			DPD_DATE4 as "dpdDate4" ,			
+			DPD_DATE5 as "dpdDate5" ,			
+			DPD_COMMENT1 as "dpdComment1" ,			
+			DPD_COMMENT2 as "dpdComment2" ,			
+			DPD_COMMENT3 as "dpdComment3" ,			
+			DPD_COMMENT4 as "dpdComment4" ,			
+			DPD_COMMENT5 as "dpdComment5" ,			
+			DPD_CREATEDATE as "dpdCreatedate" ,			
+			DPD_ACTSTATE as "dpdActstate" ,			
+			DPD_ACT_U_ID as "dpdActUId" ,			
+			DPD_ACTDATE as "dpdActdate" ,			
+			DPD_AUDITSTATE as "dpdAuditstate" ,			
+			DPD_GID as "dpdGid" ,			
+			DPD_BATCH as "dpdBatch" ,			
+			DPD_ALLOCDATE as "dpdAllocdate" ,			
+			DPD_ALLOCDAYNUM as "dpdAllocdaynum" ,			
+			DPD_AUDITSTATESTR as "dpdAuditstatestr" ,			
+			DPD_QR_ID as "dpdQrId" ,			
+			DPD_Q_ID as "dpdQId" ,			
+			DPD_CT_ID as "dpdCtId" 			
+		FROM NAG_DATAPOOLDATA
+		WHERE
+			DPD_ID=#{Id} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooldata" resultMap="nagDatapooldata">
+	SELECT
+			 DPD_ID as "Id" ,			
+			 DPD_DP_ID as "dpdDpId" ,			
+			 DPD_CM_ID as "dpdCmId" ,			
+			 DPD_CM_NAME as "dpdCmName" ,			
+			 DPD_DIALTEL as "dpdDialtel" ,			
+			 DPD_U_ID as "dpdUId" ,			
+			 DPD_AGENTID as "dpdAgentid" ,			
+			 DPD_AGENTNAME as "dpdAgentname" ,			
+			 DPD_AGENTPARTMENT as "dpdAgentpartment" ,			
+			 DPD_DIALSTATE as "dpdDialstate" ,			
+			 DPD_DIALSTATESTR as "dpdDialstatestr" ,			
+			 DPD_DIALSTARTTIME as "dpdDialstarttime" ,			
+			 DPD_DIALENDTIME as "dpdDialendtime" ,			
+			 DPD_RECORDFILE as "dpdRecordfile" ,			
+			 DPD_TALKLENGTH as "dpdTalklength" ,			
+			 DPD_OFFICIALLENGTH as "dpdOfficiallength" ,			
+			 DPD_NEXTCALLTIME as "dpdNextcalltime" ,			
+			 DPD_CALLRESULT as "dpdCallresult" ,			
+			 DPD_SUMMARY as "dpdSummary" ,			
+			 DPD_DIALTIMES as "dpdDialtimes" ,			
+			 DPD_STRING1 as "dpdString1" ,			
+			 DPD_STRING2 as "dpdString2" ,			
+			 DPD_STRING3 as "dpdString3" ,			
+			 DPD_STRING4 as "dpdString4" ,			
+			 DPD_STRING5 as "dpdString5" ,			
+			 DPD_STRING6 as "dpdString6" ,			
+			 DPD_STRING7 as "dpdString7" ,			
+			 DPD_STRING8 as "dpdString8" ,			
+			 DPD_STRING9 as "dpdString9" ,			
+			 DPD_STRING10 as "dpdString10" ,			
+			 DPD_NUMBER1 as "dpdNumber1" ,			
+			 DPD_NUMBER2 as "dpdNumber2" ,			
+			 DPD_NUMBER3 as "dpdNumber3" ,			
+			 DPD_NUMBER4 as "dpdNumber4" ,			
+			 DPD_NUMBER5 as "dpdNumber5" ,			
+			 DPD_NUMBER6 as "dpdNumber6" ,			
+			 DPD_DATE1 as "dpdDate1" ,			
+			 DPD_DATE2 as "dpdDate2" ,			
+			 DPD_DATE3 as "dpdDate3" ,			
+			 DPD_DATE4 as "dpdDate4" ,			
+			 DPD_DATE5 as "dpdDate5" ,			
+			 DPD_COMMENT1 as "dpdComment1" ,			
+			 DPD_COMMENT2 as "dpdComment2" ,			
+			 DPD_COMMENT3 as "dpdComment3" ,			
+			 DPD_COMMENT4 as "dpdComment4" ,			
+			 DPD_COMMENT5 as "dpdComment5" ,			
+			 DPD_CREATEDATE as "dpdCreatedate" ,			
+			 DPD_ACTSTATE as "dpdActstate" ,			
+			 DPD_ACT_U_ID as "dpdActUId" ,			
+			 DPD_ACTDATE as "dpdActdate" ,			
+			 DPD_AUDITSTATE as "dpdAuditstate" ,			
+			 DPD_GID as "dpdGid" ,			
+			 DPD_BATCH as "dpdBatch" ,			
+			 DPD_ALLOCDATE as "dpdAllocdate" ,			
+			 DPD_ALLOCDAYNUM as "dpdAllocdaynum" ,			
+			 DPD_AUDITSTATESTR as "dpdAuditstatestr" ,			
+			 DPD_QR_ID as "dpdQrId" ,			
+			 DPD_Q_ID as "dpdQId" ,			
+			 DPD_CT_ID as "dpdCtId" 			
+	FROM  NAG_DATAPOOLDATA  
+	      <where> 
+		       <if test="Id != null">DPD_ID = #{Id}</if>  
+        		       <if test="dpdDpId != null">and DPD_DP_ID = #{dpdDpId}</if> 
+	    		       <if test="dpdCmId != null">and DPD_CM_ID = #{dpdCmId}</if> 
+	    		       <if test="dpdCmName != null">and DPD_CM_NAME = #{dpdCmName}</if> 
+	    		       <if test="dpdDialtel != null">and DPD_DIALTEL = #{dpdDialtel}</if> 
+	    		       <if test="dpdUId != null">and DPD_U_ID = #{dpdUId}</if> 
+	    		       <if test="dpdAgentid != null">and DPD_AGENTID = #{dpdAgentid}</if> 
+	    		       <if test="dpdAgentname != null">and DPD_AGENTNAME = #{dpdAgentname}</if> 
+	    		       <if test="dpdAgentpartment != null">and DPD_AGENTPARTMENT = #{dpdAgentpartment}</if> 
+	    		       <if test="dpdDialstate != null">and DPD_DIALSTATE = #{dpdDialstate}</if> 
+	    		       <if test="dpdDialstatestr != null">and DPD_DIALSTATESTR = #{dpdDialstatestr}</if> 
+	    		       <if test="dpdDialstarttime != null">and DPD_DIALSTARTTIME = #{dpdDialstarttime}</if> 
+	    		       <if test="dpdDialendtime != null">and DPD_DIALENDTIME = #{dpdDialendtime}</if> 
+	    		       <if test="dpdRecordfile != null">and DPD_RECORDFILE = #{dpdRecordfile}</if> 
+	    		       <if test="dpdTalklength != null">and DPD_TALKLENGTH = #{dpdTalklength}</if> 
+	    		       <if test="dpdOfficiallength != null">and DPD_OFFICIALLENGTH = #{dpdOfficiallength}</if> 
+	    		       <if test="dpdNextcalltime != null">and DPD_NEXTCALLTIME = #{dpdNextcalltime}</if> 
+	    		       <if test="dpdCallresult != null">and DPD_CALLRESULT = #{dpdCallresult}</if> 
+	    		       <if test="dpdSummary != null">and DPD_SUMMARY = #{dpdSummary}</if> 
+	    		       <if test="dpdDialtimes != null">and DPD_DIALTIMES = #{dpdDialtimes}</if> 
+	    		       <if test="dpdString1 != null">and DPD_STRING1 = #{dpdString1}</if> 
+	    		       <if test="dpdString2 != null">and DPD_STRING2 = #{dpdString2}</if> 
+	    		       <if test="dpdString3 != null">and DPD_STRING3 = #{dpdString3}</if> 
+	    		       <if test="dpdString4 != null">and DPD_STRING4 = #{dpdString4}</if> 
+	    		       <if test="dpdString5 != null">and DPD_STRING5 = #{dpdString5}</if> 
+	    		       <if test="dpdString6 != null">and DPD_STRING6 = #{dpdString6}</if> 
+	    		       <if test="dpdString7 != null">and DPD_STRING7 = #{dpdString7}</if> 
+	    		       <if test="dpdString8 != null">and DPD_STRING8 = #{dpdString8}</if> 
+	    		       <if test="dpdString9 != null">and DPD_STRING9 = #{dpdString9}</if> 
+	    		       <if test="dpdString10 != null">and DPD_STRING10 = #{dpdString10}</if> 
+	    		       <if test="dpdNumber1 != null">and DPD_NUMBER1 = #{dpdNumber1}</if> 
+	    		       <if test="dpdNumber2 != null">and DPD_NUMBER2 = #{dpdNumber2}</if> 
+	    		       <if test="dpdNumber3 != null">and DPD_NUMBER3 = #{dpdNumber3}</if> 
+	    		       <if test="dpdNumber4 != null">and DPD_NUMBER4 = #{dpdNumber4}</if> 
+	    		       <if test="dpdNumber5 != null">and DPD_NUMBER5 = #{dpdNumber5}</if> 
+	    		       <if test="dpdNumber6 != null">and DPD_NUMBER6 = #{dpdNumber6}</if> 
+	    		       <if test="dpdDate1 != null">and DPD_DATE1 = #{dpdDate1}</if> 
+	    		       <if test="dpdDate2 != null">and DPD_DATE2 = #{dpdDate2}</if> 
+	    		       <if test="dpdDate3 != null">and DPD_DATE3 = #{dpdDate3}</if> 
+	    		       <if test="dpdDate4 != null">and DPD_DATE4 = #{dpdDate4}</if> 
+	    		       <if test="dpdDate5 != null">and DPD_DATE5 = #{dpdDate5}</if> 
+	    		       <if test="dpdComment1 != null">and DPD_COMMENT1 = #{dpdComment1}</if> 
+	    		       <if test="dpdComment2 != null">and DPD_COMMENT2 = #{dpdComment2}</if> 
+	    		       <if test="dpdComment3 != null">and DPD_COMMENT3 = #{dpdComment3}</if> 
+	    		       <if test="dpdComment4 != null">and DPD_COMMENT4 = #{dpdComment4}</if> 
+	    		       <if test="dpdComment5 != null">and DPD_COMMENT5 = #{dpdComment5}</if> 
+	    		       <if test="dpdCreatedate != null">and DPD_CREATEDATE = #{dpdCreatedate}</if> 
+	    		       <if test="dpdActstate != null">and DPD_ACTSTATE = #{dpdActstate}</if> 
+	    		       <if test="dpdActUId != null">and DPD_ACT_U_ID = #{dpdActUId}</if> 
+	    		       <if test="dpdActdate != null">and DPD_ACTDATE = #{dpdActdate}</if> 
+	    		       <if test="dpdAuditstate != null">and DPD_AUDITSTATE = #{dpdAuditstate}</if> 
+	    		       <if test="dpdGid != null">and DPD_GID = #{dpdGid}</if> 
+	    		       <if test="dpdBatch != null">and DPD_BATCH = #{dpdBatch}</if> 
+	    		       <if test="dpdAllocdate != null">and DPD_ALLOCDATE = #{dpdAllocdate}</if> 
+	    		       <if test="dpdAllocdaynum != null">and DPD_ALLOCDAYNUM = #{dpdAllocdaynum}</if> 
+	    		       <if test="dpdAuditstatestr != null">and DPD_AUDITSTATESTR = #{dpdAuditstatestr}</if> 
+	    		       <if test="dpdQrId != null">and DPD_QR_ID = #{dpdQrId}</if> 
+	    		       <if test="dpdQId != null">and DPD_Q_ID = #{dpdQId}</if> 
+	    		       <if test="dpdCtId != null">and DPD_CT_ID = #{dpdCtId}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM NAG_DATAPOOLDATA 
+		 <where> 
+		       <if test="Id != null">DPD_ID = #{Id}</if>  
+        		       <if test="dpdDpId != null">and DPD_DP_ID = #{dpdDpId}</if> 
+	    		       <if test="dpdCmId != null">and DPD_CM_ID = #{dpdCmId}</if> 
+	    		       <if test="dpdCmName != null">and DPD_CM_NAME = #{dpdCmName}</if> 
+	    		       <if test="dpdDialtel != null">and DPD_DIALTEL = #{dpdDialtel}</if> 
+	    		       <if test="dpdUId != null">and DPD_U_ID = #{dpdUId}</if> 
+	    		       <if test="dpdAgentid != null">and DPD_AGENTID = #{dpdAgentid}</if> 
+	    		       <if test="dpdAgentname != null">and DPD_AGENTNAME = #{dpdAgentname}</if> 
+	    		       <if test="dpdAgentpartment != null">and DPD_AGENTPARTMENT = #{dpdAgentpartment}</if> 
+	    		       <if test="dpdDialstate != null">and DPD_DIALSTATE = #{dpdDialstate}</if> 
+	    		       <if test="dpdDialstatestr != null">and DPD_DIALSTATESTR = #{dpdDialstatestr}</if> 
+	    		       <if test="dpdDialstarttime != null">and DPD_DIALSTARTTIME = #{dpdDialstarttime}</if> 
+	    		       <if test="dpdDialendtime != null">and DPD_DIALENDTIME = #{dpdDialendtime}</if> 
+	    		       <if test="dpdRecordfile != null">and DPD_RECORDFILE = #{dpdRecordfile}</if> 
+	    		       <if test="dpdTalklength != null">and DPD_TALKLENGTH = #{dpdTalklength}</if> 
+	    		       <if test="dpdOfficiallength != null">and DPD_OFFICIALLENGTH = #{dpdOfficiallength}</if> 
+	    		       <if test="dpdNextcalltime != null">and DPD_NEXTCALLTIME = #{dpdNextcalltime}</if> 
+	    		       <if test="dpdCallresult != null">and DPD_CALLRESULT = #{dpdCallresult}</if> 
+	    		       <if test="dpdSummary != null">and DPD_SUMMARY = #{dpdSummary}</if> 
+	    		       <if test="dpdDialtimes != null">and DPD_DIALTIMES = #{dpdDialtimes}</if> 
+	    		       <if test="dpdString1 != null">and DPD_STRING1 = #{dpdString1}</if> 
+	    		       <if test="dpdString2 != null">and DPD_STRING2 = #{dpdString2}</if> 
+	    		       <if test="dpdString3 != null">and DPD_STRING3 = #{dpdString3}</if> 
+	    		       <if test="dpdString4 != null">and DPD_STRING4 = #{dpdString4}</if> 
+	    		       <if test="dpdString5 != null">and DPD_STRING5 = #{dpdString5}</if> 
+	    		       <if test="dpdString6 != null">and DPD_STRING6 = #{dpdString6}</if> 
+	    		       <if test="dpdString7 != null">and DPD_STRING7 = #{dpdString7}</if> 
+	    		       <if test="dpdString8 != null">and DPD_STRING8 = #{dpdString8}</if> 
+	    		       <if test="dpdString9 != null">and DPD_STRING9 = #{dpdString9}</if> 
+	    		       <if test="dpdString10 != null">and DPD_STRING10 = #{dpdString10}</if> 
+	    		       <if test="dpdNumber1 != null">and DPD_NUMBER1 = #{dpdNumber1}</if> 
+	    		       <if test="dpdNumber2 != null">and DPD_NUMBER2 = #{dpdNumber2}</if> 
+	    		       <if test="dpdNumber3 != null">and DPD_NUMBER3 = #{dpdNumber3}</if> 
+	    		       <if test="dpdNumber4 != null">and DPD_NUMBER4 = #{dpdNumber4}</if> 
+	    		       <if test="dpdNumber5 != null">and DPD_NUMBER5 = #{dpdNumber5}</if> 
+	    		       <if test="dpdNumber6 != null">and DPD_NUMBER6 = #{dpdNumber6}</if> 
+	    		       <if test="dpdDate1 != null">and DPD_DATE1 = #{dpdDate1}</if> 
+	    		       <if test="dpdDate2 != null">and DPD_DATE2 = #{dpdDate2}</if> 
+	    		       <if test="dpdDate3 != null">and DPD_DATE3 = #{dpdDate3}</if> 
+	    		       <if test="dpdDate4 != null">and DPD_DATE4 = #{dpdDate4}</if> 
+	    		       <if test="dpdDate5 != null">and DPD_DATE5 = #{dpdDate5}</if> 
+	    		       <if test="dpdComment1 != null">and DPD_COMMENT1 = #{dpdComment1}</if> 
+	    		       <if test="dpdComment2 != null">and DPD_COMMENT2 = #{dpdComment2}</if> 
+	    		       <if test="dpdComment3 != null">and DPD_COMMENT3 = #{dpdComment3}</if> 
+	    		       <if test="dpdComment4 != null">and DPD_COMMENT4 = #{dpdComment4}</if> 
+	    		       <if test="dpdComment5 != null">and DPD_COMMENT5 = #{dpdComment5}</if> 
+	    		       <if test="dpdCreatedate != null">and DPD_CREATEDATE = #{dpdCreatedate}</if> 
+	    		       <if test="dpdActstate != null">and DPD_ACTSTATE = #{dpdActstate}</if> 
+	    		       <if test="dpdActUId != null">and DPD_ACT_U_ID = #{dpdActUId}</if> 
+	    		       <if test="dpdActdate != null">and DPD_ACTDATE = #{dpdActdate}</if> 
+	    		       <if test="dpdAuditstate != null">and DPD_AUDITSTATE = #{dpdAuditstate}</if> 
+	    		       <if test="dpdGid != null">and DPD_GID = #{dpdGid}</if> 
+	    		       <if test="dpdBatch != null">and DPD_BATCH = #{dpdBatch}</if> 
+	    		       <if test="dpdAllocdate != null">and DPD_ALLOCDATE = #{dpdAllocdate}</if> 
+	    		       <if test="dpdAllocdaynum != null">and DPD_ALLOCDAYNUM = #{dpdAllocdaynum}</if> 
+	    		       <if test="dpdAuditstatestr != null">and DPD_AUDITSTATESTR = #{dpdAuditstatestr}</if> 
+	    		       <if test="dpdQrId != null">and DPD_QR_ID = #{dpdQrId}</if> 
+	    		       <if test="dpdQId != null">and DPD_Q_ID = #{dpdQId}</if> 
+	    		       <if test="dpdCtId != null">and DPD_CT_ID = #{dpdCtId}</if> 
+	    		</where>
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'NAG_DATAPOOLDATA'
+	</select>
+</mapper>

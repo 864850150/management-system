@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NagDatapool">
+	    <resultMap id="nagDatapool" type="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapool">
+                  <result column="DP_ID" property="dpId" />
+ 		          <result column="DP_NAME" property="dpName" />
+ 		          <result column="DP_SCRIPTID" property="dpScriptid" />
+ 		          <result column="DP_STARTDATE" property="dpStartdate" />
+ 		          <result column="DP_ENDDATE" property="dpEnddate" />
+ 		          <result column="DP_START" property="dpStart" />
+ 		          <result column="DP_TRANSINT" property="dpTransint" />
+ 		          <result column="DP_TRANSKEEP" property="dpTranskeep" />
+ 		          <result column="DP_DATAASSIGN" property="dpDataassign" />
+ 		          <result column="DP_MAXCALLTIMES" property="dpMaxcalltimes" />
+ 		          <result column="DP_JUMPSCRIPT" property="dpJumpscript" />
+ 		          <result column="DP_DATACOUNT" property="dpDatacount" />
+ 		          <result column="DP_NOTASSIGNCOUNT" property="dpNotassigncount" />
+ 		          <result column="DP_ANSWERDICT" property="dpAnswerdict" />
+ 		          <result column="DP_NOANSWERDICT" property="dpNoanswerdict" />
+ 		          <result column="DP_ISCTICONTROL" property="dpIscticontrol" />
+ 		          <result column="DP_RULE1" property="dpRule1" />
+ 		          <result column="DP_RULE2" property="dpRule2" />
+ 		          <result column="DP_RULE3" property="dpRule3" />
+ 		          <result column="DP_RULE4" property="dpRule4" />
+ 		          <result column="DP_RULE5" property="dpRule5" />
+ 		          <result column="DP_RULE6" property="dpRule6" />
+ 		          <result column="DP_RULE7" property="dpRule7" />
+ 		          <result column="DP_STARTTIME" property="dpStarttime" />
+ 		          <result column="DP_ENDTIME" property="dpEndtime" />
+ 		          <result column="DP_CANIMPORT" property="dpCanimport" />
+ 		          <result column="DP_ISLIMIT" property="dpIslimit" />
+ 		          <result column="DP_POOLTYPE" property="dpPooltype" />
+ 		          <result column="DP_GIVEUPPOOL" property="dpGiveuppool" />
+ 		          <result column="DP_APPROVAL" property="dpApproval" />
+ 		          <result column="DP_INCALLTRANIN" property="dpIncalltranin" />
+ 		          <result column="DP_Q_ID" property="dpQId" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           DP_ID,
+ 		           DP_NAME,
+ 		           DP_SCRIPTID,
+ 		           DP_STARTDATE,
+ 		           DP_ENDDATE,
+ 		           DP_START,
+ 		           DP_TRANSINT,
+ 		           DP_TRANSKEEP,
+ 		           DP_DATAASSIGN,
+ 		           DP_MAXCALLTIMES,
+ 		           DP_JUMPSCRIPT,
+ 		           DP_DATACOUNT,
+ 		           DP_NOTASSIGNCOUNT,
+ 		           DP_ANSWERDICT,
+ 		           DP_NOANSWERDICT,
+ 		           DP_ISCTICONTROL,
+ 		           DP_RULE1,
+ 		           DP_RULE2,
+ 		           DP_RULE3,
+ 		           DP_RULE4,
+ 		           DP_RULE5,
+ 		           DP_RULE6,
+ 		           DP_RULE7,
+ 		           DP_STARTTIME,
+ 		           DP_ENDTIME,
+ 		           DP_CANIMPORT,
+ 		           DP_ISLIMIT,
+ 		           DP_POOLTYPE,
+ 		           DP_GIVEUPPOOL,
+ 		           DP_APPROVAL,
+ 		           DP_INCALLTRANIN,
+ 		           DP_Q_ID,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapool">
+		INSERT INTO NAG_DATAPOOL ( 
+							DP_ID ,						
+							DP_NAME ,						
+							DP_SCRIPTID ,						
+							DP_STARTDATE ,						
+							DP_ENDDATE ,						
+							DP_START ,						
+							DP_TRANSINT ,						
+							DP_TRANSKEEP ,						
+							DP_DATAASSIGN ,						
+							DP_MAXCALLTIMES ,						
+							DP_JUMPSCRIPT ,						
+							DP_DATACOUNT ,						
+							DP_NOTASSIGNCOUNT ,						
+							DP_ANSWERDICT ,						
+							DP_NOANSWERDICT ,						
+							DP_ISCTICONTROL ,						
+							DP_RULE1 ,						
+							DP_RULE2 ,						
+							DP_RULE3 ,						
+							DP_RULE4 ,						
+							DP_RULE5 ,						
+							DP_RULE6 ,						
+							DP_RULE7 ,						
+							DP_STARTTIME ,						
+							DP_ENDTIME ,						
+							DP_CANIMPORT ,						
+							DP_ISLIMIT ,						
+							DP_POOLTYPE ,						
+							DP_GIVEUPPOOL ,						
+							DP_APPROVAL ,						
+							DP_INCALLTRANIN ,						
+							DP_Q_ID 						
+		) VALUES (
+							#{dpId,jdbcType=NUMERIC},						
+							#{dpName,jdbcType=VARCHAR},						
+							#{dpScriptid,jdbcType=NUMERIC},						
+							#{dpStartdate,jdbcType=TIMESTAMP},						
+							#{dpEnddate,jdbcType=TIMESTAMP},						
+							#{dpStart,jdbcType=NUMERIC},						
+							#{dpTransint,jdbcType=NUMERIC},						
+							#{dpTranskeep,jdbcType=NUMERIC},						
+							#{dpDataassign,jdbcType=NUMERIC},						
+							#{dpMaxcalltimes,jdbcType=NUMERIC},						
+							#{dpJumpscript,jdbcType=NUMERIC},						
+							#{dpDatacount,jdbcType=NUMERIC},						
+							#{dpNotassigncount,jdbcType=NUMERIC},						
+							#{dpAnswerdict,jdbcType=NUMERIC},						
+							#{dpNoanswerdict,jdbcType=NUMERIC},						
+							#{dpIscticontrol,jdbcType=NUMERIC},						
+							#{dpRule1,jdbcType=NUMERIC},						
+							#{dpRule2,jdbcType=NUMERIC},						
+							#{dpRule3,jdbcType=NUMERIC},						
+							#{dpRule4,jdbcType=NUMERIC},						
+							#{dpRule5,jdbcType=NUMERIC},						
+							#{dpRule6,jdbcType=NUMERIC},						
+							#{dpRule7,jdbcType=NUMERIC},						
+							#{dpStarttime,jdbcType=TIMESTAMP},						
+							#{dpEndtime,jdbcType=TIMESTAMP},						
+							#{dpCanimport,jdbcType=NUMERIC},						
+							#{dpIslimit,jdbcType=NUMERIC},						
+							#{dpPooltype,jdbcType=VARCHAR},						
+							#{dpGiveuppool,jdbcType=NUMERIC},						
+							#{dpApproval,jdbcType=NUMERIC},						
+							#{dpIncalltranin,jdbcType=NUMERIC},						
+							#{dpQId,jdbcType=NUMERIC}						
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapool">
+		UPDATE NAG_DATAPOOL	
+		<set>
+			 <if test="dpId != null">DP_ID=#{dpId},</if>
+			 <if test="dpName != null">DP_NAME=#{dpName},</if>
+			 <if test="dpScriptid != null">DP_SCRIPTID=#{dpScriptid},</if>
+			 <if test="dpStartdate != null">DP_STARTDATE=#{dpStartdate},</if>
+			 <if test="dpEnddate != null">DP_ENDDATE=#{dpEnddate},</if>
+			 <if test="dpStart != null">DP_START=#{dpStart},</if>
+			 <if test="dpTransint != null">DP_TRANSINT=#{dpTransint},</if>
+			 <if test="dpTranskeep != null">DP_TRANSKEEP=#{dpTranskeep},</if>
+			 <if test="dpDataassign != null">DP_DATAASSIGN=#{dpDataassign},</if>
+			 <if test="dpMaxcalltimes != null">DP_MAXCALLTIMES=#{dpMaxcalltimes},</if>
+			 <if test="dpJumpscript != null">DP_JUMPSCRIPT=#{dpJumpscript},</if>
+			 <if test="dpDatacount != null">DP_DATACOUNT=#{dpDatacount},</if>
+			 <if test="dpNotassigncount != null">DP_NOTASSIGNCOUNT=#{dpNotassigncount},</if>
+			 <if test="dpAnswerdict != null">DP_ANSWERDICT=#{dpAnswerdict},</if>
+			 <if test="dpNoanswerdict != null">DP_NOANSWERDICT=#{dpNoanswerdict},</if>
+			 <if test="dpIscticontrol != null">DP_ISCTICONTROL=#{dpIscticontrol},</if>
+			 <if test="dpRule1 != null">DP_RULE1=#{dpRule1},</if>
+			 <if test="dpRule2 != null">DP_RULE2=#{dpRule2},</if>
+			 <if test="dpRule3 != null">DP_RULE3=#{dpRule3},</if>
+			 <if test="dpRule4 != null">DP_RULE4=#{dpRule4},</if>
+			 <if test="dpRule5 != null">DP_RULE5=#{dpRule5},</if>
+			 <if test="dpRule6 != null">DP_RULE6=#{dpRule6},</if>
+			 <if test="dpRule7 != null">DP_RULE7=#{dpRule7},</if>
+			 <if test="dpStarttime != null">DP_STARTTIME=#{dpStarttime},</if>
+			 <if test="dpEndtime != null">DP_ENDTIME=#{dpEndtime},</if>
+			 <if test="dpCanimport != null">DP_CANIMPORT=#{dpCanimport},</if>
+			 <if test="dpIslimit != null">DP_ISLIMIT=#{dpIslimit},</if>
+			 <if test="dpPooltype != null">DP_POOLTYPE=#{dpPooltype},</if>
+			 <if test="dpGiveuppool != null">DP_GIVEUPPOOL=#{dpGiveuppool},</if>
+			 <if test="dpApproval != null">DP_APPROVAL=#{dpApproval},</if>
+			 <if test="dpIncalltranin != null">DP_INCALLTRANIN=#{dpIncalltranin},</if>
+			 <if test="dpQId != null">DP_Q_ID=#{dpQId}</if>
+ 	</set>
+		WHERE
+			DP_ID=#{dpId} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Long">
+        DELETE FROM NAG_DATAPOOL	 WHERE 			DP_ID=#{dpId}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapool">
+        DELETE FROM NAG_DATAPOOL	 
+         <where>   
+		       <if test="dpId != null">DP_ID = #{dpId}</if>  
+        		       <if test="dpName != null">and DP_NAME = #{dpName}</if> 
+	    		       <if test="dpScriptid != null">and DP_SCRIPTID = #{dpScriptid}</if> 
+	    		       <if test="dpStartdate != null">and DP_STARTDATE = #{dpStartdate}</if> 
+	    		       <if test="dpEnddate != null">and DP_ENDDATE = #{dpEnddate}</if> 
+	    		       <if test="dpStart != null">and DP_START = #{dpStart}</if> 
+	    		       <if test="dpTransint != null">and DP_TRANSINT = #{dpTransint}</if> 
+	    		       <if test="dpTranskeep != null">and DP_TRANSKEEP = #{dpTranskeep}</if> 
+	    		       <if test="dpDataassign != null">and DP_DATAASSIGN = #{dpDataassign}</if> 
+	    		       <if test="dpMaxcalltimes != null">and DP_MAXCALLTIMES = #{dpMaxcalltimes}</if> 
+	    		       <if test="dpJumpscript != null">and DP_JUMPSCRIPT = #{dpJumpscript}</if> 
+	    		       <if test="dpDatacount != null">and DP_DATACOUNT = #{dpDatacount}</if> 
+	    		       <if test="dpNotassigncount != null">and DP_NOTASSIGNCOUNT = #{dpNotassigncount}</if> 
+	    		       <if test="dpAnswerdict != null">and DP_ANSWERDICT = #{dpAnswerdict}</if> 
+	    		       <if test="dpNoanswerdict != null">and DP_NOANSWERDICT = #{dpNoanswerdict}</if> 
+	    		       <if test="dpIscticontrol != null">and DP_ISCTICONTROL = #{dpIscticontrol}</if> 
+	    		       <if test="dpRule1 != null">and DP_RULE1 = #{dpRule1}</if> 
+	    		       <if test="dpRule2 != null">and DP_RULE2 = #{dpRule2}</if> 
+	    		       <if test="dpRule3 != null">and DP_RULE3 = #{dpRule3}</if> 
+	    		       <if test="dpRule4 != null">and DP_RULE4 = #{dpRule4}</if> 
+	    		       <if test="dpRule5 != null">and DP_RULE5 = #{dpRule5}</if> 
+	    		       <if test="dpRule6 != null">and DP_RULE6 = #{dpRule6}</if> 
+	    		       <if test="dpRule7 != null">and DP_RULE7 = #{dpRule7}</if> 
+	    		       <if test="dpStarttime != null">and DP_STARTTIME = #{dpStarttime}</if> 
+	    		       <if test="dpEndtime != null">and DP_ENDTIME = #{dpEndtime}</if> 
+	    		       <if test="dpCanimport != null">and DP_CANIMPORT = #{dpCanimport}</if> 
+	    		       <if test="dpIslimit != null">and DP_ISLIMIT = #{dpIslimit}</if> 
+	    		       <if test="dpPooltype != null">and DP_POOLTYPE = #{dpPooltype}</if> 
+	    		       <if test="dpGiveuppool != null">and DP_GIVEUPPOOL = #{dpGiveuppool}</if> 
+	    		       <if test="dpApproval != null">and DP_APPROVAL = #{dpApproval}</if> 
+	    		       <if test="dpIncalltranin != null">and DP_INCALLTRANIN = #{dpIncalltranin}</if> 
+	    		       <if test="dpQId != null">and DP_Q_ID = #{dpQId}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="nagDatapool">
+		SELECT 
+			DP_ID as "dpId" ,			
+			DP_NAME as "dpName" ,			
+			DP_SCRIPTID as "dpScriptid" ,			
+			DP_STARTDATE as "dpStartdate" ,			
+			DP_ENDDATE as "dpEnddate" ,			
+			DP_START as "dpStart" ,			
+			DP_TRANSINT as "dpTransint" ,			
+			DP_TRANSKEEP as "dpTranskeep" ,			
+			DP_DATAASSIGN as "dpDataassign" ,			
+			DP_MAXCALLTIMES as "dpMaxcalltimes" ,			
+			DP_JUMPSCRIPT as "dpJumpscript" ,			
+			DP_DATACOUNT as "dpDatacount" ,			
+			DP_NOTASSIGNCOUNT as "dpNotassigncount" ,			
+			DP_ANSWERDICT as "dpAnswerdict" ,			
+			DP_NOANSWERDICT as "dpNoanswerdict" ,			
+			DP_ISCTICONTROL as "dpIscticontrol" ,			
+			DP_RULE1 as "dpRule1" ,			
+			DP_RULE2 as "dpRule2" ,			
+			DP_RULE3 as "dpRule3" ,			
+			DP_RULE4 as "dpRule4" ,			
+			DP_RULE5 as "dpRule5" ,			
+			DP_RULE6 as "dpRule6" ,			
+			DP_RULE7 as "dpRule7" ,			
+			DP_STARTTIME as "dpStarttime" ,			
+			DP_ENDTIME as "dpEndtime" ,			
+			DP_CANIMPORT as "dpCanimport" ,			
+			DP_ISLIMIT as "dpIslimit" ,			
+			DP_POOLTYPE as "dpPooltype" ,			
+			DP_GIVEUPPOOL as "dpGiveuppool" ,			
+			DP_APPROVAL as "dpApproval" ,			
+			DP_INCALLTRANIN as "dpIncalltranin" ,			
+			DP_Q_ID as "dpQId" 			
+		FROM NAG_DATAPOOL
+		WHERE
+			DP_ID=#{dpId} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapool" resultMap="nagDatapool">
+	SELECT
+			 DP_ID as "dpId" ,			
+			 DP_NAME as "dpName" ,			
+			 DP_SCRIPTID as "dpScriptid" ,			
+			 DP_STARTDATE as "dpStartdate" ,			
+			 DP_ENDDATE as "dpEnddate" ,			
+			 DP_START as "dpStart" ,			
+			 DP_TRANSINT as "dpTransint" ,			
+			 DP_TRANSKEEP as "dpTranskeep" ,			
+			 DP_DATAASSIGN as "dpDataassign" ,			
+			 DP_MAXCALLTIMES as "dpMaxcalltimes" ,			
+			 DP_JUMPSCRIPT as "dpJumpscript" ,			
+			 DP_DATACOUNT as "dpDatacount" ,			
+			 DP_NOTASSIGNCOUNT as "dpNotassigncount" ,			
+			 DP_ANSWERDICT as "dpAnswerdict" ,			
+			 DP_NOANSWERDICT as "dpNoanswerdict" ,			
+			 DP_ISCTICONTROL as "dpIscticontrol" ,			
+			 DP_RULE1 as "dpRule1" ,			
+			 DP_RULE2 as "dpRule2" ,			
+			 DP_RULE3 as "dpRule3" ,			
+			 DP_RULE4 as "dpRule4" ,			
+			 DP_RULE5 as "dpRule5" ,			
+			 DP_RULE6 as "dpRule6" ,			
+			 DP_RULE7 as "dpRule7" ,			
+			 DP_STARTTIME as "dpStarttime" ,			
+			 DP_ENDTIME as "dpEndtime" ,			
+			 DP_CANIMPORT as "dpCanimport" ,			
+			 DP_ISLIMIT as "dpIslimit" ,			
+			 DP_POOLTYPE as "dpPooltype" ,			
+			 DP_GIVEUPPOOL as "dpGiveuppool" ,			
+			 DP_APPROVAL as "dpApproval" ,			
+			 DP_INCALLTRANIN as "dpIncalltranin" ,			
+			 DP_Q_ID as "dpQId" 			
+	FROM  NAG_DATAPOOL  
+	      <where> 
+		       <if test="dpId != null">DP_ID = #{dpId}</if>  
+        		       <if test="dpName != null">and DP_NAME = #{dpName}</if> 
+	    		       <if test="dpScriptid != null">and DP_SCRIPTID = #{dpScriptid}</if> 
+	    		       <if test="dpStartdate != null">and DP_STARTDATE = #{dpStartdate}</if> 
+	    		       <if test="dpEnddate != null">and DP_ENDDATE = #{dpEnddate}</if> 
+	    		       <if test="dpStart != null">and DP_START = #{dpStart}</if> 
+	    		       <if test="dpTransint != null">and DP_TRANSINT = #{dpTransint}</if> 
+	    		       <if test="dpTranskeep != null">and DP_TRANSKEEP = #{dpTranskeep}</if> 
+	    		       <if test="dpDataassign != null">and DP_DATAASSIGN = #{dpDataassign}</if> 
+	    		       <if test="dpMaxcalltimes != null">and DP_MAXCALLTIMES = #{dpMaxcalltimes}</if> 
+	    		       <if test="dpJumpscript != null">and DP_JUMPSCRIPT = #{dpJumpscript}</if> 
+	    		       <if test="dpDatacount != null">and DP_DATACOUNT = #{dpDatacount}</if> 
+	    		       <if test="dpNotassigncount != null">and DP_NOTASSIGNCOUNT = #{dpNotassigncount}</if> 
+	    		       <if test="dpAnswerdict != null">and DP_ANSWERDICT = #{dpAnswerdict}</if> 
+	    		       <if test="dpNoanswerdict != null">and DP_NOANSWERDICT = #{dpNoanswerdict}</if> 
+	    		       <if test="dpIscticontrol != null">and DP_ISCTICONTROL = #{dpIscticontrol}</if> 
+	    		       <if test="dpRule1 != null">and DP_RULE1 = #{dpRule1}</if> 
+	    		       <if test="dpRule2 != null">and DP_RULE2 = #{dpRule2}</if> 
+	    		       <if test="dpRule3 != null">and DP_RULE3 = #{dpRule3}</if> 
+	    		       <if test="dpRule4 != null">and DP_RULE4 = #{dpRule4}</if> 
+	    		       <if test="dpRule5 != null">and DP_RULE5 = #{dpRule5}</if> 
+	    		       <if test="dpRule6 != null">and DP_RULE6 = #{dpRule6}</if> 
+	    		       <if test="dpRule7 != null">and DP_RULE7 = #{dpRule7}</if> 
+	    		       <if test="dpStarttime != null">and DP_STARTTIME = #{dpStarttime}</if> 
+	    		       <if test="dpEndtime != null">and DP_ENDTIME = #{dpEndtime}</if> 
+	    		       <if test="dpCanimport != null">and DP_CANIMPORT = #{dpCanimport}</if> 
+	    		       <if test="dpIslimit != null">and DP_ISLIMIT = #{dpIslimit}</if> 
+	    		       <if test="dpPooltype != null">and DP_POOLTYPE = #{dpPooltype}</if> 
+	    		       <if test="dpGiveuppool != null">and DP_GIVEUPPOOL = #{dpGiveuppool}</if> 
+	    		       <if test="dpApproval != null">and DP_APPROVAL = #{dpApproval}</if> 
+	    		       <if test="dpIncalltranin != null">and DP_INCALLTRANIN = #{dpIncalltranin}</if> 
+	    		       <if test="dpQId != null">and DP_Q_ID = #{dpQId}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM NAG_DATAPOOL 
+		 <where> 
+		       <if test="dpId != null">DP_ID = #{dpId}</if>  
+        		       <if test="dpName != null">and DP_NAME = #{dpName}</if> 
+	    		       <if test="dpScriptid != null">and DP_SCRIPTID = #{dpScriptid}</if> 
+	    		       <if test="dpStartdate != null">and DP_STARTDATE = #{dpStartdate}</if> 
+	    		       <if test="dpEnddate != null">and DP_ENDDATE = #{dpEnddate}</if> 
+	    		       <if test="dpStart != null">and DP_START = #{dpStart}</if> 
+	    		       <if test="dpTransint != null">and DP_TRANSINT = #{dpTransint}</if> 
+	    		       <if test="dpTranskeep != null">and DP_TRANSKEEP = #{dpTranskeep}</if> 
+	    		       <if test="dpDataassign != null">and DP_DATAASSIGN = #{dpDataassign}</if> 
+	    		       <if test="dpMaxcalltimes != null">and DP_MAXCALLTIMES = #{dpMaxcalltimes}</if> 
+	    		       <if test="dpJumpscript != null">and DP_JUMPSCRIPT = #{dpJumpscript}</if> 
+	    		       <if test="dpDatacount != null">and DP_DATACOUNT = #{dpDatacount}</if> 
+	    		       <if test="dpNotassigncount != null">and DP_NOTASSIGNCOUNT = #{dpNotassigncount}</if> 
+	    		       <if test="dpAnswerdict != null">and DP_ANSWERDICT = #{dpAnswerdict}</if> 
+	    		       <if test="dpNoanswerdict != null">and DP_NOANSWERDICT = #{dpNoanswerdict}</if> 
+	    		       <if test="dpIscticontrol != null">and DP_ISCTICONTROL = #{dpIscticontrol}</if> 
+	    		       <if test="dpRule1 != null">and DP_RULE1 = #{dpRule1}</if> 
+	    		       <if test="dpRule2 != null">and DP_RULE2 = #{dpRule2}</if> 
+	    		       <if test="dpRule3 != null">and DP_RULE3 = #{dpRule3}</if> 
+	    		       <if test="dpRule4 != null">and DP_RULE4 = #{dpRule4}</if> 
+	    		       <if test="dpRule5 != null">and DP_RULE5 = #{dpRule5}</if> 
+	    		       <if test="dpRule6 != null">and DP_RULE6 = #{dpRule6}</if> 
+	    		       <if test="dpRule7 != null">and DP_RULE7 = #{dpRule7}</if> 
+	    		       <if test="dpStarttime != null">and DP_STARTTIME = #{dpStarttime}</if> 
+	    		       <if test="dpEndtime != null">and DP_ENDTIME = #{dpEndtime}</if> 
+	    		       <if test="dpCanimport != null">and DP_CANIMPORT = #{dpCanimport}</if> 
+	    		       <if test="dpIslimit != null">and DP_ISLIMIT = #{dpIslimit}</if> 
+	    		       <if test="dpPooltype != null">and DP_POOLTYPE = #{dpPooltype}</if> 
+	    		       <if test="dpGiveuppool != null">and DP_GIVEUPPOOL = #{dpGiveuppool}</if> 
+	    		       <if test="dpApproval != null">and DP_APPROVAL = #{dpApproval}</if> 
+	    		       <if test="dpIncalltranin != null">and DP_INCALLTRANIN = #{dpIncalltranin}</if> 
+	    		       <if test="dpQId != null">and DP_Q_ID = #{dpQId}</if> 
+	    		</where>
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'NAG_DATAPOOL'
+	</select>
+</mapper>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 本地数据源 -->
+    <bean id="localDataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+        <property name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+        <property name="jdbcUrl" value="${bi.db.local.url}" />
+        <property name="username" value="${bi.db.local.user}"/>
+        <property name="password" value="${bi.db.local.password}"/>
+        <property name="maxConnectionsPerPartition" value="${bi.db.maxConnectionsPerPartition}"/>
+        <property name="minConnectionsPerPartition" value="${bi.db.minConnectionsPerPartition}"/>
+        <property name="partitionCount" value="${bi.db.partitionCount}"/>
+        <property name="acquireIncrement" value="${bi.db.acquireIncrement}"/>
+        <property name="statementsCacheSize" value="${bi.db.statementsCacheSize}"/>
+        <property name="releaseHelperThreads" value="${bi.db.releaseHelperThreads}"/>
+    </bean>
+    <!-- mysql数据源 -->
+      <bean id="semSqlDataSource" class="com.jolbox.bonecp.BoneCPDataSource">  
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>  
+        <property name="jdbcUrl" value="jdbc:mysql://rds547jv3h7h517rcg8lo.mysql.rds.aliyuncs.com:3306/ruyu_crm_db"></property>  
+        <property name="username" value="it"></property>  
+        <property name="password" value="it2015"></property>  
+    </bean> 
+    
+       <!-- mysql数据源 -->
+     <bean id="zhiboshi02SqlDataSource" class="com.jolbox.bonecp.BoneCPDataSource">  
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>  
+        <property name="jdbcUrl" value="jdbc:mysql://rds547jv3h7h517rcg8lo.mysql.rds.aliyuncs.com:3306/zhiboshi02"></property>  
+        <property name="username" value="it"></property>  
+        <property name="password" value="it2015"></property>  
+    </bean> 
+    
+     <!-- mysql数据源 -->
+     <bean id="zhiboshi01SqlDataSource" class="com.jolbox.bonecp.BoneCPDataSource">  
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>  
+        <property name="jdbcUrl" value="jdbc:mysql://rds547jv3h7h517rcg8lo.mysql.rds.aliyuncs.com:3306/zhiboshi01"></property>  
+        <property name="username" value="it"></property>  
+        <property name="password" value="it2015"></property>  
+    </bean> 
+     <!-- mysql数据源 -->
+     <bean id="zhiboshi03SqlDataSource" class="com.jolbox.bonecp.BoneCPDataSource">  
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>  
+        <property name="jdbcUrl" value="jdbc:mysql://rds547jv3h7h517rcg8lo.mysql.rds.aliyuncs.com:3306/zhiboshi03"></property>  
+        <property name="username" value="it"></property>  
+        <property name="password" value="it2015"></property>  
+    </bean> 
+    <!-- 远程sqlserver数据源  odbc连接 -->
+    <bean id="remoteDataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+        <property name="driverClass" value="${bi.db.zhiboshi.odbc.driverclass}" />
+        <property name="jdbcUrl" value="${bi.db.zhiboshi.odbc.url}" />
+        <property name="username" value="${bi.db.zhiboshi.user}"/>
+        <property name="password" value="${bi.db.zhiboshi.password}"/>
+    </bean>
+    
+     <!-- oracle数据源 -->
+      <bean id="oracleDataSource" class="com.jolbox.bonecp.BoneCPDataSource">  
+        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"></property>  
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.1.251:1521:oracle"></property>    
+       <!-- <property name="username" value="newagent2"></property>  
+        <property name="password" value="newagent2"></property> -->
+        <property name="username" value="agenttest"></property>  
+        <property name="password" value="agent"></property>
+    </bean> 
+    
+    <!-- 自定义dataSource -->
+    <bean id="dataSource" class=" com.ruyu.web.portal.bi.util.datasource.DataSources">  
+        <property name="targetDataSources">  
+            <map key-type="java.lang.String">  
+                <!-- <entry value-ref="mySqlDataSource" key="MYSQL"></entry> -->  
+                <entry value-ref="remoteDataSource" key="SQLSERVER"></entry>
+                <entry value-ref="localDataSource" key="LOCAL"></entry>  <!-- DatasouceInstance重定义的 --> 
+                  <entry value-ref="semSqlDataSource" key="SEM"></entry>
+                  <entry value-ref="zhiboshi02SqlDataSource" key="MYSQL"></entry>
+                  <entry value-ref="oracleDataSource" key="ORACLE"></entry>
+                  <entry value-ref="zhiboshi01SqlDataSource" key="ROOM1"></entry>
+                  <entry value-ref="zhiboshi03SqlDataSource" key="ROOM3"></entry>
+            </map>  
+        </property>  
+         <property name="defaultTargetDataSource" ref="localDataSource"></property>   
+    </bean>  
+   
+   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="dataSource" />  
+    </bean>  
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation"  value="classpath:context/mybatis-conf.xml" />
+		 <property name="mapperLocations" value="classpath*:com/ruyu/web/portal/bi/app/mapper/**/*.xml" />  
+		<property name="typeAliasesPackage" value="com.ruyu.web.portal.bi.app.domain" />  
+	</bean>
+	
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+		
+	</bean> 
+</beans>
+

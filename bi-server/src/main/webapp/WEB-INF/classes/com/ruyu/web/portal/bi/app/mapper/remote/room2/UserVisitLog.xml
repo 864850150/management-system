@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="UserVisitLog">
+	    <resultMap id="userVisitLog" type="com.ruyu.web.portal.bi.app.domain.remote.room2.UserVisitLog">
+                  <result column="i_User_VisitLog_ID" property="id" />
+ 		          <result column="i_User_VisitLog_UID" property="iUserVisitlogUid" />
+ 		          <result column="i_User_VisitLog_UName" property="iUserVisitlogUname" />
+ 		          <result column="i_User_VisitLog_GuestUID" property="iUserVisitlogGuestuid" />
+ 		          <result column="i_User_VisitLog_IP" property="iUserVisitlogIp" />
+ 		          <result column="i_User_VisitLog_RoomID" property="iUserVisitlogRoomid" />
+ 		          <result column="i_User_VisitLog_Time" property="iUserVisitlogTime" />
+ 		          <result column="i_User_VisitLog_LeaveTime" property="iUserVisitlogLeavetime" />
+ 		          <result column="i_User_VisitLog_FromUrl" property="iUserVisitlogFromurl" />
+ 		          <result column="i_User_VisitLog_CurrentSite" property="iUserVisitlogCurrentsite" />
+ 		          <result column="i_User_VisitLog_CurrentUrl" property="iUserVisitlogCurrenturl" />
+ 		          <result column="i_User_VisitLog_Pa" property="iUserVisitlogPa" />
+ 		          <result column="i_User_VisitLog_Pl" property="iUserVisitlogPl" />
+ 		          <result column="i_User_VisitLog_Ch" property="iUserVisitlogCh" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           i_User_VisitLog_ID,
+ 		           i_User_VisitLog_UID,
+ 		           i_User_VisitLog_UName,
+ 		           i_User_VisitLog_GuestUID,
+ 		           i_User_VisitLog_IP,
+ 		           i_User_VisitLog_RoomID,
+ 		           i_User_VisitLog_Time,
+ 		           i_User_VisitLog_LeaveTime,
+ 		           i_User_VisitLog_FromUrl,
+ 		           i_User_VisitLog_CurrentSite,
+ 		           i_User_VisitLog_CurrentUrl,
+ 		           i_User_VisitLog_Pa,
+ 		           i_User_VisitLog_Pl,
+ 		           i_User_VisitLog_Ch,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.UserVisitLog">
+		INSERT INTO user_visit_log ( 
+							i_User_VisitLog_ID ,						
+							i_User_VisitLog_UID ,						
+							i_User_VisitLog_UName ,						
+							i_User_VisitLog_GuestUID ,						
+							i_User_VisitLog_IP ,						
+							i_User_VisitLog_RoomID ,						
+							i_User_VisitLog_Time ,						
+							i_User_VisitLog_LeaveTime ,						
+							i_User_VisitLog_FromUrl ,						
+							i_User_VisitLog_CurrentSite ,						
+							i_User_VisitLog_CurrentUrl ,						
+							i_User_VisitLog_Pa ,						
+							i_User_VisitLog_Pl ,						
+							i_User_VisitLog_Ch 						
+		) VALUES (
+							#{id,jdbcType=NUMERIC},						
+							#{iUserVisitlogUid,jdbcType=NUMERIC},						
+							#{iUserVisitlogUname,jdbcType=VARCHAR},						
+							#{iUserVisitlogGuestuid,jdbcType=VARCHAR},						
+							#{iUserVisitlogIp,jdbcType=VARCHAR},						
+							#{iUserVisitlogRoomid,jdbcType=VARCHAR},						
+							#{iUserVisitlogTime,jdbcType=DATE},						
+							#{iUserVisitlogLeavetime,jdbcType=DATE},						
+							#{iUserVisitlogFromurl,jdbcType=VARCHAR},						
+							#{iUserVisitlogCurrentsite,jdbcType=VARCHAR},						
+							#{iUserVisitlogCurrenturl,jdbcType=VARCHAR},						
+							#{iUserVisitlogPa,jdbcType=VARCHAR},						
+							#{iUserVisitlogPl,jdbcType=VARCHAR},						
+							#{iUserVisitlogCh,jdbcType=VARCHAR}						
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.UserVisitLog">
+		UPDATE user_visit_log	
+		<set>
+			 <if test="id != null">i_User_VisitLog_ID=#{id},</if>
+			 <if test="iUserVisitlogUid != null">i_User_VisitLog_UID=#{iUserVisitlogUid},</if>
+			 <if test="iUserVisitlogUname != null">i_User_VisitLog_UName=#{iUserVisitlogUname},</if>
+			 <if test="iUserVisitlogGuestuid != null">i_User_VisitLog_GuestUID=#{iUserVisitlogGuestuid},</if>
+			 <if test="iUserVisitlogIp != null">i_User_VisitLog_IP=#{iUserVisitlogIp},</if>
+			 <if test="iUserVisitlogRoomid != null">i_User_VisitLog_RoomID=#{iUserVisitlogRoomid},</if>
+			 <if test="iUserVisitlogTime != null">i_User_VisitLog_Time=#{iUserVisitlogTime},</if>
+			 <if test="iUserVisitlogLeavetime != null">i_User_VisitLog_LeaveTime=#{iUserVisitlogLeavetime},</if>
+			 <if test="iUserVisitlogFromurl != null">i_User_VisitLog_FromUrl=#{iUserVisitlogFromurl},</if>
+			 <if test="iUserVisitlogCurrentsite != null">i_User_VisitLog_CurrentSite=#{iUserVisitlogCurrentsite},</if>
+			 <if test="iUserVisitlogCurrenturl != null">i_User_VisitLog_CurrentUrl=#{iUserVisitlogCurrenturl},</if>
+			 <if test="iUserVisitlogPa != null">i_User_VisitLog_Pa=#{iUserVisitlogPa},</if>
+			 <if test="iUserVisitlogPl != null">i_User_VisitLog_Pl=#{iUserVisitlogPl},</if>
+			 <if test="iUserVisitlogCh != null">i_User_VisitLog_Ch=#{iUserVisitlogCh}</if>
+ 	</set>
+		WHERE
+			i_User_VisitLog_ID=#{id} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Integer">
+        DELETE FROM user_visit_log	 WHERE 			i_User_VisitLog_ID=#{id}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.UserVisitLog">
+        DELETE FROM user_visit_log	 
+         <where>   
+		       <if test="id != null">i_User_VisitLog_ID = #{id}</if>  
+        		       <if test="iUserVisitlogUid != null">and i_User_VisitLog_UID = #{iUserVisitlogUid}</if> 
+	    		       <if test="iUserVisitlogUname != null">and i_User_VisitLog_UName = #{iUserVisitlogUname}</if> 
+	    		       <if test="iUserVisitlogGuestuid != null">and i_User_VisitLog_GuestUID = #{iUserVisitlogGuestuid}</if> 
+	    		       <if test="iUserVisitlogIp != null">and i_User_VisitLog_IP = #{iUserVisitlogIp}</if> 
+	    		       <if test="iUserVisitlogRoomid != null">and i_User_VisitLog_RoomID = #{iUserVisitlogRoomid}</if> 
+	    		       <if test="iUserVisitlogTime != null">and i_User_VisitLog_Time = #{iUserVisitlogTime}</if> 
+	    		       <if test="iUserVisitlogLeavetime != null">and i_User_VisitLog_LeaveTime = #{iUserVisitlogLeavetime}</if> 
+	    		       <if test="iUserVisitlogFromurl != null">and i_User_VisitLog_FromUrl = #{iUserVisitlogFromurl}</if> 
+	    		       <if test="iUserVisitlogCurrentsite != null">and i_User_VisitLog_CurrentSite = #{iUserVisitlogCurrentsite}</if> 
+	    		       <if test="iUserVisitlogCurrenturl != null">and i_User_VisitLog_CurrentUrl = #{iUserVisitlogCurrenturl}</if> 
+	    		       <if test="iUserVisitlogPa != null">and i_User_VisitLog_Pa = #{iUserVisitlogPa}</if> 
+	    		       <if test="iUserVisitlogPl != null">and i_User_VisitLog_Pl = #{iUserVisitlogPl}</if> 
+	    		       <if test="iUserVisitlogCh != null">and i_User_VisitLog_Ch = #{iUserVisitlogCh}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="userVisitLog">
+		SELECT 
+			i_User_VisitLog_ID as "id" ,			
+			i_User_VisitLog_UID as "iUserVisitlogUid" ,			
+			i_User_VisitLog_UName as "iUserVisitlogUname" ,			
+			i_User_VisitLog_GuestUID as "iUserVisitlogGuestuid" ,			
+			i_User_VisitLog_IP as "iUserVisitlogIp" ,			
+			i_User_VisitLog_RoomID as "iUserVisitlogRoomid" ,			
+			i_User_VisitLog_Time as "iUserVisitlogTime" ,			
+			i_User_VisitLog_LeaveTime as "iUserVisitlogLeavetime" ,			
+			i_User_VisitLog_FromUrl as "iUserVisitlogFromurl" ,			
+			i_User_VisitLog_CurrentSite as "iUserVisitlogCurrentsite" ,			
+			i_User_VisitLog_CurrentUrl as "iUserVisitlogCurrenturl" ,			
+			i_User_VisitLog_Pa as "iUserVisitlogPa" ,			
+			i_User_VisitLog_Pl as "iUserVisitlogPl" ,			
+			i_User_VisitLog_Ch as "iUserVisitlogCh" 			
+		FROM user_visit_log
+		WHERE
+			i_User_VisitLog_ID=#{id} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.UserVisitLog" resultMap="userVisitLog">
+	SELECT
+			 i_User_VisitLog_ID as "id" ,			
+			 i_User_VisitLog_UID as "iUserVisitlogUid" ,			
+			 i_User_VisitLog_UName as "iUserVisitlogUname" ,			
+			 i_User_VisitLog_GuestUID as "iUserVisitlogGuestuid" ,			
+			 i_User_VisitLog_IP as "iUserVisitlogIp" ,			
+			 i_User_VisitLog_RoomID as "iUserVisitlogRoomid" ,			
+			 i_User_VisitLog_Time as "iUserVisitlogTime" ,			
+			 i_User_VisitLog_LeaveTime as "iUserVisitlogLeavetime" ,			
+			 i_User_VisitLog_FromUrl as "iUserVisitlogFromurl" ,			
+			 i_User_VisitLog_CurrentSite as "iUserVisitlogCurrentsite" ,			
+			 i_User_VisitLog_CurrentUrl as "iUserVisitlogCurrenturl" ,			
+			 i_User_VisitLog_Pa as "iUserVisitlogPa" ,			
+			 i_User_VisitLog_Pl as "iUserVisitlogPl" ,			
+			 i_User_VisitLog_Ch as "iUserVisitlogCh" 			
+	FROM  user_visit_log  
+	      <where> 
+		       <if test="id != null">i_User_VisitLog_ID = #{id}</if>  
+        		       <if test="iUserVisitlogUid != null">and i_User_VisitLog_UID = #{iUserVisitlogUid}</if> 
+	    		       <if test="iUserVisitlogUname != null">and i_User_VisitLog_UName = #{iUserVisitlogUname}</if> 
+	    		       <if test="iUserVisitlogGuestuid != null">and i_User_VisitLog_GuestUID = #{iUserVisitlogGuestuid}</if> 
+	    		       <if test="iUserVisitlogIp != null">and i_User_VisitLog_IP = #{iUserVisitlogIp}</if> 
+	    		       <if test="iUserVisitlogRoomid != null">and i_User_VisitLog_RoomID = #{iUserVisitlogRoomid}</if> 
+	    		       <if test="iUserVisitlogTime != null">and i_User_VisitLog_Time = #{iUserVisitlogTime}</if> 
+	    		       <if test="iUserVisitlogLeavetime != null">and i_User_VisitLog_LeaveTime = #{iUserVisitlogLeavetime}</if> 
+	    		       <if test="iUserVisitlogFromurl != null">and i_User_VisitLog_FromUrl = #{iUserVisitlogFromurl}</if> 
+	    		       <if test="iUserVisitlogCurrentsite != null">and i_User_VisitLog_CurrentSite = #{iUserVisitlogCurrentsite}</if> 
+	    		       <if test="iUserVisitlogCurrenturl != null">and i_User_VisitLog_CurrentUrl = #{iUserVisitlogCurrenturl}</if> 
+	    		       <if test="iUserVisitlogPa != null">and i_User_VisitLog_Pa = #{iUserVisitlogPa}</if> 
+	    		       <if test="iUserVisitlogPl != null">and i_User_VisitLog_Pl = #{iUserVisitlogPl}</if> 
+	    		       <if test="iUserVisitlogCh != null">and i_User_VisitLog_Ch = #{iUserVisitlogCh}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM user_visit_log 
+		 <where> 
+		       <if test="id!= null">i_User_VisitLog_ID = #{id}</if>  
+        		       <if test="iUserVisitlogUid != null">and i_User_VisitLog_UID = #{iUserVisitlogUid}</if> 
+	    		       <if test="iUserVisitlogUname != null">and i_User_VisitLog_UName = #{iUserVisitlogUname}</if> 
+	    		       <if test="iUserVisitlogGuestuid != null">and i_User_VisitLog_GuestUID = #{iUserVisitlogGuestuid}</if> 
+	    		       <if test="iUserVisitlogIp != null">and i_User_VisitLog_IP = #{iUserVisitlogIp}</if> 
+	    		       <if test="iUserVisitlogRoomid != null">and i_User_VisitLog_RoomID = #{iUserVisitlogRoomid}</if> 
+	    		       <if test="iUserVisitlogTime != null">and i_User_VisitLog_Time = #{iUserVisitlogTime}</if> 
+	    		       <if test="iUserVisitlogLeavetime != null">and i_User_VisitLog_LeaveTime = #{iUserVisitlogLeavetime}</if> 
+	    		       <if test="iUserVisitlogFromurl != null">and i_User_VisitLog_FromUrl = #{iUserVisitlogFromurl}</if> 
+	    		       <if test="iUserVisitlogCurrentsite != null">and i_User_VisitLog_CurrentSite = #{iUserVisitlogCurrentsite}</if> 
+	    		       <if test="iUserVisitlogCurrenturl != null">and i_User_VisitLog_CurrentUrl = #{iUserVisitlogCurrenturl}</if> 
+	    		       <if test="iUserVisitlogPa != null">and i_User_VisitLog_Pa = #{iUserVisitlogPa}</if> 
+	    		       <if test="iUserVisitlogPl != null">and i_User_VisitLog_Pl = #{iUserVisitlogPl}</if> 
+	    		       <if test="iUserVisitlogCh != null">and i_User_VisitLog_Ch = #{iUserVisitlogCh}</if> 
+	    		</where>
+	</select>
+	<select id="findByDateAndDate" resultType="userVisitLog" parameterType="java.lang.String">
+	   SELECT 
+			i_User_VisitLog_ID as "id" ,			
+			i_User_VisitLog_UID as "iUserVisitlogUid" ,			
+			i_User_VisitLog_UName as "iUserVisitlogUname" ,			
+			i_User_VisitLog_GuestUID as "iUserVisitlogGuestuid" ,			
+			i_User_VisitLog_IP as "iUserVisitlogIp" ,			
+			i_User_VisitLog_RoomID as "iUserVisitlogRoomid" ,			
+			i_User_VisitLog_Time as "iUserVisitlogTime" ,			
+			i_User_VisitLog_LeaveTime as "iUserVisitlogLeavetime" ,			
+			i_User_VisitLog_FromUrl as "iUserVisitlogFromurl" ,			
+			i_User_VisitLog_CurrentSite as "iUserVisitlogCurrentsite" ,			
+			i_User_VisitLog_CurrentUrl as "iUserVisitlogCurrenturl" ,			
+			i_User_VisitLog_Pa as "iUserVisitlogPa" ,			
+			i_User_VisitLog_Pl as "iUserVisitlogPl" ,			
+			i_User_VisitLog_Ch as "iUserVisitlogCh" 			
+		FROM user_visit_log where date(i_User_VisitLog_Time)=#{date} ;
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'user_visit_log'
+	</select>
+</mapper>

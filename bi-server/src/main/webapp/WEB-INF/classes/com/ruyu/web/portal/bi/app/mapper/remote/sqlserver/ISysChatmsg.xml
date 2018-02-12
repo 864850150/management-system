@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ISysChatmsg">
+	    <resultMap id="iSysChatmsg" type="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.ISysChatmsg">
+                  <result column="i_ChatMsg_ID" property="iChatmsgId" />
+ 		          <result column="i_ChatMsg_MD5" property="iChatmsgMd5" />
+ 		          <result column="i_ChatMsg_RoomID" property="iChatmsgRoomid" />
+ 		          <result column="i_ChatMsg_Type" property="iChatmsgType" />
+ 		          <result column="i_ChatMsg_UID" property="iChatmsgUid" />
+ 		          <result column="i_ChatMsg_IP" property="iChatmsgIp" />
+ 		          <result column="i_ChatMsg_UName" property="iChatmsgUname" />
+ 		          <result column="i_ChatMsg_GUID" property="iChatmsgGuid" />
+ 		          <result column="i_ChatMsg_GUName" property="iChatmsgGuname" />
+ 		          <result column="i_ChatMsg_Msg" property="iChatmsgMsg" />
+ 		          <result column="i_ChatMsg_Checked" property="iChatmsgChecked" />
+ 		          <result column="i_ChatMsg_IsViewPoint" property="iChatmsgIsviewpoint" />
+ 		          <result column="i_ChatMsg_ViewPoint_Grade" property="iChatmsgViewpointGrade" />
+ 		          <result column="i_ChatMsg_Time" property="iChatmsgTime" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           i_ChatMsg_ID,
+ 		           i_ChatMsg_MD5,
+ 		           i_ChatMsg_RoomID,
+ 		           i_ChatMsg_Type,
+ 		           i_ChatMsg_UID,
+ 		           i_ChatMsg_IP,
+ 		           i_ChatMsg_UName,
+ 		           i_ChatMsg_GUID,
+ 		           i_ChatMsg_GUName,
+ 		           i_ChatMsg_Msg,
+ 		           i_ChatMsg_Checked,
+ 		           i_ChatMsg_IsViewPoint,
+ 		           i_ChatMsg_ViewPoint_Grade,
+ 		           i_ChatMsg_Time,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.ISysChatmsg">
+		INSERT INTO i_Sys_ChatMsg ( 
+							i_ChatMsg_ID ,						
+							i_ChatMsg_MD5 ,						
+							i_ChatMsg_RoomID ,						
+							i_ChatMsg_Type ,						
+							i_ChatMsg_UID ,						
+							i_ChatMsg_IP ,						
+							i_ChatMsg_UName ,						
+							i_ChatMsg_GUID ,						
+							i_ChatMsg_GUName ,						
+							i_ChatMsg_Msg ,						
+							i_ChatMsg_Checked ,						
+							i_ChatMsg_IsViewPoint ,						
+							i_ChatMsg_ViewPoint_Grade ,						
+							i_ChatMsg_Time 						
+		) VALUES (
+							#{iChatmsgId,jdbcType=NUMERIC},						
+							#{iChatmsgMd5,jdbcType=VARCHAR},						
+							#{iChatmsgRoomid,jdbcType=NUMERIC},						
+							#{iChatmsgType,jdbcType=NUMERIC},						
+							#{iChatmsgUid,jdbcType=VARCHAR},						
+							#{iChatmsgIp,jdbcType=VARCHAR},						
+							#{iChatmsgUname,jdbcType=VARCHAR},						
+							#{iChatmsgGuid,jdbcType=NUMERIC},						
+							#{iChatmsgGuname,jdbcType=VARCHAR},						
+							#{iChatmsgMsg,jdbcType=VARCHAR},						
+							#{iChatmsgChecked,jdbcType=NUMERIC},						
+							#{iChatmsgIsviewpoint,jdbcType=NUMERIC},						
+							#{iChatmsgViewpointGrade,jdbcType=NUMERIC},						
+							#{iChatmsgTime,jdbcType=DATE}						
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.ISysChatmsg">
+		UPDATE i_Sys_ChatMsg	
+		<set>
+			 <if test="iChatmsgId != null">i_ChatMsg_ID=#{iChatmsgId},</if>
+			 <if test="iChatmsgMd5 != null">i_ChatMsg_MD5=#{iChatmsgMd5},</if>
+			 <if test="iChatmsgRoomid != null">i_ChatMsg_RoomID=#{iChatmsgRoomid},</if>
+			 <if test="iChatmsgType != null">i_ChatMsg_Type=#{iChatmsgType},</if>
+			 <if test="iChatmsgUid != null">i_ChatMsg_UID=#{iChatmsgUid},</if>
+			 <if test="iChatmsgIp != null">i_ChatMsg_IP=#{iChatmsgIp},</if>
+			 <if test="iChatmsgUname != null">i_ChatMsg_UName=#{iChatmsgUname},</if>
+			 <if test="iChatmsgGuid != null">i_ChatMsg_GUID=#{iChatmsgGuid},</if>
+			 <if test="iChatmsgGuname != null">i_ChatMsg_GUName=#{iChatmsgGuname},</if>
+			 <if test="iChatmsgMsg != null">i_ChatMsg_Msg=#{iChatmsgMsg},</if>
+			 <if test="iChatmsgChecked != null">i_ChatMsg_Checked=#{iChatmsgChecked},</if>
+			 <if test="iChatmsgIsviewpoint != null">i_ChatMsg_IsViewPoint=#{iChatmsgIsviewpoint},</if>
+			 <if test="iChatmsgViewpointGrade != null">i_ChatMsg_ViewPoint_Grade=#{iChatmsgViewpointGrade},</if>
+			 <if test="iChatmsgTime != null">i_ChatMsg_Time=#{iChatmsgTime}</if>
+ 	</set>
+		WHERE
+			i_ChatMsg_ID=#{iChatmsgId} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Long">
+        DELETE FROM i_Sys_ChatMsg	 WHERE 			i_ChatMsg_ID=#{iChatmsgId}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.ISysChatmsg">
+        DELETE FROM i_Sys_ChatMsg	 
+         <where>   
+		       <if test="iChatmsgId != null">i_ChatMsg_ID = #{iChatmsgId}</if>  
+        		       <if test="iChatmsgMd5 != null">and i_ChatMsg_MD5 = #{iChatmsgMd5}</if> 
+	    		       <if test="iChatmsgRoomid != null">and i_ChatMsg_RoomID = #{iChatmsgRoomid}</if> 
+	    		       <if test="iChatmsgType != null">and i_ChatMsg_Type = #{iChatmsgType}</if> 
+	    		       <if test="iChatmsgUid != null">and i_ChatMsg_UID = #{iChatmsgUid}</if> 
+	    		       <if test="iChatmsgIp != null">and i_ChatMsg_IP = #{iChatmsgIp}</if> 
+	    		       <if test="iChatmsgUname != null">and i_ChatMsg_UName = #{iChatmsgUname}</if> 
+	    		       <if test="iChatmsgGuid != null">and i_ChatMsg_GUID = #{iChatmsgGuid}</if> 
+	    		       <if test="iChatmsgGuname != null">and i_ChatMsg_GUName = #{iChatmsgGuname}</if> 
+	    		       <if test="iChatmsgMsg != null">and i_ChatMsg_Msg = #{iChatmsgMsg}</if> 
+	    		       <if test="iChatmsgChecked != null">and i_ChatMsg_Checked = #{iChatmsgChecked}</if> 
+	    		       <if test="iChatmsgIsviewpoint != null">and i_ChatMsg_IsViewPoint = #{iChatmsgIsviewpoint}</if> 
+	    		       <if test="iChatmsgViewpointGrade != null">and i_ChatMsg_ViewPoint_Grade = #{iChatmsgViewpointGrade}</if> 
+	    		       <if test="iChatmsgTime != null">and i_ChatMsg_Time = #{iChatmsgTime}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="iSysChatmsg">
+		SELECT 
+			i_ChatMsg_ID as "iChatmsgId" ,			
+			i_ChatMsg_MD5 as "iChatmsgMd5" ,			
+			i_ChatMsg_RoomID as "iChatmsgRoomid" ,			
+			i_ChatMsg_Type as "iChatmsgType" ,			
+			i_ChatMsg_UID as "iChatmsgUid" ,			
+			i_ChatMsg_IP as "iChatmsgIp" ,			
+			i_ChatMsg_UName as "iChatmsgUname" ,			
+			i_ChatMsg_GUID as "iChatmsgGuid" ,			
+			i_ChatMsg_GUName as "iChatmsgGuname" ,			
+			i_ChatMsg_Msg as "iChatmsgMsg" ,			
+			i_ChatMsg_Checked as "iChatmsgChecked" ,			
+			i_ChatMsg_IsViewPoint as "iChatmsgIsviewpoint" ,			
+			i_ChatMsg_ViewPoint_Grade as "iChatmsgViewpointGrade" ,			
+			i_ChatMsg_Time as "iChatmsgTime" 			
+		FROM i_Sys_ChatMsg
+		WHERE
+			i_ChatMsg_ID=#{iChatmsgId} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.ISysChatmsg" resultMap="iSysChatmsg">
+	SELECT
+			 i_ChatMsg_ID as "iChatmsgId" ,			
+			 i_ChatMsg_MD5 as "iChatmsgMd5" ,			
+			 i_ChatMsg_RoomID as "iChatmsgRoomid" ,			
+			 i_ChatMsg_Type as "iChatmsgType" ,			
+			 i_ChatMsg_UID as "iChatmsgUid" ,			
+			 i_ChatMsg_IP as "iChatmsgIp" ,			
+			 i_ChatMsg_UName as "iChatmsgUname" ,			
+			 i_ChatMsg_GUID as "iChatmsgGuid" ,			
+			 i_ChatMsg_GUName as "iChatmsgGuname" ,			
+			 i_ChatMsg_Msg as "iChatmsgMsg" ,			
+			 i_ChatMsg_Checked as "iChatmsgChecked" ,			
+			 i_ChatMsg_IsViewPoint as "iChatmsgIsviewpoint" ,			
+			 i_ChatMsg_ViewPoint_Grade as "iChatmsgViewpointGrade" ,			
+			 i_ChatMsg_Time as "iChatmsgTime" 			
+	FROM  i_Sys_ChatMsg  
+	      <where> 
+		       <if test="iChatmsgId != null">i_ChatMsg_ID = #{iChatmsgId}</if>  
+        		       <if test="iChatmsgMd5 != null">and i_ChatMsg_MD5 = #{iChatmsgMd5}</if> 
+	    		       <if test="iChatmsgRoomid != null">and i_ChatMsg_RoomID = #{iChatmsgRoomid}</if> 
+	    		       <if test="iChatmsgType != null">and i_ChatMsg_Type = #{iChatmsgType}</if> 
+	    		       <if test="iChatmsgUid != null">and i_ChatMsg_UID = #{iChatmsgUid}</if> 
+	    		       <if test="iChatmsgIp != null">and i_ChatMsg_IP = #{iChatmsgIp}</if> 
+	    		       <if test="iChatmsgUname != null">and i_ChatMsg_UName = #{iChatmsgUname}</if> 
+	    		       <if test="iChatmsgGuid != null">and i_ChatMsg_GUID = #{iChatmsgGuid}</if> 
+	    		       <if test="iChatmsgGuname != null">and i_ChatMsg_GUName = #{iChatmsgGuname}</if> 
+	    		       <if test="iChatmsgMsg != null">and i_ChatMsg_Msg = #{iChatmsgMsg}</if> 
+	    		       <if test="iChatmsgChecked != null">and i_ChatMsg_Checked = #{iChatmsgChecked}</if> 
+	    		       <if test="iChatmsgIsviewpoint != null">and i_ChatMsg_IsViewPoint = #{iChatmsgIsviewpoint}</if> 
+	    		       <if test="iChatmsgViewpointGrade != null">and i_ChatMsg_ViewPoint_Grade = #{iChatmsgViewpointGrade}</if> 
+	    		       <if test="iChatmsgTime != null">and i_ChatMsg_Time = #{iChatmsgTime}</if> 
+	    		</where>
+	</select>
+	
+	<select id="findByDate" parameterType="Map" resultMap="iSysChatmsg">
+	SELECT
+			 i_ChatMsg_ID as "iChatmsgId" ,			
+			 i_ChatMsg_MD5 as "iChatmsgMd5" ,			
+			 i_ChatMsg_RoomID as "iChatmsgRoomid" ,			
+			 i_ChatMsg_Type as "iChatmsgType" ,			
+			 i_ChatMsg_UID as "iChatmsgUid" ,			
+			 i_ChatMsg_IP as "iChatmsgIp" ,			
+			 i_ChatMsg_UName as "iChatmsgUname" ,			
+			 i_ChatMsg_GUID as "iChatmsgGuid" ,			
+			 i_ChatMsg_GUName as "iChatmsgGuname" ,			
+			 i_ChatMsg_Msg as "iChatmsgMsg" ,			
+			 i_ChatMsg_Checked as "iChatmsgChecked" ,			
+			 i_ChatMsg_IsViewPoint as "iChatmsgIsviewpoint" ,			
+			 i_ChatMsg_ViewPoint_Grade as "iChatmsgViewpointGrade" ,			
+			 i_ChatMsg_Time as "iChatmsgTime" 			
+	FROM  i_Sys_ChatMsg  
+	      <where> 
+	    		     <!-- CONVERT(CHAR(10),i_ChatMsg_Time,23)=#{date} --> 
+	    		     i_ChatMsg_Time &lt;getDate()
+	    		</where>
+	</select>
+	
+	<select id="findByDateAndDate" parameterType="String" resultMap="iSysChatmsg">
+	SELECT
+			 i_ChatMsg_ID as "iChatmsgId" ,			
+			 i_ChatMsg_MD5 as "iChatmsgMd5" ,			
+			 i_ChatMsg_RoomID as "iChatmsgRoomid" ,			
+			 i_ChatMsg_Type as "iChatmsgType" ,			
+			 i_ChatMsg_UID as "iChatmsgUid" ,			
+			 i_ChatMsg_IP as "iChatmsgIp" ,			
+			 i_ChatMsg_UName as "iChatmsgUname" ,			
+			 i_ChatMsg_GUID as "iChatmsgGuid" ,			
+			 i_ChatMsg_GUName as "iChatmsgGuname" ,			
+			 i_ChatMsg_Msg as "iChatmsgMsg" ,			
+			 i_ChatMsg_Checked as "iChatmsgChecked" ,			
+			 i_ChatMsg_IsViewPoint as "iChatmsgIsviewpoint" ,			
+			 i_ChatMsg_ViewPoint_Grade as "iChatmsgViewpointGrade" ,			
+			 i_ChatMsg_Time as "iChatmsgTime" 			
+	FROM  i_Sys_ChatMsg  
+	      <where>  
+		   CONVERT(CHAR(10),i_ChatMsg_Time,23)=#{date}
+	      </where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM i_Sys_ChatMsg 
+		 <where> 
+		       <if test="iChatmsgId != null">i_ChatMsg_ID = #{iChatmsgId}</if>  
+        		       <if test="iChatmsgMd5 != null">and i_ChatMsg_MD5 = #{iChatmsgMd5}</if> 
+	    		       <if test="iChatmsgRoomid != null">and i_ChatMsg_RoomID = #{iChatmsgRoomid}</if> 
+	    		       <if test="iChatmsgType != null">and i_ChatMsg_Type = #{iChatmsgType}</if> 
+	    		       <if test="iChatmsgUid != null">and i_ChatMsg_UID = #{iChatmsgUid}</if> 
+	    		       <if test="iChatmsgIp != null">and i_ChatMsg_IP = #{iChatmsgIp}</if> 
+	    		       <if test="iChatmsgUname != null">and i_ChatMsg_UName = #{iChatmsgUname}</if> 
+	    		       <if test="iChatmsgGuid != null">and i_ChatMsg_GUID = #{iChatmsgGuid}</if> 
+	    		       <if test="iChatmsgGuname != null">and i_ChatMsg_GUName = #{iChatmsgGuname}</if> 
+	    		       <if test="iChatmsgMsg != null">and i_ChatMsg_Msg = #{iChatmsgMsg}</if> 
+	    		       <if test="iChatmsgChecked != null">and i_ChatMsg_Checked = #{iChatmsgChecked}</if> 
+	    		       <if test="iChatmsgIsviewpoint != null">and i_ChatMsg_IsViewPoint = #{iChatmsgIsviewpoint}</if> 
+	    		       <if test="iChatmsgViewpointGrade != null">and i_ChatMsg_ViewPoint_Grade = #{iChatmsgViewpointGrade}</if> 
+	    		       <if test="iChatmsgTime != null">and i_ChatMsg_Time = #{iChatmsgTime}</if> 
+	    		</where>
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'i_Sys_ChatMsg'
+	</select>
+</mapper>

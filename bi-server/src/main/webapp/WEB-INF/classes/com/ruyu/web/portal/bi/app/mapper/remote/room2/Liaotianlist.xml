@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Liaotianlist">
+	    <resultMap id="liaotianlist" type="com.ruyu.web.portal.bi.app.domain.remote.room2.Liaotianlist">
+                  <result column="lid" property="id" />
+ 		          <result column="mid" property="mid" />
+ 		          <result column="username" property="username" />
+ 		          <result column="tomid" property="tomid" />
+ 		          <result column="tousername" property="tousername" />
+ 		          <result column="content" property="content" />
+ 		          <result column="time" property="time" />
+ 		          <result column="shstatus" property="shstatus" />
+ 		          <result column="shtime" property="shtime" />
+ 		          <result column="siliao" property="siliao" />
+ 		          <result column="new_IP" property="newIp" />
+ 		          <result column="fid" property="fid" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           lid,
+ 		           mid,
+ 		           username,
+ 		           tomid,
+ 		           tousername,
+ 		           content,
+ 		           time,
+ 		           shstatus,
+ 		           shtime,
+ 		           siliao,
+ 		           new_IP,
+ 		           fid,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.Liaotianlist">
+		INSERT INTO liaotianlist ( 
+							lid ,						
+							mid ,						
+							username ,						
+							tomid ,						
+							tousername ,						
+							content ,						
+							time ,						
+							shstatus ,						
+							shtime ,						
+							siliao ,						
+							new_IP ,						
+							fid 						
+		) VALUES (
+							#{lid,jdbcType=NUMERIC},						
+							#{mid,jdbcType=NUMERIC},						
+							#{username,jdbcType=VARCHAR},						
+							#{tomid,jdbcType=NUMERIC},						
+							#{tousername,jdbcType=VARCHAR},						
+							#{content,jdbcType=VARCHAR},						
+							#{time,jdbcType=NUMERIC},						
+							#{shstatus,jdbcType=VARCHAR},						
+							#{shtime,jdbcType=NUMERIC},						
+							#{siliao,jdbcType=VARCHAR},						
+							#{newIp,jdbcType=VARCHAR},						
+							#{fid,jdbcType=NUMERIC}						
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.Liaotianlist">
+		UPDATE liaotianlist	
+		<set>
+			 <if test="lid != null">lid=#{lid},</if>
+			 <if test="mid != null">mid=#{mid},</if>
+			 <if test="username != null">username=#{username},</if>
+			 <if test="tomid != null">tomid=#{tomid},</if>
+			 <if test="tousername != null">tousername=#{tousername},</if>
+			 <if test="content != null">content=#{content},</if>
+			 <if test="time != null">time=#{time},</if>
+			 <if test="shstatus != null">shstatus=#{shstatus},</if>
+			 <if test="shtime != null">shtime=#{shtime},</if>
+			 <if test="siliao != null">siliao=#{siliao},</if>
+			 <if test="newIp != null">new_IP=#{newIp},</if>
+			 <if test="fid != null">fid=#{fid}</if>
+ 	</set>
+		WHERE
+			lid=#{lid} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Integer">
+        DELETE FROM liaotianlist	 WHERE 			lid=#{lid}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.Liaotianlist">
+        DELETE FROM liaotianlist	 
+         <where>   
+		       <if test="lid != null">lid = #{lid}</if>  
+        		       <if test="mid != null">and mid = #{mid}</if> 
+	    		       <if test="username != null">and username = #{username}</if> 
+	    		       <if test="tomid != null">and tomid = #{tomid}</if> 
+	    		       <if test="tousername != null">and tousername = #{tousername}</if> 
+	    		       <if test="content != null">and content = #{content}</if> 
+	    		       <if test="time != null">and time = #{time}</if> 
+	    		       <if test="shstatus != null">and shstatus = #{shstatus}</if> 
+	    		       <if test="shtime != null">and shtime = #{shtime}</if> 
+	    		       <if test="siliao != null">and siliao = #{siliao}</if> 
+	    		       <if test="newIp != null">and new_IP = #{newIp}</if> 
+	    		       <if test="fid != null">and fid = #{fid}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="liaotianlist">
+		SELECT 
+			lid as "lid" ,			
+			mid as "mid" ,			
+			username as "username" ,			
+			tomid as "tomid" ,			
+			tousername as "tousername" ,			
+			content as "content" ,			
+			time as "time" ,			
+			shstatus as "shstatus" ,			
+			shtime as "shtime" ,			
+			siliao as "siliao" ,			
+			new_IP as "newIp" ,			
+			fid as "fid" 			
+		FROM liaotianlist
+		WHERE
+			lid=#{lid} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.Liaotianlist" resultMap="liaotianlist">
+	SELECT
+			 lid as "lid" ,			
+			 mid as "mid" ,			
+			 username as "username" ,			
+			 tomid as "tomid" ,			
+			 tousername as "tousername" ,			
+			 content as "content" ,			
+			 time as "time" ,			
+			 shstatus as "shstatus" ,			
+			 shtime as "shtime" ,			
+			 siliao as "siliao" ,			
+			 new_IP as "newIp" ,			
+			 fid as "fid" 			
+	FROM  liaotianlist  
+	      <where> 
+		       <if test="lid != null">lid = #{lid}</if>  
+        		       <if test="mid != null">and mid = #{mid}</if> 
+	    		       <if test="username != null">and username = #{username}</if> 
+	    		       <if test="tomid != null">and tomid = #{tomid}</if> 
+	    		       <if test="tousername != null">and tousername = #{tousername}</if> 
+	    		       <if test="content != null">and content = #{content}</if> 
+	    		       <if test="time != null">and time = #{time}</if> 
+	    		       <if test="shstatus != null">and shstatus = #{shstatus}</if> 
+	    		       <if test="shtime != null">and shtime = #{shtime}</if> 
+	    		       <if test="siliao != null">and siliao = #{siliao}</if> 
+	    		       <if test="newIp != null">and new_IP = #{newIp}</if> 
+	    		       <if test="fid != null">and fid = #{fid}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM liaotianlist 
+		 <where> 
+		       <if test="lid != null">lid = #{lid}</if>  
+        		       <if test="mid != null">and mid = #{mid}</if> 
+	    		       <if test="username != null">and username = #{username}</if> 
+	    		       <if test="tomid != null">and tomid = #{tomid}</if> 
+	    		       <if test="tousername != null">and tousername = #{tousername}</if> 
+	    		       <if test="content != null">and content = #{content}</if> 
+	    		       <if test="time != null">and time = #{time}</if> 
+	    		       <if test="shstatus != null">and shstatus = #{shstatus}</if> 
+	    		       <if test="shtime != null">and shtime = #{shtime}</if> 
+	    		       <if test="siliao != null">and siliao = #{siliao}</if> 
+	    		       <if test="newIp != null">and new_IP = #{newIp}</if> 
+	    		       <if test="fid != null">and fid = #{fid}</if> 
+	    		</where>
+	</select> 
+	
+	<select id="findByDateAndDate"  resultType="liaotianlist" parameterType="java.lang.String"> 
+	SELECT
+			 lid as "lid" ,			
+			 mid as "mid" ,			
+			 username as "username" ,			
+			 tomid as "tomid" ,			
+			 tousername as "tousername" ,			
+			 content as "content" ,			
+			 time as "time" ,			
+			 shstatus as "shstatus" ,			
+			 shtime as "shtime" ,			
+			 siliao as "siliao" ,			
+			 new_IP as "newIp" ,			
+			 fid as "fid" 			
+	FROM  liaotianlist   where FROM_UNIXTIME(time,'%Y-%m-%d')=#{date}
+	</select> 
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'liaotianlist'
+	</select>
+</mapper>

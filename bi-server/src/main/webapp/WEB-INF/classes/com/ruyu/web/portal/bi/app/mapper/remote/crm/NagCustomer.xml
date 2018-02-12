@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NagCustomer">
+	    <resultMap id="nagCustomer" type="com.ruyu.web.portal.bi.app.domain.remote.crm.NagCustomer">
+                  <result column="CM_ID" property="cmId" />
+ 		          <result column="CM_NAME" property="cmName" />
+ 		          <result column="CM_PHONENUMBER" property="cmPhonenumber" />
+ 		          <result column="CM_TEL1" property="cmTel1" />
+ 		          <result column="CM_TEL2" property="cmTel2" />
+ 		          <result column="CM_FAX" property="cmFax" />
+ 		          <result column="CM_CREATEBY" property="cmCreateby" />
+ 		          <result column="CM_CREATEDATE" property="cmCreatedate" />
+ 		          <result column="CM_MODIFIEDBY" property="cmModifiedby" />
+ 		          <result column="CM_MODIFIEDDATE" property="cmModifieddate" />
+ 		          <result column="CM_LASTCALLBY" property="cmLastcallby" />
+ 		          <result column="CM_LASTCALLDATE" property="cmLastcalldate" />
+ 		          <result column="CM_LASTCALLRESULT" property="cmLastcallresult" />
+ 		          <result column="CM_LASTCALLSUMMARY" property="cmLastcallsummary" />
+ 		          <result column="CM_HOLDER" property="cmHolder" />
+ 		          <result column="CM_HOLDERPART" property="cmHolderpart" />
+ 		          <result column="CM_POSTCODE" property="cmPostcode" />
+ 		          <result column="CM_ADDRESS" property="cmAddress" />
+ 		          <result column="CM_INDUSTRY" property="cmIndustry" />
+ 		          <result column="CM_GRADE" property="cmGrade" />
+ 		          <result column="CM_TYPE" property="cmType" />
+ 		          <result column="CM_WEBURL" property="cmWeburl" />
+ 		          <result column="CM_EMAIL" property="cmEmail" />
+ 		          <result column="CM_ISDELETE" property="cmIsdelete" />
+ 		          <result column="CM_ISLOCK" property="cmIslock" />
+ 		          <result column="CM_ISFORBIDCALL" property="cmIsforbidcall" />
+ 		          <result column="CM_BROWSETIMES" property="cmBrowsetimes" />
+ 		          <result column="CM_ISINPOOL" property="cmIsinpool" />
+ 		          <result column="CM_DATAPOOLID" property="cmDatapoolid" />
+ 		          <result column="CM_DATASOUCE" property="cmDatasouce" />
+ 		          <result column="CM_DATAMMARK" property="cmDatammark" />
+ 		          <result column="CM_STRING1" property="cmString1" />
+ 		          <result column="CM_STRING2" property="cmString2" />
+ 		          <result column="CM_STRING3" property="cmString3" />
+ 		          <result column="CM_STRING4" property="cmString4" />
+ 		          <result column="CM_STRING5" property="cmString5" />
+ 		          <result column="CM_STRING6" property="cmString6" />
+ 		          <result column="CM_STRING7" property="cmString7" />
+ 		          <result column="CM_STRING8" property="cmString8" />
+ 		          <result column="CM_STRING9" property="cmString9" />
+ 		          <result column="CM_STRING10" property="cmString10" />
+ 		          <result column="CM_STRING11" property="cmString11" />
+ 		          <result column="CM_STRING12" property="cmString12" />
+ 		          <result column="CM_STRING13" property="cmString13" />
+ 		          <result column="CM_STRING14" property="cmString14" />
+ 		          <result column="CM_STRING15" property="cmString15" />
+ 		          <result column="CM_STRING16" property="cmString16" />
+ 		          <result column="CM_STRING17" property="cmString17" />
+ 		          <result column="CM_STRING18" property="cmString18" />
+ 		          <result column="CM_STRING19" property="cmString19" />
+ 		          <result column="CM_STRING20" property="cmString20" />
+ 		          <result column="CM_STRING21" property="cmString21" />
+ 		          <result column="CM_STRING22" property="cmString22" />
+ 		          <result column="CM_STRING23" property="cmString23" />
+ 		          <result column="CM_STRING24" property="cmString24" />
+ 		          <result column="CM_STRING25" property="cmString25" />
+ 		          <result column="CM_STRING26" property="cmString26" />
+ 		          <result column="CM_STRING27" property="cmString27" />
+ 		          <result column="CM_STRING28" property="cmString28" />
+ 		          <result column="CM_STRING29" property="cmString29" />
+ 		          <result column="CM_STRING30" property="cmString30" />
+ 		          <result column="CM_STRING31" property="cmString31" />
+ 		          <result column="CM_STRING32" property="cmString32" />
+ 		          <result column="CM_STRING33" property="cmString33" />
+ 		          <result column="CM_STRING34" property="cmString34" />
+ 		          <result column="CM_STRING35" property="cmString35" />
+ 		          <result column="CM_NUMBER1" property="cmNumber1" />
+ 		          <result column="CM_NUMBER2" property="cmNumber2" />
+ 		          <result column="CM_NUMBER3" property="cmNumber3" />
+ 		          <result column="CM_NUMBER4" property="cmNumber4" />
+ 		          <result column="CM_NUMBER5" property="cmNumber5" />
+ 		          <result column="CM_NUMBER6" property="cmNumber6" />
+ 		          <result column="CM_DATE1" property="cmDate1" />
+ 		          <result column="CM_DATE2" property="cmDate2" />
+ 		          <result column="CM_DATE3" property="cmDate3" />
+ 		          <result column="CM_DATE4" property="cmDate4" />
+ 		          <result column="CM_DATE5" property="cmDate5" />
+ 		          <result column="CM_COMMENT1" property="cmComment1" />
+ 		          <result column="CM_COMMENT2" property="cmComment2" />
+ 		          <result column="CM_COMMENT3" property="cmComment3" />
+ 		          <result column="CM_COMMENT4" property="cmComment4" />
+ 		          <result column="CM_COMMENT5" property="cmComment5" />
+ 		          <result column="CM_HOLDERID" property="cmHolderid" />
+ 		          <result column="CM_DELUSER" property="cmDeluser" />
+ 		          <result column="CM_DELTIME" property="cmDeltime" />
+ 		          <result column="CM_DIALNUM" property="cmDialnum" />
+ 		          <result column="CM_TATOLCALLOUTLEN" property="cmTatolcalloutlen" />
+ 		          <result column="CM_ALLOCDATE" property="cmAllocdate" />
+ 		          <result column="CM_ALLOCDAYNUM" property="cmAllocdaynum" />
+ 		          <result column="CM_CALLOUTANSWERNUM" property="cmCalloutanswernum" />
+ 		          <result column="CM_TATOLCALLINLEN" property="cmTatolcallinlen" />
+ 		          <result column="CM_BATCH" property="cmBatch" />
+ 		          <result column="CM_LASTTALKBY" property="cmLasttalkby" />
+ 		          <result column="CM_LASTTALKDATE" property="cmLasttalkdate" />
+ 		          <result column="CM_WITHCUS" property="cmWithcus" />
+ 		          <result column="CM_FIRSTCALL" property="cmFirstcall" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           CM_ID,
+ 		           CM_NAME,
+ 		           CM_PHONENUMBER,
+ 		           CM_TEL1,
+ 		           CM_TEL2,
+ 		           CM_FAX,
+ 		           CM_CREATEBY,
+ 		           CM_CREATEDATE,
+ 		           CM_MODIFIEDBY,
+ 		           CM_MODIFIEDDATE,
+ 		           CM_LASTCALLBY,
+ 		           CM_LASTCALLDATE,
+ 		           CM_LASTCALLRESULT,
+ 		           CM_LASTCALLSUMMARY,
+ 		           CM_HOLDER,
+ 		           CM_HOLDERPART,
+ 		           CM_POSTCODE,
+ 		           CM_ADDRESS,
+ 		           CM_INDUSTRY,
+ 		           CM_GRADE,
+ 		           CM_TYPE,
+ 		           CM_WEBURL,
+ 		           CM_EMAIL,
+ 		           CM_ISDELETE,
+ 		           CM_ISLOCK,
+ 		           CM_ISFORBIDCALL,
+ 		           CM_BROWSETIMES,
+ 		           CM_ISINPOOL,
+ 		           CM_DATAPOOLID,
+ 		           CM_DATASOUCE,
+ 		           CM_DATAMMARK,
+ 		           CM_STRING1,
+ 		           CM_STRING2,
+ 		           CM_STRING3,
+ 		           CM_STRING4,
+ 		           CM_STRING5,
+ 		           CM_STRING6,
+ 		           CM_STRING7,
+ 		           CM_STRING8,
+ 		           CM_STRING9,
+ 		           CM_STRING10,
+ 		           CM_STRING11,
+ 		           CM_STRING12,
+ 		           CM_STRING13,
+ 		           CM_STRING14,
+ 		           CM_STRING15,
+ 		           CM_STRING16,
+ 		           CM_STRING17,
+ 		           CM_STRING18,
+ 		           CM_STRING19,
+ 		           CM_STRING20,
+ 		           CM_STRING21,
+ 		           CM_STRING22,
+ 		           CM_STRING23,
+ 		           CM_STRING24,
+ 		           CM_STRING25,
+ 		           CM_STRING26,
+ 		           CM_STRING27,
+ 		           CM_STRING28,
+ 		           CM_STRING29,
+ 		           CM_STRING30,
+ 		           CM_STRING31,
+ 		           CM_STRING32,
+ 		           CM_STRING33,
+ 		           CM_STRING34,
+ 		           CM_STRING35,
+ 		           CM_NUMBER1,
+ 		           CM_NUMBER2,
+ 		           CM_NUMBER3,
+ 		           CM_NUMBER4,
+ 		           CM_NUMBER5,
+ 		           CM_NUMBER6,
+ 		           CM_DATE1,
+ 		           CM_DATE2,
+ 		           CM_DATE3,
+ 		           CM_DATE4,
+ 		           CM_DATE5,
+ 		           CM_COMMENT1,
+ 		           CM_COMMENT2,
+ 		           CM_COMMENT3,
+ 		           CM_COMMENT4,
+ 		           CM_COMMENT5,
+ 		           CM_HOLDERID,
+ 		           CM_DELUSER,
+ 		           CM_DELTIME,
+ 		           CM_DIALNUM,
+ 		           CM_TATOLCALLOUTLEN,
+ 		           CM_ALLOCDATE,
+ 		           CM_ALLOCDAYNUM,
+ 		           CM_CALLOUTANSWERNUM,
+ 		           CM_TATOLCALLINLEN,
+ 		           CM_BATCH,
+ 		           CM_LASTTALKBY,
+ 		           CM_LASTTALKDATE,
+ 		           CM_WITHCUS,
+ 		           CM_FIRSTCALL,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagCustomer">
+		INSERT INTO NAG_CUSTOMER ( 				
+							CM_NAME ,						
+							CM_PHONENUMBER ,		
+							CM_ISINPOOL ,						
+							CM_DATAPOOLID , 	
+							CM_DATASOUCE ,						
+							CM_DATAMMARK ,	 		
+							CM_STRING20 ,  		
+							CM_DATE1 
+		) VALUES (				
+							#{cmName,jdbcType=VARCHAR},						
+							#{cmPhonenumber,jdbcType=VARCHAR},
+							#{cmIsinpool,jdbcType=NUMERIC},						
+							#{cmDatapoolid,jdbcType=NUMERIC},						
+							#{cmDatasouce,jdbcType=VARCHAR},						
+							#{cmDatammark,jdbcType=VARCHAR},
+							#{cmString20,jdbcType=VARCHAR},
+							#{cmDate1,jdbcType=TIMESTAMP}						
+									
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagCustomer">
+		UPDATE NAG_CUSTOMER	
+		<set>
+			 <if test="cmId != null">CM_ID=#{cmId},</if>
+			 <if test="cmName != null">CM_NAME=#{cmName},</if>
+			 <if test="cmPhonenumber != null">CM_PHONENUMBER=#{cmPhonenumber},</if>
+			 <if test="cmTel1 != null">CM_TEL1=#{cmTel1},</if>
+			 <if test="cmTel2 != null">CM_TEL2=#{cmTel2},</if>
+			 <if test="cmFax != null">CM_FAX=#{cmFax},</if>
+			 <if test="cmCreateby != null">CM_CREATEBY=#{cmCreateby},</if>
+			 <if test="cmCreatedate != null">CM_CREATEDATE=#{cmCreatedate},</if>
+			 <if test="cmModifiedby != null">CM_MODIFIEDBY=#{cmModifiedby},</if>
+			 <if test="cmModifieddate != null">CM_MODIFIEDDATE=#{cmModifieddate},</if>
+			 <if test="cmLastcallby != null">CM_LASTCALLBY=#{cmLastcallby},</if>
+			 <if test="cmLastcalldate != null">CM_LASTCALLDATE=#{cmLastcalldate},</if>
+			 <if test="cmLastcallresult != null">CM_LASTCALLRESULT=#{cmLastcallresult},</if>
+			 <if test="cmLastcallsummary != null">CM_LASTCALLSUMMARY=#{cmLastcallsummary},</if>
+			 <if test="cmHolder != null">CM_HOLDER=#{cmHolder},</if>
+			 <if test="cmHolderpart != null">CM_HOLDERPART=#{cmHolderpart},</if>
+			 <if test="cmPostcode != null">CM_POSTCODE=#{cmPostcode},</if>
+			 <if test="cmAddress != null">CM_ADDRESS=#{cmAddress},</if>
+			 <if test="cmIndustry != null">CM_INDUSTRY=#{cmIndustry},</if>
+			 <if test="cmGrade != null">CM_GRADE=#{cmGrade},</if>
+			 <if test="cmType != null">CM_TYPE=#{cmType},</if>
+			 <if test="cmWeburl != null">CM_WEBURL=#{cmWeburl},</if>
+			 <if test="cmEmail != null">CM_EMAIL=#{cmEmail},</if>
+			 <if test="cmIsdelete != null">CM_ISDELETE=#{cmIsdelete},</if>
+			 <if test="cmIslock != null">CM_ISLOCK=#{cmIslock},</if>
+			 <if test="cmIsforbidcall != null">CM_ISFORBIDCALL=#{cmIsforbidcall},</if>
+			 <if test="cmBrowsetimes != null">CM_BROWSETIMES=#{cmBrowsetimes},</if>
+			 <if test="cmIsinpool != null">CM_ISINPOOL=#{cmIsinpool},</if>
+			 <if test="cmDatapoolid != null">CM_DATAPOOLID=#{cmDatapoolid},</if>
+			 <if test="cmDatasouce != null">CM_DATASOUCE=#{cmDatasouce},</if>
+			 <if test="cmDatammark != null">CM_DATAMMARK=#{cmDatammark},</if>
+			 <if test="cmString1 != null">CM_STRING1=#{cmString1},</if>
+			 <if test="cmString2 != null">CM_STRING2=#{cmString2},</if>
+			 <if test="cmString3 != null">CM_STRING3=#{cmString3},</if>
+			 <if test="cmString4 != null">CM_STRING4=#{cmString4},</if>
+			 <if test="cmString5 != null">CM_STRING5=#{cmString5},</if>
+			 <if test="cmString6 != null">CM_STRING6=#{cmString6},</if>
+			 <if test="cmString7 != null">CM_STRING7=#{cmString7},</if>
+			 <if test="cmString8 != null">CM_STRING8=#{cmString8},</if>
+			 <if test="cmString9 != null">CM_STRING9=#{cmString9},</if>
+			 <if test="cmString10 != null">CM_STRING10=#{cmString10},</if>
+			 <if test="cmString11 != null">CM_STRING11=#{cmString11},</if>
+			 <if test="cmString12 != null">CM_STRING12=#{cmString12},</if>
+			 <if test="cmString13 != null">CM_STRING13=#{cmString13},</if>
+			 <if test="cmString14 != null">CM_STRING14=#{cmString14},</if>
+			 <if test="cmString15 != null">CM_STRING15=#{cmString15},</if>
+			 <if test="cmString16 != null">CM_STRING16=#{cmString16},</if>
+			 <if test="cmString17 != null">CM_STRING17=#{cmString17},</if>
+			 <if test="cmString18 != null">CM_STRING18=#{cmString18},</if>
+			 <if test="cmString19 != null">CM_STRING19=#{cmString19},</if>
+			 <if test="cmString20 != null">CM_STRING20=#{cmString20},</if>
+			 <if test="cmString21 != null">CM_STRING21=#{cmString21},</if>
+			 <if test="cmString22 != null">CM_STRING22=#{cmString22},</if>
+			 <if test="cmString23 != null">CM_STRING23=#{cmString23},</if>
+			 <if test="cmString24 != null">CM_STRING24=#{cmString24},</if>
+			 <if test="cmString25 != null">CM_STRING25=#{cmString25},</if>
+			 <if test="cmString26 != null">CM_STRING26=#{cmString26},</if>
+			 <if test="cmString27 != null">CM_STRING27=#{cmString27},</if>
+			 <if test="cmString28 != null">CM_STRING28=#{cmString28},</if>
+			 <if test="cmString29 != null">CM_STRING29=#{cmString29},</if>
+			 <if test="cmString30 != null">CM_STRING30=#{cmString30},</if>
+			 <if test="cmString31 != null">CM_STRING31=#{cmString31},</if>
+			 <if test="cmString32 != null">CM_STRING32=#{cmString32},</if>
+			 <if test="cmString33 != null">CM_STRING33=#{cmString33},</if>
+			 <if test="cmString34 != null">CM_STRING34=#{cmString34},</if>
+			 <if test="cmString35 != null">CM_STRING35=#{cmString35},</if>
+			 <if test="cmNumber1 != null">CM_NUMBER1=#{cmNumber1},</if>
+			 <if test="cmNumber2 != null">CM_NUMBER2=#{cmNumber2},</if>
+			 <if test="cmNumber3 != null">CM_NUMBER3=#{cmNumber3},</if>
+			 <if test="cmNumber4 != null">CM_NUMBER4=#{cmNumber4},</if>
+			 <if test="cmNumber5 != null">CM_NUMBER5=#{cmNumber5},</if>
+			 <if test="cmNumber6 != null">CM_NUMBER6=#{cmNumber6},</if>
+			 <if test="cmDate1 != null">CM_DATE1=#{cmDate1},</if>
+			 <if test="cmDate2 != null">CM_DATE2=#{cmDate2},</if>
+			 <if test="cmDate3 != null">CM_DATE3=#{cmDate3},</if>
+			 <if test="cmDate4 != null">CM_DATE4=#{cmDate4},</if>
+			 <if test="cmDate5 != null">CM_DATE5=#{cmDate5},</if>
+			 <if test="cmComment1 != null">CM_COMMENT1=#{cmComment1},</if>
+			 <if test="cmComment2 != null">CM_COMMENT2=#{cmComment2},</if>
+			 <if test="cmComment3 != null">CM_COMMENT3=#{cmComment3},</if>
+			 <if test="cmComment4 != null">CM_COMMENT4=#{cmComment4},</if>
+			 <if test="cmComment5 != null">CM_COMMENT5=#{cmComment5},</if>
+			 <if test="cmHolderid != null">CM_HOLDERID=#{cmHolderid},</if>
+			 <if test="cmDeluser != null">CM_DELUSER=#{cmDeluser},</if>
+			 <if test="cmDeltime != null">CM_DELTIME=#{cmDeltime},</if>
+			 <if test="cmDialnum != null">CM_DIALNUM=#{cmDialnum},</if>
+			 <if test="cmTatolcalloutlen != null">CM_TATOLCALLOUTLEN=#{cmTatolcalloutlen},</if>
+			 <if test="cmAllocdate != null">CM_ALLOCDATE=#{cmAllocdate},</if>
+			 <if test="cmAllocdaynum != null">CM_ALLOCDAYNUM=#{cmAllocdaynum},</if>
+			 <if test="cmCalloutanswernum != null">CM_CALLOUTANSWERNUM=#{cmCalloutanswernum},</if>
+			 <if test="cmTatolcallinlen != null">CM_TATOLCALLINLEN=#{cmTatolcallinlen},</if>
+			 <if test="cmBatch != null">CM_BATCH=#{cmBatch},</if>
+			 <if test="cmLasttalkby != null">CM_LASTTALKBY=#{cmLasttalkby},</if>
+			 <if test="cmLasttalkdate != null">CM_LASTTALKDATE=#{cmLasttalkdate},</if>
+			 <if test="cmWithcus != null">CM_WITHCUS=#{cmWithcus},</if>
+			 <if test="cmFirstcall != null">CM_FIRSTCALL=#{cmFirstcall}</if>
+ 	</set>
+		WHERE
+			CM_ID=#{cmId} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="String">
+        DELETE FROM NAG_CUSTOMER	 WHERE 			CM_ID=#{cmId}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagCustomer">
+        DELETE FROM NAG_CUSTOMER	 
+         <where>   
+		       <if test="cmId != null">CM_ID = #{cmId}</if>  
+        		       <if test="cmName != null">and CM_NAME = #{cmName}</if> 
+	    		       <if test="cmPhonenumber != null">and CM_PHONENUMBER = #{cmPhonenumber}</if> 
+	    		       <if test="cmTel1 != null">and CM_TEL1 = #{cmTel1}</if> 
+	    		       <if test="cmTel2 != null">and CM_TEL2 = #{cmTel2}</if> 
+	    		       <if test="cmFax != null">and CM_FAX = #{cmFax}</if> 
+	    		       <if test="cmCreateby != null">and CM_CREATEBY = #{cmCreateby}</if> 
+	    		       <if test="cmCreatedate != null">and CM_CREATEDATE = #{cmCreatedate}</if> 
+	    		       <if test="cmModifiedby != null">and CM_MODIFIEDBY = #{cmModifiedby}</if> 
+	    		       <if test="cmModifieddate != null">and CM_MODIFIEDDATE = #{cmModifieddate}</if> 
+	    		       <if test="cmLastcallby != null">and CM_LASTCALLBY = #{cmLastcallby}</if> 
+	    		       <if test="cmLastcalldate != null">and CM_LASTCALLDATE = #{cmLastcalldate}</if> 
+	    		       <if test="cmLastcallresult != null">and CM_LASTCALLRESULT = #{cmLastcallresult}</if> 
+	    		       <if test="cmLastcallsummary != null">and CM_LASTCALLSUMMARY = #{cmLastcallsummary}</if> 
+	    		       <if test="cmHolder != null">and CM_HOLDER = #{cmHolder}</if> 
+	    		       <if test="cmHolderpart != null">and CM_HOLDERPART = #{cmHolderpart}</if> 
+	    		       <if test="cmPostcode != null">and CM_POSTCODE = #{cmPostcode}</if> 
+	    		       <if test="cmAddress != null">and CM_ADDRESS = #{cmAddress}</if> 
+	    		       <if test="cmIndustry != null">and CM_INDUSTRY = #{cmIndustry}</if> 
+	    		       <if test="cmGrade != null">and CM_GRADE = #{cmGrade}</if> 
+	    		       <if test="cmType != null">and CM_TYPE = #{cmType}</if> 
+	    		       <if test="cmWeburl != null">and CM_WEBURL = #{cmWeburl}</if> 
+	    		       <if test="cmEmail != null">and CM_EMAIL = #{cmEmail}</if> 
+	    		       <if test="cmIsdelete != null">and CM_ISDELETE = #{cmIsdelete}</if> 
+	    		       <if test="cmIslock != null">and CM_ISLOCK = #{cmIslock}</if> 
+	    		       <if test="cmIsforbidcall != null">and CM_ISFORBIDCALL = #{cmIsforbidcall}</if> 
+	    		       <if test="cmBrowsetimes != null">and CM_BROWSETIMES = #{cmBrowsetimes}</if> 
+	    		       <if test="cmIsinpool != null">and CM_ISINPOOL = #{cmIsinpool}</if> 
+	    		       <if test="cmDatapoolid != null">and CM_DATAPOOLID = #{cmDatapoolid}</if> 
+	    		       <if test="cmDatasouce != null">and CM_DATASOUCE = #{cmDatasouce}</if> 
+	    		       <if test="cmDatammark != null">and CM_DATAMMARK = #{cmDatammark}</if> 
+	    		       <if test="cmString1 != null">and CM_STRING1 = #{cmString1}</if> 
+	    		       <if test="cmString2 != null">and CM_STRING2 = #{cmString2}</if> 
+	    		       <if test="cmString3 != null">and CM_STRING3 = #{cmString3}</if> 
+	    		       <if test="cmString4 != null">and CM_STRING4 = #{cmString4}</if> 
+	    		       <if test="cmString5 != null">and CM_STRING5 = #{cmString5}</if> 
+	    		       <if test="cmString6 != null">and CM_STRING6 = #{cmString6}</if> 
+	    		       <if test="cmString7 != null">and CM_STRING7 = #{cmString7}</if> 
+	    		       <if test="cmString8 != null">and CM_STRING8 = #{cmString8}</if> 
+	    		       <if test="cmString9 != null">and CM_STRING9 = #{cmString9}</if> 
+	    		       <if test="cmString10 != null">and CM_STRING10 = #{cmString10}</if> 
+	    		       <if test="cmString11 != null">and CM_STRING11 = #{cmString11}</if> 
+	    		       <if test="cmString12 != null">and CM_STRING12 = #{cmString12}</if> 
+	    		       <if test="cmString13 != null">and CM_STRING13 = #{cmString13}</if> 
+	    		       <if test="cmString14 != null">and CM_STRING14 = #{cmString14}</if> 
+	    		       <if test="cmString15 != null">and CM_STRING15 = #{cmString15}</if> 
+	    		       <if test="cmString16 != null">and CM_STRING16 = #{cmString16}</if> 
+	    		       <if test="cmString17 != null">and CM_STRING17 = #{cmString17}</if> 
+	    		       <if test="cmString18 != null">and CM_STRING18 = #{cmString18}</if> 
+	    		       <if test="cmString19 != null">and CM_STRING19 = #{cmString19}</if> 
+	    		       <if test="cmString20 != null">and CM_STRING20 = #{cmString20}</if> 
+	    		       <if test="cmString21 != null">and CM_STRING21 = #{cmString21}</if> 
+	    		       <if test="cmString22 != null">and CM_STRING22 = #{cmString22}</if> 
+	    		       <if test="cmString23 != null">and CM_STRING23 = #{cmString23}</if> 
+	    		       <if test="cmString24 != null">and CM_STRING24 = #{cmString24}</if> 
+	    		       <if test="cmString25 != null">and CM_STRING25 = #{cmString25}</if> 
+	    		       <if test="cmString26 != null">and CM_STRING26 = #{cmString26}</if> 
+	    		       <if test="cmString27 != null">and CM_STRING27 = #{cmString27}</if> 
+	    		       <if test="cmString28 != null">and CM_STRING28 = #{cmString28}</if> 
+	    		       <if test="cmString29 != null">and CM_STRING29 = #{cmString29}</if> 
+	    		       <if test="cmString30 != null">and CM_STRING30 = #{cmString30}</if> 
+	    		       <if test="cmString31 != null">and CM_STRING31 = #{cmString31}</if> 
+	    		       <if test="cmString32 != null">and CM_STRING32 = #{cmString32}</if> 
+	    		       <if test="cmString33 != null">and CM_STRING33 = #{cmString33}</if> 
+	    		       <if test="cmString34 != null">and CM_STRING34 = #{cmString34}</if> 
+	    		       <if test="cmString35 != null">and CM_STRING35 = #{cmString35}</if> 
+	    		       <if test="cmNumber1 != null">and CM_NUMBER1 = #{cmNumber1}</if> 
+	    		       <if test="cmNumber2 != null">and CM_NUMBER2 = #{cmNumber2}</if> 
+	    		       <if test="cmNumber3 != null">and CM_NUMBER3 = #{cmNumber3}</if> 
+	    		       <if test="cmNumber4 != null">and CM_NUMBER4 = #{cmNumber4}</if> 
+	    		       <if test="cmNumber5 != null">and CM_NUMBER5 = #{cmNumber5}</if> 
+	    		       <if test="cmNumber6 != null">and CM_NUMBER6 = #{cmNumber6}</if> 
+	    		       <if test="cmDate1 != null">and CM_DATE1 = #{cmDate1}</if> 
+	    		       <if test="cmDate2 != null">and CM_DATE2 = #{cmDate2}</if> 
+	    		       <if test="cmDate3 != null">and CM_DATE3 = #{cmDate3}</if> 
+	    		       <if test="cmDate4 != null">and CM_DATE4 = #{cmDate4}</if> 
+	    		       <if test="cmDate5 != null">and CM_DATE5 = #{cmDate5}</if> 
+	    		       <if test="cmComment1 != null">and CM_COMMENT1 = #{cmComment1}</if> 
+	    		       <if test="cmComment2 != null">and CM_COMMENT2 = #{cmComment2}</if> 
+	    		       <if test="cmComment3 != null">and CM_COMMENT3 = #{cmComment3}</if> 
+	    		       <if test="cmComment4 != null">and CM_COMMENT4 = #{cmComment4}</if> 
+	    		       <if test="cmComment5 != null">and CM_COMMENT5 = #{cmComment5}</if> 
+	    		       <if test="cmHolderid != null">and CM_HOLDERID = #{cmHolderid}</if> 
+	    		       <if test="cmDeluser != null">and CM_DELUSER = #{cmDeluser}</if> 
+	    		       <if test="cmDeltime != null">and CM_DELTIME = #{cmDeltime}</if> 
+	    		       <if test="cmDialnum != null">and CM_DIALNUM = #{cmDialnum}</if> 
+	    		       <if test="cmTatolcalloutlen != null">and CM_TATOLCALLOUTLEN = #{cmTatolcalloutlen}</if> 
+	    		       <if test="cmAllocdate != null">and CM_ALLOCDATE = #{cmAllocdate}</if> 
+	    		       <if test="cmAllocdaynum != null">and CM_ALLOCDAYNUM = #{cmAllocdaynum}</if> 
+	    		       <if test="cmCalloutanswernum != null">and CM_CALLOUTANSWERNUM = #{cmCalloutanswernum}</if> 
+	    		       <if test="cmTatolcallinlen != null">and CM_TATOLCALLINLEN = #{cmTatolcallinlen}</if> 
+	    		       <if test="cmBatch != null">and CM_BATCH = #{cmBatch}</if> 
+	    		       <if test="cmLasttalkby != null">and CM_LASTTALKBY = #{cmLasttalkby}</if> 
+	    		       <if test="cmLasttalkdate != null">and CM_LASTTALKDATE = #{cmLasttalkdate}</if> 
+	    		       <if test="cmWithcus != null">and CM_WITHCUS = #{cmWithcus}</if> 
+	    		       <if test="cmFirstcall != null">and CM_FIRSTCALL = #{cmFirstcall}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="nagCustomer">
+		SELECT 
+			CM_ID as "cmId" ,			
+			CM_NAME as "cmName" ,			
+			CM_PHONENUMBER as "cmPhonenumber" ,			
+			CM_TEL1 as "cmTel1" ,			
+			CM_TEL2 as "cmTel2" ,			
+			CM_FAX as "cmFax" ,			
+			CM_CREATEBY as "cmCreateby" ,			
+			CM_CREATEDATE as "cmCreatedate" ,			
+			CM_MODIFIEDBY as "cmModifiedby" ,			
+			CM_MODIFIEDDATE as "cmModifieddate" ,			
+			CM_LASTCALLBY as "cmLastcallby" ,			
+			CM_LASTCALLDATE as "cmLastcalldate" ,			
+			CM_LASTCALLRESULT as "cmLastcallresult" ,			
+			CM_LASTCALLSUMMARY as "cmLastcallsummary" ,			
+			CM_HOLDER as "cmHolder" ,			
+			CM_HOLDERPART as "cmHolderpart" ,			
+			CM_POSTCODE as "cmPostcode" ,			
+			CM_ADDRESS as "cmAddress" ,			
+			CM_INDUSTRY as "cmIndustry" ,			
+			CM_GRADE as "cmGrade" ,			
+			CM_TYPE as "cmType" ,			
+			CM_WEBURL as "cmWeburl" ,			
+			CM_EMAIL as "cmEmail" ,			
+			CM_ISDELETE as "cmIsdelete" ,			
+			CM_ISLOCK as "cmIslock" ,			
+			CM_ISFORBIDCALL as "cmIsforbidcall" ,			
+			CM_BROWSETIMES as "cmBrowsetimes" ,			
+			CM_ISINPOOL as "cmIsinpool" ,			
+			CM_DATAPOOLID as "cmDatapoolid" ,			
+			CM_DATASOUCE as "cmDatasouce" ,			
+			CM_DATAMMARK as "cmDatammark" ,			
+			CM_STRING1 as "cmString1" ,			
+			CM_STRING2 as "cmString2" ,			
+			CM_STRING3 as "cmString3" ,			
+			CM_STRING4 as "cmString4" ,			
+			CM_STRING5 as "cmString5" ,			
+			CM_STRING6 as "cmString6" ,			
+			CM_STRING7 as "cmString7" ,			
+			CM_STRING8 as "cmString8" ,			
+			CM_STRING9 as "cmString9" ,			
+			CM_STRING10 as "cmString10" ,			
+			CM_STRING11 as "cmString11" ,			
+			CM_STRING12 as "cmString12" ,			
+			CM_STRING13 as "cmString13" ,			
+			CM_STRING14 as "cmString14" ,			
+			CM_STRING15 as "cmString15" ,			
+			CM_STRING16 as "cmString16" ,			
+			CM_STRING17 as "cmString17" ,			
+			CM_STRING18 as "cmString18" ,			
+			CM_STRING19 as "cmString19" ,			
+			CM_STRING20 as "cmString20" ,			
+			CM_STRING21 as "cmString21" ,			
+			CM_STRING22 as "cmString22" ,			
+			CM_STRING23 as "cmString23" ,			
+			CM_STRING24 as "cmString24" ,			
+			CM_STRING25 as "cmString25" ,			
+			CM_STRING26 as "cmString26" ,			
+			CM_STRING27 as "cmString27" ,			
+			CM_STRING28 as "cmString28" ,			
+			CM_STRING29 as "cmString29" ,			
+			CM_STRING30 as "cmString30" ,			
+			CM_STRING31 as "cmString31" ,			
+			CM_STRING32 as "cmString32" ,			
+			CM_STRING33 as "cmString33" ,			
+			CM_STRING34 as "cmString34" ,			
+			CM_STRING35 as "cmString35" ,			
+			CM_NUMBER1 as "cmNumber1" ,			
+			CM_NUMBER2 as "cmNumber2" ,			
+			CM_NUMBER3 as "cmNumber3" ,			
+			CM_NUMBER4 as "cmNumber4" ,			
+			CM_NUMBER5 as "cmNumber5" ,			
+			CM_NUMBER6 as "cmNumber6" ,			
+			CM_DATE1 as "cmDate1" ,			
+			CM_DATE2 as "cmDate2" ,			
+			CM_DATE3 as "cmDate3" ,			
+			CM_DATE4 as "cmDate4" ,			
+			CM_DATE5 as "cmDate5" ,			
+			CM_COMMENT1 as "cmComment1" ,			
+			CM_COMMENT2 as "cmComment2" ,			
+			CM_COMMENT3 as "cmComment3" ,			
+			CM_COMMENT4 as "cmComment4" ,			
+			CM_COMMENT5 as "cmComment5" ,			
+			CM_HOLDERID as "cmHolderid" ,			
+			CM_DELUSER as "cmDeluser" ,			
+			CM_DELTIME as "cmDeltime" ,			
+			CM_DIALNUM as "cmDialnum" ,			
+			CM_TATOLCALLOUTLEN as "cmTatolcalloutlen" ,			
+			CM_ALLOCDATE as "cmAllocdate" ,			
+			CM_ALLOCDAYNUM as "cmAllocdaynum" ,			
+			CM_CALLOUTANSWERNUM as "cmCalloutanswernum" ,			
+			CM_TATOLCALLINLEN as "cmTatolcallinlen" ,			
+			CM_BATCH as "cmBatch" ,			
+			CM_LASTTALKBY as "cmLasttalkby" ,			
+			CM_LASTTALKDATE as "cmLasttalkdate" ,			
+			CM_WITHCUS as "cmWithcus" ,			
+			CM_FIRSTCALL as "cmFirstcall" 			
+		FROM NAG_CUSTOMER
+		WHERE
+			CM_ID=#{cmId} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagCustomer" resultMap="nagCustomer">
+	SELECT
+			 CM_ID as "cmId" ,			
+			 CM_NAME as "cmName" ,			
+			 CM_PHONENUMBER as "cmPhonenumber" ,			
+			 CM_TEL1 as "cmTel1" ,			
+			 CM_TEL2 as "cmTel2" ,			
+			 CM_FAX as "cmFax" ,			
+			 CM_CREATEBY as "cmCreateby" ,			
+			 CM_CREATEDATE as "cmCreatedate" ,			
+			 CM_MODIFIEDBY as "cmModifiedby" ,			
+			 CM_MODIFIEDDATE as "cmModifieddate" ,			
+			 CM_LASTCALLBY as "cmLastcallby" ,			
+			 CM_LASTCALLDATE as "cmLastcalldate" ,			
+			 CM_LASTCALLRESULT as "cmLastcallresult" ,			
+			 CM_LASTCALLSUMMARY as "cmLastcallsummary" ,			
+			 CM_HOLDER as "cmHolder" ,			
+			 CM_HOLDERPART as "cmHolderpart" ,			
+			 CM_POSTCODE as "cmPostcode" ,			
+			 CM_ADDRESS as "cmAddress" ,			
+			 CM_INDUSTRY as "cmIndustry" ,			
+			 CM_GRADE as "cmGrade" ,			
+			 CM_TYPE as "cmType" ,			
+			 CM_WEBURL as "cmWeburl" ,			
+			 CM_EMAIL as "cmEmail" ,			
+			 CM_ISDELETE as "cmIsdelete" ,			
+			 CM_ISLOCK as "cmIslock" ,			
+			 CM_ISFORBIDCALL as "cmIsforbidcall" ,			
+			 CM_BROWSETIMES as "cmBrowsetimes" ,			
+			 CM_ISINPOOL as "cmIsinpool" ,			
+			 CM_DATAPOOLID as "cmDatapoolid" ,			
+			 CM_DATASOUCE as "cmDatasouce" ,			
+			 CM_DATAMMARK as "cmDatammark" ,			
+			 CM_STRING1 as "cmString1" ,			
+			 CM_STRING2 as "cmString2" ,			
+			 CM_STRING3 as "cmString3" ,			
+			 CM_STRING4 as "cmString4" ,			
+			 CM_STRING5 as "cmString5" ,			
+			 CM_STRING6 as "cmString6" ,			
+			 CM_STRING7 as "cmString7" ,			
+			 CM_STRING8 as "cmString8" ,			
+			 CM_STRING9 as "cmString9" ,			
+			 CM_STRING10 as "cmString10" ,			
+			 CM_STRING11 as "cmString11" ,			
+			 CM_STRING12 as "cmString12" ,			
+			 CM_STRING13 as "cmString13" ,			
+			 CM_STRING14 as "cmString14" ,			
+			 CM_STRING15 as "cmString15" ,			
+			 CM_STRING16 as "cmString16" ,			
+			 CM_STRING17 as "cmString17" ,			
+			 CM_STRING18 as "cmString18" ,			
+			 CM_STRING19 as "cmString19" ,			
+			 CM_STRING20 as "cmString20" ,			
+			 CM_STRING21 as "cmString21" ,			
+			 CM_STRING22 as "cmString22" ,			
+			 CM_STRING23 as "cmString23" ,			
+			 CM_STRING24 as "cmString24" ,			
+			 CM_STRING25 as "cmString25" ,			
+			 CM_STRING26 as "cmString26" ,			
+			 CM_STRING27 as "cmString27" ,			
+			 CM_STRING28 as "cmString28" ,			
+			 CM_STRING29 as "cmString29" ,			
+			 CM_STRING30 as "cmString30" ,			
+			 CM_STRING31 as "cmString31" ,			
+			 CM_STRING32 as "cmString32" ,			
+			 CM_STRING33 as "cmString33" ,			
+			 CM_STRING34 as "cmString34" ,			
+			 CM_STRING35 as "cmString35" ,			
+			 CM_NUMBER1 as "cmNumber1" ,			
+			 CM_NUMBER2 as "cmNumber2" ,			
+			 CM_NUMBER3 as "cmNumber3" ,			
+			 CM_NUMBER4 as "cmNumber4" ,			
+			 CM_NUMBER5 as "cmNumber5" ,			
+			 CM_NUMBER6 as "cmNumber6" ,			
+			 CM_DATE1 as "cmDate1" ,			
+			 CM_DATE2 as "cmDate2" ,			
+			 CM_DATE3 as "cmDate3" ,			
+			 CM_DATE4 as "cmDate4" ,			
+			 CM_DATE5 as "cmDate5" ,			
+			 CM_COMMENT1 as "cmComment1" ,			
+			 CM_COMMENT2 as "cmComment2" ,			
+			 CM_COMMENT3 as "cmComment3" ,			
+			 CM_COMMENT4 as "cmComment4" ,			
+			 CM_COMMENT5 as "cmComment5" ,			
+			 CM_HOLDERID as "cmHolderid" ,			
+			 CM_DELUSER as "cmDeluser" ,			
+			 CM_DELTIME as "cmDeltime" ,			
+			 CM_DIALNUM as "cmDialnum" ,			
+			 CM_TATOLCALLOUTLEN as "cmTatolcalloutlen" ,			
+			 CM_ALLOCDATE as "cmAllocdate" ,			
+			 CM_ALLOCDAYNUM as "cmAllocdaynum" ,			
+			 CM_CALLOUTANSWERNUM as "cmCalloutanswernum" ,			
+			 CM_TATOLCALLINLEN as "cmTatolcallinlen" ,			
+			 CM_BATCH as "cmBatch" ,			
+			 CM_LASTTALKBY as "cmLasttalkby" ,			
+			 CM_LASTTALKDATE as "cmLasttalkdate" ,			
+			 CM_WITHCUS as "cmWithcus" ,			
+			 CM_FIRSTCALL as "cmFirstcall" 			
+	FROM  NAG_CUSTOMER  
+	      <where> 
+		       <if test="cmId != null">CM_ID = #{cmId}</if>  
+        		       <if test="cmName != null">and CM_NAME = #{cmName}</if> 
+	    		       <if test="cmPhonenumber != null">and CM_PHONENUMBER = #{cmPhonenumber}</if> 
+	    		       <if test="cmTel1 != null">and CM_TEL1 = #{cmTel1}</if> 
+	    		       <if test="cmTel2 != null">and CM_TEL2 = #{cmTel2}</if> 
+	    		       <if test="cmFax != null">and CM_FAX = #{cmFax}</if> 
+	    		       <if test="cmCreateby != null">and CM_CREATEBY = #{cmCreateby}</if> 
+	    		       <if test="cmCreatedate != null">and CM_CREATEDATE = #{cmCreatedate}</if> 
+	    		       <if test="cmModifiedby != null">and CM_MODIFIEDBY = #{cmModifiedby}</if> 
+	    		       <if test="cmModifieddate != null">and CM_MODIFIEDDATE = #{cmModifieddate}</if> 
+	    		       <if test="cmLastcallby != null">and CM_LASTCALLBY = #{cmLastcallby}</if> 
+	    		       <if test="cmLastcalldate != null">and CM_LASTCALLDATE = #{cmLastcalldate}</if> 
+	    		       <if test="cmLastcallresult != null">and CM_LASTCALLRESULT = #{cmLastcallresult}</if> 
+	    		       <if test="cmLastcallsummary != null">and CM_LASTCALLSUMMARY = #{cmLastcallsummary}</if> 
+	    		       <if test="cmHolder != null">and CM_HOLDER = #{cmHolder}</if> 
+	    		       <if test="cmHolderpart != null">and CM_HOLDERPART = #{cmHolderpart}</if> 
+	    		       <if test="cmPostcode != null">and CM_POSTCODE = #{cmPostcode}</if> 
+	    		       <if test="cmAddress != null">and CM_ADDRESS = #{cmAddress}</if> 
+	    		       <if test="cmIndustry != null">and CM_INDUSTRY = #{cmIndustry}</if> 
+	    		       <if test="cmGrade != null">and CM_GRADE = #{cmGrade}</if> 
+	    		       <if test="cmType != null">and CM_TYPE = #{cmType}</if> 
+	    		       <if test="cmWeburl != null">and CM_WEBURL = #{cmWeburl}</if> 
+	    		       <if test="cmEmail != null">and CM_EMAIL = #{cmEmail}</if> 
+	    		       <if test="cmIsdelete != null">and CM_ISDELETE = #{cmIsdelete}</if> 
+	    		       <if test="cmIslock != null">and CM_ISLOCK = #{cmIslock}</if> 
+	    		       <if test="cmIsforbidcall != null">and CM_ISFORBIDCALL = #{cmIsforbidcall}</if> 
+	    		       <if test="cmBrowsetimes != null">and CM_BROWSETIMES = #{cmBrowsetimes}</if> 
+	    		       <if test="cmIsinpool != null">and CM_ISINPOOL = #{cmIsinpool}</if> 
+	    		       <if test="cmDatapoolid != null">and CM_DATAPOOLID = #{cmDatapoolid}</if> 
+	    		       <if test="cmDatasouce != null">and CM_DATASOUCE = #{cmDatasouce}</if> 
+	    		       <if test="cmDatammark != null">and CM_DATAMMARK = #{cmDatammark}</if> 
+	    		       <if test="cmString1 != null">and CM_STRING1 = #{cmString1}</if> 
+	    		       <if test="cmString2 != null">and CM_STRING2 = #{cmString2}</if> 
+	    		       <if test="cmString3 != null">and CM_STRING3 = #{cmString3}</if> 
+	    		       <if test="cmString4 != null">and CM_STRING4 = #{cmString4}</if> 
+	    		       <if test="cmString5 != null">and CM_STRING5 = #{cmString5}</if> 
+	    		       <if test="cmString6 != null">and CM_STRING6 = #{cmString6}</if> 
+	    		       <if test="cmString7 != null">and CM_STRING7 = #{cmString7}</if> 
+	    		       <if test="cmString8 != null">and CM_STRING8 = #{cmString8}</if> 
+	    		       <if test="cmString9 != null">and CM_STRING9 = #{cmString9}</if> 
+	    		       <if test="cmString10 != null">and CM_STRING10 = #{cmString10}</if> 
+	    		       <if test="cmString11 != null">and CM_STRING11 = #{cmString11}</if> 
+	    		       <if test="cmString12 != null">and CM_STRING12 = #{cmString12}</if> 
+	    		       <if test="cmString13 != null">and CM_STRING13 = #{cmString13}</if> 
+	    		       <if test="cmString14 != null">and CM_STRING14 = #{cmString14}</if> 
+	    		       <if test="cmString15 != null">and CM_STRING15 = #{cmString15}</if> 
+	    		       <if test="cmString16 != null">and CM_STRING16 = #{cmString16}</if> 
+	    		       <if test="cmString17 != null">and CM_STRING17 = #{cmString17}</if> 
+	    		       <if test="cmString18 != null">and CM_STRING18 = #{cmString18}</if> 
+	    		       <if test="cmString19 != null">and CM_STRING19 = #{cmString19}</if> 
+	    		       <if test="cmString20 != null">and CM_STRING20 = #{cmString20}</if> 
+	    		       <if test="cmString21 != null">and CM_STRING21 = #{cmString21}</if> 
+	    		       <if test="cmString22 != null">and CM_STRING22 = #{cmString22}</if> 
+	    		       <if test="cmString23 != null">and CM_STRING23 = #{cmString23}</if> 
+	    		       <if test="cmString24 != null">and CM_STRING24 = #{cmString24}</if> 
+	    		       <if test="cmString25 != null">and CM_STRING25 = #{cmString25}</if> 
+	    		       <if test="cmString26 != null">and CM_STRING26 = #{cmString26}</if> 
+	    		       <if test="cmString27 != null">and CM_STRING27 = #{cmString27}</if> 
+	    		       <if test="cmString28 != null">and CM_STRING28 = #{cmString28}</if> 
+	    		       <if test="cmString29 != null">and CM_STRING29 = #{cmString29}</if> 
+	    		       <if test="cmString30 != null">and CM_STRING30 = #{cmString30}</if> 
+	    		       <if test="cmString31 != null">and CM_STRING31 = #{cmString31}</if> 
+	    		       <if test="cmString32 != null">and CM_STRING32 = #{cmString32}</if> 
+	    		       <if test="cmString33 != null">and CM_STRING33 = #{cmString33}</if> 
+	    		       <if test="cmString34 != null">and CM_STRING34 = #{cmString34}</if> 
+	    		       <if test="cmString35 != null">and CM_STRING35 = #{cmString35}</if> 
+	    		       <if test="cmNumber1 != null">and CM_NUMBER1 = #{cmNumber1}</if> 
+	    		       <if test="cmNumber2 != null">and CM_NUMBER2 = #{cmNumber2}</if> 
+	    		       <if test="cmNumber3 != null">and CM_NUMBER3 = #{cmNumber3}</if> 
+	    		       <if test="cmNumber4 != null">and CM_NUMBER4 = #{cmNumber4}</if> 
+	    		       <if test="cmNumber5 != null">and CM_NUMBER5 = #{cmNumber5}</if> 
+	    		       <if test="cmNumber6 != null">and CM_NUMBER6 = #{cmNumber6}</if> 
+	    		       <if test="cmDate1 != null">and CM_DATE1 = #{cmDate1}</if> 
+	    		       <if test="cmDate2 != null">and CM_DATE2 = #{cmDate2}</if> 
+	    		       <if test="cmDate3 != null">and CM_DATE3 = #{cmDate3}</if> 
+	    		       <if test="cmDate4 != null">and CM_DATE4 = #{cmDate4}</if> 
+	    		       <if test="cmDate5 != null">and CM_DATE5 = #{cmDate5}</if> 
+	    		       <if test="cmComment1 != null">and CM_COMMENT1 = #{cmComment1}</if> 
+	    		       <if test="cmComment2 != null">and CM_COMMENT2 = #{cmComment2}</if> 
+	    		       <if test="cmComment3 != null">and CM_COMMENT3 = #{cmComment3}</if> 
+	    		       <if test="cmComment4 != null">and CM_COMMENT4 = #{cmComment4}</if> 
+	    		       <if test="cmComment5 != null">and CM_COMMENT5 = #{cmComment5}</if> 
+	    		       <if test="cmHolderid != null">and CM_HOLDERID = #{cmHolderid}</if> 
+	    		       <if test="cmDeluser != null">and CM_DELUSER = #{cmDeluser}</if> 
+	    		       <if test="cmDeltime != null">and CM_DELTIME = #{cmDeltime}</if> 
+	    		       <if test="cmDialnum != null">and CM_DIALNUM = #{cmDialnum}</if> 
+	    		       <if test="cmTatolcalloutlen != null">and CM_TATOLCALLOUTLEN = #{cmTatolcalloutlen}</if> 
+	    		       <if test="cmAllocdate != null">and CM_ALLOCDATE = #{cmAllocdate}</if> 
+	    		       <if test="cmAllocdaynum != null">and CM_ALLOCDAYNUM = #{cmAllocdaynum}</if> 
+	    		       <if test="cmCalloutanswernum != null">and CM_CALLOUTANSWERNUM = #{cmCalloutanswernum}</if> 
+	    		       <if test="cmTatolcallinlen != null">and CM_TATOLCALLINLEN = #{cmTatolcallinlen}</if> 
+	    		       <if test="cmBatch != null">and CM_BATCH = #{cmBatch}</if> 
+	    		       <if test="cmLasttalkby != null">and CM_LASTTALKBY = #{cmLasttalkby}</if> 
+	    		       <if test="cmLasttalkdate != null">and CM_LASTTALKDATE = #{cmLasttalkdate}</if> 
+	    		       <if test="cmWithcus != null">and CM_WITHCUS = #{cmWithcus}</if> 
+	    		       <if test="cmFirstcall != null">and CM_FIRSTCALL = #{cmFirstcall}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM NAG_CUSTOMER 
+		 <where> 
+		       <if test="cmId != null">CM_ID = #{cmId}</if>  
+        		       <if test="cmName != null">and CM_NAME = #{cmName}</if> 
+	    		       <if test="cmPhonenumber != null">and CM_PHONENUMBER = #{cmPhonenumber}</if> 
+	    		       <if test="cmTel1 != null">and CM_TEL1 = #{cmTel1}</if> 
+	    		       <if test="cmTel2 != null">and CM_TEL2 = #{cmTel2}</if> 
+	    		       <if test="cmFax != null">and CM_FAX = #{cmFax}</if> 
+	    		       <if test="cmCreateby != null">and CM_CREATEBY = #{cmCreateby}</if> 
+	    		       <if test="cmCreatedate != null">and CM_CREATEDATE = #{cmCreatedate}</if> 
+	    		       <if test="cmModifiedby != null">and CM_MODIFIEDBY = #{cmModifiedby}</if> 
+	    		       <if test="cmModifieddate != null">and CM_MODIFIEDDATE = #{cmModifieddate}</if> 
+	    		       <if test="cmLastcallby != null">and CM_LASTCALLBY = #{cmLastcallby}</if> 
+	    		       <if test="cmLastcalldate != null">and CM_LASTCALLDATE = #{cmLastcalldate}</if> 
+	    		       <if test="cmLastcallresult != null">and CM_LASTCALLRESULT = #{cmLastcallresult}</if> 
+	    		       <if test="cmLastcallsummary != null">and CM_LASTCALLSUMMARY = #{cmLastcallsummary}</if> 
+	    		       <if test="cmHolder != null">and CM_HOLDER = #{cmHolder}</if> 
+	    		       <if test="cmHolderpart != null">and CM_HOLDERPART = #{cmHolderpart}</if> 
+	    		       <if test="cmPostcode != null">and CM_POSTCODE = #{cmPostcode}</if> 
+	    		       <if test="cmAddress != null">and CM_ADDRESS = #{cmAddress}</if> 
+	    		       <if test="cmIndustry != null">and CM_INDUSTRY = #{cmIndustry}</if> 
+	    		       <if test="cmGrade != null">and CM_GRADE = #{cmGrade}</if> 
+	    		       <if test="cmType != null">and CM_TYPE = #{cmType}</if> 
+	    		       <if test="cmWeburl != null">and CM_WEBURL = #{cmWeburl}</if> 
+	    		       <if test="cmEmail != null">and CM_EMAIL = #{cmEmail}</if> 
+	    		       <if test="cmIsdelete != null">and CM_ISDELETE = #{cmIsdelete}</if> 
+	    		       <if test="cmIslock != null">and CM_ISLOCK = #{cmIslock}</if> 
+	    		       <if test="cmIsforbidcall != null">and CM_ISFORBIDCALL = #{cmIsforbidcall}</if> 
+	    		       <if test="cmBrowsetimes != null">and CM_BROWSETIMES = #{cmBrowsetimes}</if> 
+	    		       <if test="cmIsinpool != null">and CM_ISINPOOL = #{cmIsinpool}</if> 
+	    		       <if test="cmDatapoolid != null">and CM_DATAPOOLID = #{cmDatapoolid}</if> 
+	    		       <if test="cmDatasouce != null">and CM_DATASOUCE = #{cmDatasouce}</if> 
+	    		       <if test="cmDatammark != null">and CM_DATAMMARK = #{cmDatammark}</if> 
+	    		       <if test="cmString1 != null">and CM_STRING1 = #{cmString1}</if> 
+	    		       <if test="cmString2 != null">and CM_STRING2 = #{cmString2}</if> 
+	    		       <if test="cmString3 != null">and CM_STRING3 = #{cmString3}</if> 
+	    		       <if test="cmString4 != null">and CM_STRING4 = #{cmString4}</if> 
+	    		       <if test="cmString5 != null">and CM_STRING5 = #{cmString5}</if> 
+	    		       <if test="cmString6 != null">and CM_STRING6 = #{cmString6}</if> 
+	    		       <if test="cmString7 != null">and CM_STRING7 = #{cmString7}</if> 
+	    		       <if test="cmString8 != null">and CM_STRING8 = #{cmString8}</if> 
+	    		       <if test="cmString9 != null">and CM_STRING9 = #{cmString9}</if> 
+	    		       <if test="cmString10 != null">and CM_STRING10 = #{cmString10}</if> 
+	    		       <if test="cmString11 != null">and CM_STRING11 = #{cmString11}</if> 
+	    		       <if test="cmString12 != null">and CM_STRING12 = #{cmString12}</if> 
+	    		       <if test="cmString13 != null">and CM_STRING13 = #{cmString13}</if> 
+	    		       <if test="cmString14 != null">and CM_STRING14 = #{cmString14}</if> 
+	    		       <if test="cmString15 != null">and CM_STRING15 = #{cmString15}</if> 
+	    		       <if test="cmString16 != null">and CM_STRING16 = #{cmString16}</if> 
+	    		       <if test="cmString17 != null">and CM_STRING17 = #{cmString17}</if> 
+	    		       <if test="cmString18 != null">and CM_STRING18 = #{cmString18}</if> 
+	    		       <if test="cmString19 != null">and CM_STRING19 = #{cmString19}</if> 
+	    		       <if test="cmString20 != null">and CM_STRING20 = #{cmString20}</if> 
+	    		       <if test="cmString21 != null">and CM_STRING21 = #{cmString21}</if> 
+	    		       <if test="cmString22 != null">and CM_STRING22 = #{cmString22}</if> 
+	    		       <if test="cmString23 != null">and CM_STRING23 = #{cmString23}</if> 
+	    		       <if test="cmString24 != null">and CM_STRING24 = #{cmString24}</if> 
+	    		       <if test="cmString25 != null">and CM_STRING25 = #{cmString25}</if> 
+	    		       <if test="cmString26 != null">and CM_STRING26 = #{cmString26}</if> 
+	    		       <if test="cmString27 != null">and CM_STRING27 = #{cmString27}</if> 
+	    		       <if test="cmString28 != null">and CM_STRING28 = #{cmString28}</if> 
+	    		       <if test="cmString29 != null">and CM_STRING29 = #{cmString29}</if> 
+	    		       <if test="cmString30 != null">and CM_STRING30 = #{cmString30}</if> 
+	    		       <if test="cmString31 != null">and CM_STRING31 = #{cmString31}</if> 
+	    		       <if test="cmString32 != null">and CM_STRING32 = #{cmString32}</if> 
+	    		       <if test="cmString33 != null">and CM_STRING33 = #{cmString33}</if> 
+	    		       <if test="cmString34 != null">and CM_STRING34 = #{cmString34}</if> 
+	    		       <if test="cmString35 != null">and CM_STRING35 = #{cmString35}</if> 
+	    		       <if test="cmNumber1 != null">and CM_NUMBER1 = #{cmNumber1}</if> 
+	    		       <if test="cmNumber2 != null">and CM_NUMBER2 = #{cmNumber2}</if> 
+	    		       <if test="cmNumber3 != null">and CM_NUMBER3 = #{cmNumber3}</if> 
+	    		       <if test="cmNumber4 != null">and CM_NUMBER4 = #{cmNumber4}</if> 
+	    		       <if test="cmNumber5 != null">and CM_NUMBER5 = #{cmNumber5}</if> 
+	    		       <if test="cmNumber6 != null">and CM_NUMBER6 = #{cmNumber6}</if> 
+	    		       <if test="cmDate1 != null">and CM_DATE1 = #{cmDate1}</if> 
+	    		       <if test="cmDate2 != null">and CM_DATE2 = #{cmDate2}</if> 
+	    		       <if test="cmDate3 != null">and CM_DATE3 = #{cmDate3}</if> 
+	    		       <if test="cmDate4 != null">and CM_DATE4 = #{cmDate4}</if> 
+	    		       <if test="cmDate5 != null">and CM_DATE5 = #{cmDate5}</if> 
+	    		       <if test="cmComment1 != null">and CM_COMMENT1 = #{cmComment1}</if> 
+	    		       <if test="cmComment2 != null">and CM_COMMENT2 = #{cmComment2}</if> 
+	    		       <if test="cmComment3 != null">and CM_COMMENT3 = #{cmComment3}</if> 
+	    		       <if test="cmComment4 != null">and CM_COMMENT4 = #{cmComment4}</if> 
+	    		       <if test="cmComment5 != null">and CM_COMMENT5 = #{cmComment5}</if> 
+	    		       <if test="cmHolderid != null">and CM_HOLDERID = #{cmHolderid}</if> 
+	    		       <if test="cmDeluser != null">and CM_DELUSER = #{cmDeluser}</if> 
+	    		       <if test="cmDeltime != null">and CM_DELTIME = #{cmDeltime}</if> 
+	    		       <if test="cmDialnum != null">and CM_DIALNUM = #{cmDialnum}</if> 
+	    		       <if test="cmTatolcalloutlen != null">and CM_TATOLCALLOUTLEN = #{cmTatolcalloutlen}</if> 
+	    		       <if test="cmAllocdate != null">and CM_ALLOCDATE = #{cmAllocdate}</if> 
+	    		       <if test="cmAllocdaynum != null">and CM_ALLOCDAYNUM = #{cmAllocdaynum}</if> 
+	    		       <if test="cmCalloutanswernum != null">and CM_CALLOUTANSWERNUM = #{cmCalloutanswernum}</if> 
+	    		       <if test="cmTatolcallinlen != null">and CM_TATOLCALLINLEN = #{cmTatolcallinlen}</if> 
+	    		       <if test="cmBatch != null">and CM_BATCH = #{cmBatch}</if> 
+	    		       <if test="cmLasttalkby != null">and CM_LASTTALKBY = #{cmLasttalkby}</if> 
+	    		       <if test="cmLasttalkdate != null">and CM_LASTTALKDATE = #{cmLasttalkdate}</if> 
+	    		       <if test="cmWithcus != null">and CM_WITHCUS = #{cmWithcus}</if> 
+	    		       <if test="cmFirstcall != null">and CM_FIRSTCALL = #{cmFirstcall}</if> 
+	    		</where>
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'NAG_CUSTOMER'
+	</select>
+</mapper>

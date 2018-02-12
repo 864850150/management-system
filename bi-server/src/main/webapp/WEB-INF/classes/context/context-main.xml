@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<bean id="configBean"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		p:location="classpath:server.properties">
+	</bean>
+	<context:annotation-config />
+	<!-- <context:component-scan base-package="com.newcosoft.lsmp.opms.config" />  -->
+    <context:component-scan base-package="com.ruyu.web.portal.bi.app"/>
+    <context:component-scan base-package="com.ruyu.web.portal.bi.event"/>
+    <context:component-scan base-package="com.ruyu.web.portal.bi.schedule" />
+    
+    <task:annotation-driven scheduler="dataCoppySchedule" executor="executor" />
+    <task:scheduler id="dataCoppySchedule" pool-size="2"/>
+	<task:executor id="executor" pool-size="5" />  
+	
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding">
+			<value>UTF-8</value>
+		</property>
+		<property name="maxUploadSize">
+			<value>500000000</value>
+		</property>
+	</bean>
+	<!-- 
+	<bean id="rmiRegistry" class="org.springframework.remoting.rmi.RmiRegistryFactoryBean">
+        <property name="port" value="${bi.server.rmiport}"/>
+    </bean>
+    
+    <bean id = "manageService" class = "ruyu.com.bi.app.service.ManagerServiceImpl" />
+    <bean id = "rmiService" class = "org.springframework.remoting.rmi.RmiServiceExporter" >
+        <property name = "serviceName" value = "ManageService" />
+        <property name = "service" ref = "manageService" />
+        <property name = "serviceInterface" value = "ruyu.com.bi.service.ImanagerService" />
+        <property name="registry" ref="rmiRegistry"/>
+	</bean > -->
+    
+	<import resource="classpath:context/context-service.xml" />
+	<import resource="classpath:context/context-dao.xml" />
+</beans>

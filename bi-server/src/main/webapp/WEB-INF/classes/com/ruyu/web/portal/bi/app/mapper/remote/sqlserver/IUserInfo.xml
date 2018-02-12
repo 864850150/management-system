@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="IUserInfo">
+	    <resultMap id="iUserInfo" type="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.IUserInfo">
+                  <result column="i_User_ID" property="iUserId" />
+ 		          <result column="i_User_Name" property="iUserName" />
+ 		          <result column="i_User_Mail" property="iUserMail" />
+ 		          <result column="i_User_Pass" property="iUserPass" />
+ 		          <result column="i_User_RoleID" property="iUserRoleid" />
+ 		          <result column="i_User_SaleID" property="iUserSaleid" />
+ 		          <result column="i_User_SaleCompanyID" property="iUserSalecompanyid" />
+ 		          <result column="i_User_CompanyID" property="iUserCompanyid" />
+ 		          <result column="i_User_CompanyRoleID" property="iUserCompanyroleid" />
+ 		          <result column="i_User_CustomCompanys" property="iUserCustomcompanys" />
+ 		          <result column="i_User_ClassID" property="iUserClassid" />
+ 		          <result column="i_User_TypeID" property="iUserTypeid" />
+ 		          <result column="i_User_NickName" property="iUserNickname" />
+ 		          <result column="i_User_RealName" property="iUserRealname" />
+ 		          <result column="i_User_Sex" property="iUserSex" />
+ 		          <result column="i_User_QQ" property="iUserQq" />
+ 		          <result column="i_User_Tel" property="iUserTel" />
+ 		          <result column="i_User_Add" property="iUserAdd" />
+ 		          <result column="i_User_Birthday" property="iUserBirthday" />
+ 		          <result column="i_User_Profession" property="iUserProfession" />
+ 		          <result column="i_User_Face" property="iUserFace" />
+ 		          <result column="i_User_About" property="iUserAbout" />
+ 		          <result column="i_User_Faction" property="iUserFaction" />
+ 		          <result column="i_User_Invest" property="iUserInvest" />
+ 		          <result column="i_User_Era" property="iUserEra" />
+ 		          <result column="i_User_Label" property="iUserLabel" />
+ 		          <result column="i_User_Tags" property="iUserTags" />
+ 		          <result column="i_User_Score" property="iUserScore" />
+ 		          <result column="i_User_Money" property="iUserMoney" />
+ 		          <result column="i_User_LiveNess" property="iUserLiveness" />
+ 		          <result column="i_User_ViewNum" property="iUserViewnum" />
+ 		          <result column="i_User_RegTime" property="iUserRegtime" />
+ 		          <result column="i_User_LastLoginTime" property="iUserLastlogintime" />
+ 		          <result column="i_User_LoginIP" property="iUserLoginip" />
+ 		          <result column="i_User_IsLock" property="iUserIslock" />
+ 		          <result column="i_User_MailValid_Key" property="iUserMailvalidKey" />
+ 		          <result column="i_User_MailValid" property="iUserMailvalid" />
+ 		          <result column="i_User_Question" property="iUserQuestion" />
+ 		          <result column="i_User_Answer" property="iUserAnswer" />
+ 		          <result column="i_User_OpenID" property="iUserOpenid" />
+ 		          <result column="i_User_UCID" property="iUserUcid" />
+ 		          <result column="i_User_IsRobot" property="iUserIsrobot" />
+ 		          <result column="i_User_RedBagNum" property="iUserRedbagnum" />
+ 		          <result column="i_User_IncomeNum" property="iUserIncomenum" />
+ 		          <result column="i_User_RoomID" property="iUserRoomid" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           i_User_ID,
+ 		           i_User_Name,
+ 		           i_User_Mail,
+ 		           i_User_Pass,
+ 		           i_User_RoleID,
+ 		           i_User_SaleID,
+ 		           i_User_SaleCompanyID,
+ 		           i_User_CompanyID,
+ 		           i_User_CompanyRoleID,
+ 		           i_User_CustomCompanys,
+ 		           i_User_ClassID,
+ 		           i_User_TypeID,
+ 		           i_User_NickName,
+ 		           i_User_RealName,
+ 		           i_User_Sex,
+ 		           i_User_QQ,
+ 		           i_User_Tel,
+ 		           i_User_Add,
+ 		           i_User_Birthday,
+ 		           i_User_Profession,
+ 		           i_User_Face,
+ 		           i_User_About,
+ 		           i_User_Faction,
+ 		           i_User_Invest,
+ 		           i_User_Era,
+ 		           i_User_Label,
+ 		           i_User_Tags,
+ 		           i_User_Score,
+ 		           i_User_Money,
+ 		           i_User_LiveNess,
+ 		           i_User_ViewNum,
+ 		           i_User_RegTime,
+ 		           i_User_LastLoginTime,
+ 		           i_User_LoginIP,
+ 		           i_User_IsLock,
+ 		           i_User_MailValid_Key,
+ 		           i_User_MailValid,
+ 		           i_User_Question,
+ 		           i_User_Answer,
+ 		           i_User_OpenID,
+ 		           i_User_UCID,
+ 		           i_User_IsRobot,
+ 		           i_User_RedBagNum,
+ 		           i_User_IncomeNum,
+ 		           i_User_RoomID,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.IUserInfo">
+		INSERT INTO i_User_Info ( 
+							i_User_ID ,						
+							i_User_Name ,						
+							i_User_Mail ,						
+							i_User_Pass ,						
+							i_User_RoleID ,						
+							i_User_SaleID ,						
+							i_User_SaleCompanyID ,						
+							i_User_CompanyID ,						
+							i_User_CompanyRoleID ,						
+							i_User_CustomCompanys ,						
+							i_User_ClassID ,						
+							i_User_TypeID ,						
+							i_User_NickName ,						
+							i_User_RealName ,						
+							i_User_Sex ,						
+							i_User_QQ ,						
+							i_User_Tel ,						
+							i_User_Add ,						
+							i_User_Birthday ,						
+							i_User_Profession ,						
+							i_User_Face ,						
+							i_User_About ,						
+							i_User_Faction ,						
+							i_User_Invest ,						
+							i_User_Era ,						
+							i_User_Label ,						
+							i_User_Tags ,						
+							i_User_Score ,						
+							i_User_Money ,						
+							i_User_LiveNess ,						
+							i_User_ViewNum ,						
+							i_User_RegTime ,						
+							i_User_LastLoginTime ,						
+							i_User_LoginIP ,						
+							i_User_IsLock ,						
+							i_User_MailValid_Key ,						
+							i_User_MailValid ,						
+							i_User_Question ,						
+							i_User_Answer ,						
+							i_User_OpenID ,						
+							i_User_UCID ,						
+							i_User_IsRobot ,						
+							i_User_RedBagNum ,						
+							i_User_IncomeNum ,						
+							i_User_RoomID 						
+		) VALUES (
+							#{iUserId,jdbcType=NUMERIC},						
+							#{iUserName,jdbcType=VARCHAR},						
+							#{iUserMail,jdbcType=VARCHAR},						
+							#{iUserPass,jdbcType=VARCHAR},						
+							#{iUserRoleid,jdbcType=NUMERIC},						
+							#{iUserSaleid,jdbcType=NUMERIC},						
+							#{iUserSalecompanyid,jdbcType=NUMERIC},						
+							#{iUserCompanyid,jdbcType=NUMERIC},						
+							#{iUserCompanyroleid,jdbcType=NUMERIC},						
+							#{iUserCustomcompanys,jdbcType=VARCHAR},						
+							#{iUserClassid,jdbcType=NUMERIC},						
+							#{iUserTypeid,jdbcType=NUMERIC},						
+							#{iUserNickname,jdbcType=VARCHAR},						
+							#{iUserRealname,jdbcType=VARCHAR},						
+							#{iUserSex,jdbcType=NUMERIC},						
+							#{iUserQq,jdbcType=VARCHAR},						
+							#{iUserTel,jdbcType=VARCHAR},						
+							#{iUserAdd,jdbcType=VARCHAR},						
+							#{iUserBirthday,jdbcType=VARCHAR},						
+							#{iUserProfession,jdbcType=NUMERIC},						
+							#{iUserFace,jdbcType=VARCHAR},						
+							#{iUserAbout,jdbcType=VARCHAR},						
+							#{iUserFaction,jdbcType=NUMERIC},						
+							#{iUserInvest,jdbcType=VARCHAR},						
+							#{iUserEra,jdbcType=NUMERIC},						
+							#{iUserLabel,jdbcType=VARCHAR},						
+							#{iUserTags,jdbcType=VARCHAR},						
+							#{iUserScore,jdbcType=NUMERIC},						
+							#{iUserMoney,jdbcType=NUMERIC},						
+							#{iUserLiveness,jdbcType=NUMERIC},						
+							#{iUserViewnum,jdbcType=NUMERIC},						
+							#{iUserRegtime,jdbcType=DATE},						
+							#{iUserLastlogintime,jdbcType=DATE},						
+							#{iUserLoginip,jdbcType=VARCHAR},						
+							#{iUserIslock,jdbcType=NUMERIC},						
+							#{iUserMailvalidKey,jdbcType=VARCHAR},						
+							#{iUserMailvalid,jdbcType=NUMERIC},						
+							#{iUserQuestion,jdbcType=VARCHAR},						
+							#{iUserAnswer,jdbcType=VARCHAR},						
+							#{iUserOpenid,jdbcType=VARCHAR},						
+							#{iUserUcid,jdbcType=VARCHAR},						
+							#{iUserIsrobot,jdbcType=NUMERIC},						
+							#{iUserRedbagnum,jdbcType=NUMERIC},						
+							#{iUserIncomenum,jdbcType=NUMERIC},						
+							#{iUserRoomid,jdbcType=NUMERIC}						
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.IUserInfo">
+		UPDATE i_User_Info	
+		<set>
+			 <if test="iUserId != null">i_User_ID=#{iUserId},</if>
+			 <if test="iUserName != null">i_User_Name=#{iUserName},</if>
+			 <if test="iUserMail != null">i_User_Mail=#{iUserMail},</if>
+			 <if test="iUserPass != null">i_User_Pass=#{iUserPass},</if>
+			 <if test="iUserRoleid != null">i_User_RoleID=#{iUserRoleid},</if>
+			 <if test="iUserSaleid != null">i_User_SaleID=#{iUserSaleid},</if>
+			 <if test="iUserSalecompanyid != null">i_User_SaleCompanyID=#{iUserSalecompanyid},</if>
+			 <if test="iUserCompanyid != null">i_User_CompanyID=#{iUserCompanyid},</if>
+			 <if test="iUserCompanyroleid != null">i_User_CompanyRoleID=#{iUserCompanyroleid},</if>
+			 <if test="iUserCustomcompanys != null">i_User_CustomCompanys=#{iUserCustomcompanys},</if>
+			 <if test="iUserClassid != null">i_User_ClassID=#{iUserClassid},</if>
+			 <if test="iUserTypeid != null">i_User_TypeID=#{iUserTypeid},</if>
+			 <if test="iUserNickname != null">i_User_NickName=#{iUserNickname},</if>
+			 <if test="iUserRealname != null">i_User_RealName=#{iUserRealname},</if>
+			 <if test="iUserSex != null">i_User_Sex=#{iUserSex},</if>
+			 <if test="iUserQq != null">i_User_QQ=#{iUserQq},</if>
+			 <if test="iUserTel != null">i_User_Tel=#{iUserTel},</if>
+			 <if test="iUserAdd != null">i_User_Add=#{iUserAdd},</if>
+			 <if test="iUserBirthday != null">i_User_Birthday=#{iUserBirthday},</if>
+			 <if test="iUserProfession != null">i_User_Profession=#{iUserProfession},</if>
+			 <if test="iUserFace != null">i_User_Face=#{iUserFace},</if>
+			 <if test="iUserAbout != null">i_User_About=#{iUserAbout},</if>
+			 <if test="iUserFaction != null">i_User_Faction=#{iUserFaction},</if>
+			 <if test="iUserInvest != null">i_User_Invest=#{iUserInvest},</if>
+			 <if test="iUserEra != null">i_User_Era=#{iUserEra},</if>
+			 <if test="iUserLabel != null">i_User_Label=#{iUserLabel},</if>
+			 <if test="iUserTags != null">i_User_Tags=#{iUserTags},</if>
+			 <if test="iUserScore != null">i_User_Score=#{iUserScore},</if>
+			 <if test="iUserMoney != null">i_User_Money=#{iUserMoney},</if>
+			 <if test="iUserLiveness != null">i_User_LiveNess=#{iUserLiveness},</if>
+			 <if test="iUserViewnum != null">i_User_ViewNum=#{iUserViewnum},</if>
+			 <if test="iUserRegtime != null">i_User_RegTime=#{iUserRegtime},</if>
+			 <if test="iUserLastlogintime != null">i_User_LastLoginTime=#{iUserLastlogintime},</if>
+			 <if test="iUserLoginip != null">i_User_LoginIP=#{iUserLoginip},</if>
+			 <if test="iUserIslock != null">i_User_IsLock=#{iUserIslock},</if>
+			 <if test="iUserMailvalidKey != null">i_User_MailValid_Key=#{iUserMailvalidKey},</if>
+			 <if test="iUserMailvalid != null">i_User_MailValid=#{iUserMailvalid},</if>
+			 <if test="iUserQuestion != null">i_User_Question=#{iUserQuestion},</if>
+			 <if test="iUserAnswer != null">i_User_Answer=#{iUserAnswer},</if>
+			 <if test="iUserOpenid != null">i_User_OpenID=#{iUserOpenid},</if>
+			 <if test="iUserUcid != null">i_User_UCID=#{iUserUcid},</if>
+			 <if test="iUserIsrobot != null">i_User_IsRobot=#{iUserIsrobot},</if>
+			 <if test="iUserRedbagnum != null">i_User_RedBagNum=#{iUserRedbagnum},</if>
+			 <if test="iUserIncomenum != null">i_User_IncomeNum=#{iUserIncomenum},</if>
+			 <if test="iUserRoomid != null">i_User_RoomID=#{iUserRoomid}</if>
+ 	</set>
+		WHERE
+			i_User_ID=#{iUserId} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Long">
+        DELETE FROM i_User_Info	 WHERE 			i_User_ID=#{iUserId}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.IUserInfo">
+        DELETE FROM i_User_Info	 
+         <where>   
+		       <if test="iUserId != null">i_User_ID = #{iUserId}</if>  
+        		       <if test="iUserName != null">and i_User_Name = #{iUserName}</if> 
+	    		       <if test="iUserMail != null">and i_User_Mail = #{iUserMail}</if> 
+	    		       <if test="iUserPass != null">and i_User_Pass = #{iUserPass}</if> 
+	    		       <if test="iUserRoleid != null">and i_User_RoleID = #{iUserRoleid}</if> 
+	    		       <if test="iUserSaleid != null">and i_User_SaleID = #{iUserSaleid}</if> 
+	    		       <if test="iUserSalecompanyid != null">and i_User_SaleCompanyID = #{iUserSalecompanyid}</if> 
+	    		       <if test="iUserCompanyid != null">and i_User_CompanyID = #{iUserCompanyid}</if> 
+	    		       <if test="iUserCompanyroleid != null">and i_User_CompanyRoleID = #{iUserCompanyroleid}</if> 
+	    		       <if test="iUserCustomcompanys != null">and i_User_CustomCompanys = #{iUserCustomcompanys}</if> 
+	    		       <if test="iUserClassid != null">and i_User_ClassID = #{iUserClassid}</if> 
+	    		       <if test="iUserTypeid != null">and i_User_TypeID = #{iUserTypeid}</if> 
+	    		       <if test="iUserNickname != null">and i_User_NickName = #{iUserNickname}</if> 
+	    		       <if test="iUserRealname != null">and i_User_RealName = #{iUserRealname}</if> 
+	    		       <if test="iUserSex != null">and i_User_Sex = #{iUserSex}</if> 
+	    		       <if test="iUserQq != null">and i_User_QQ = #{iUserQq}</if> 
+	    		       <if test="iUserTel != null">and i_User_Tel = #{iUserTel}</if> 
+	    		       <if test="iUserAdd != null">and i_User_Add = #{iUserAdd}</if> 
+	    		       <if test="iUserBirthday != null">and i_User_Birthday = #{iUserBirthday}</if> 
+	    		       <if test="iUserProfession != null">and i_User_Profession = #{iUserProfession}</if> 
+	    		       <if test="iUserFace != null">and i_User_Face = #{iUserFace}</if> 
+	    		       <if test="iUserAbout != null">and i_User_About = #{iUserAbout}</if> 
+	    		       <if test="iUserFaction != null">and i_User_Faction = #{iUserFaction}</if> 
+	    		       <if test="iUserInvest != null">and i_User_Invest = #{iUserInvest}</if> 
+	    		       <if test="iUserEra != null">and i_User_Era = #{iUserEra}</if> 
+	    		       <if test="iUserLabel != null">and i_User_Label = #{iUserLabel}</if> 
+	    		       <if test="iUserTags != null">and i_User_Tags = #{iUserTags}</if> 
+	    		       <if test="iUserScore != null">and i_User_Score = #{iUserScore}</if> 
+	    		       <if test="iUserMoney != null">and i_User_Money = #{iUserMoney}</if> 
+	    		       <if test="iUserLiveness != null">and i_User_LiveNess = #{iUserLiveness}</if> 
+	    		       <if test="iUserViewnum != null">and i_User_ViewNum = #{iUserViewnum}</if> 
+	    		       <if test="iUserRegtime != null">and i_User_RegTime = #{iUserRegtime}</if> 
+	    		       <if test="iUserLastlogintime != null">and i_User_LastLoginTime = #{iUserLastlogintime}</if> 
+	    		       <if test="iUserLoginip != null">and i_User_LoginIP = #{iUserLoginip}</if> 
+	    		       <if test="iUserIslock != null">and i_User_IsLock = #{iUserIslock}</if> 
+	    		       <if test="iUserMailvalidKey != null">and i_User_MailValid_Key = #{iUserMailvalidKey}</if> 
+	    		       <if test="iUserMailvalid != null">and i_User_MailValid = #{iUserMailvalid}</if> 
+	    		       <if test="iUserQuestion != null">and i_User_Question = #{iUserQuestion}</if> 
+	    		       <if test="iUserAnswer != null">and i_User_Answer = #{iUserAnswer}</if> 
+	    		       <if test="iUserOpenid != null">and i_User_OpenID = #{iUserOpenid}</if> 
+	    		       <if test="iUserUcid != null">and i_User_UCID = #{iUserUcid}</if> 
+	    		       <if test="iUserIsrobot != null">and i_User_IsRobot = #{iUserIsrobot}</if> 
+	    		       <if test="iUserRedbagnum != null">and i_User_RedBagNum = #{iUserRedbagnum}</if> 
+	    		       <if test="iUserIncomenum != null">and i_User_IncomeNum = #{iUserIncomenum}</if> 
+	    		       <if test="iUserRoomid != null">and i_User_RoomID = #{iUserRoomid}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="iUserInfo">
+		SELECT 
+			i_User_ID as "iUserId" ,			
+			i_User_Name as "iUserName" ,			
+			i_User_Mail as "iUserMail" ,			
+			i_User_Pass as "iUserPass" ,			
+			i_User_RoleID as "iUserRoleid" ,			
+			i_User_SaleID as "iUserSaleid" ,			
+			i_User_SaleCompanyID as "iUserSalecompanyid" ,			
+			i_User_CompanyID as "iUserCompanyid" ,			
+			i_User_CompanyRoleID as "iUserCompanyroleid" ,			
+			i_User_CustomCompanys as "iUserCustomcompanys" ,			
+			i_User_ClassID as "iUserClassid" ,			
+			i_User_TypeID as "iUserTypeid" ,			
+			i_User_NickName as "iUserNickname" ,			
+			i_User_RealName as "iUserRealname" ,			
+			i_User_Sex as "iUserSex" ,			
+			i_User_QQ as "iUserQq" ,			
+			i_User_Tel as "iUserTel" ,			
+			i_User_Add as "iUserAdd" ,			
+			i_User_Birthday as "iUserBirthday" ,			
+			i_User_Profession as "iUserProfession" ,			
+			i_User_Face as "iUserFace" ,			
+			i_User_About as "iUserAbout" ,			
+			i_User_Faction as "iUserFaction" ,			
+			i_User_Invest as "iUserInvest" ,			
+			i_User_Era as "iUserEra" ,			
+			i_User_Label as "iUserLabel" ,			
+			i_User_Tags as "iUserTags" ,			
+			i_User_Score as "iUserScore" ,			
+			i_User_Money as "iUserMoney" ,			
+			i_User_LiveNess as "iUserLiveness" ,			
+			i_User_ViewNum as "iUserViewnum" ,			
+			i_User_RegTime as "iUserRegtime" ,			
+			i_User_LastLoginTime as "iUserLastlogintime" ,			
+			i_User_LoginIP as "iUserLoginip" ,			
+			i_User_IsLock as "iUserIslock" ,			
+			i_User_MailValid_Key as "iUserMailvalidKey" ,			
+			i_User_MailValid as "iUserMailvalid" ,			
+			i_User_Question as "iUserQuestion" ,			
+			i_User_Answer as "iUserAnswer" ,			
+			i_User_OpenID as "iUserOpenid" ,			
+			i_User_UCID as "iUserUcid" ,			
+			i_User_IsRobot as "iUserIsrobot" ,			
+			i_User_RedBagNum as "iUserRedbagnum" ,			
+			i_User_IncomeNum as "iUserIncomenum" ,			
+			i_User_RoomID as "iUserRoomid" 			
+		FROM i_User_Info
+		WHERE
+			i_User_ID=#{iUserId} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.sqlserver.IUserInfo" resultMap="iUserInfo">
+	SELECT
+			 i_User_ID as "iUserId" ,			
+			 i_User_Name as "iUserName" ,			
+			 i_User_Mail as "iUserMail" ,			
+			 i_User_Pass as "iUserPass" ,			
+			 i_User_RoleID as "iUserRoleid" ,			
+			 i_User_SaleID as "iUserSaleid" ,			
+			 i_User_SaleCompanyID as "iUserSalecompanyid" ,			
+			 i_User_CompanyID as "iUserCompanyid" ,			
+			 i_User_CompanyRoleID as "iUserCompanyroleid" ,			
+			 i_User_CustomCompanys as "iUserCustomcompanys" ,			
+			 i_User_ClassID as "iUserClassid" ,			
+			 i_User_TypeID as "iUserTypeid" ,			
+			 i_User_NickName as "iUserNickname" ,			
+			 i_User_RealName as "iUserRealname" ,			
+			 i_User_Sex as "iUserSex" ,			
+			 i_User_QQ as "iUserQq" ,			
+			 i_User_Tel as "iUserTel" ,			
+			 i_User_Add as "iUserAdd" ,			
+			 i_User_Birthday as "iUserBirthday" ,			
+			 i_User_Profession as "iUserProfession" ,			
+			 i_User_Face as "iUserFace" ,			
+			 i_User_About as "iUserAbout" ,			
+			 i_User_Faction as "iUserFaction" ,			
+			 i_User_Invest as "iUserInvest" ,			
+			 i_User_Era as "iUserEra" ,			
+			 i_User_Label as "iUserLabel" ,			
+			 i_User_Tags as "iUserTags" ,			
+			 i_User_Score as "iUserScore" ,			
+			 i_User_Money as "iUserMoney" ,			
+			 i_User_LiveNess as "iUserLiveness" ,			
+			 i_User_ViewNum as "iUserViewnum" ,			
+			 i_User_RegTime as "iUserRegtime" ,			
+			 i_User_LastLoginTime as "iUserLastlogintime" ,			
+			 i_User_LoginIP as "iUserLoginip" ,			
+			 i_User_IsLock as "iUserIslock" ,			
+			 i_User_MailValid_Key as "iUserMailvalidKey" ,			
+			 i_User_MailValid as "iUserMailvalid" ,			
+			 i_User_Question as "iUserQuestion" ,			
+			 i_User_Answer as "iUserAnswer" ,			
+			 i_User_OpenID as "iUserOpenid" ,			
+			 i_User_UCID as "iUserUcid" ,			
+			 i_User_IsRobot as "iUserIsrobot" ,			
+			 i_User_RedBagNum as "iUserRedbagnum" ,			
+			 i_User_IncomeNum as "iUserIncomenum" ,			
+			 i_User_RoomID as "iUserRoomid" 			
+	FROM  i_User_Info  
+	      <where> 
+		       <if test="iUserId != null">i_User_ID = #{iUserId}</if> 
+		               <if test="maxId != null">i_User_ID &gt;#{maxId}</if> 
+        		       <if test="iUserName != null">and i_User_Name = #{iUserName}</if> 
+	    		       <if test="iUserMail != null">and i_User_Mail = #{iUserMail}</if> 
+	    		       <if test="iUserPass != null">and i_User_Pass = #{iUserPass}</if> 
+	    		       <if test="iUserRoleid != null">and i_User_RoleID = #{iUserRoleid}</if> 
+	    		       <if test="iUserSaleid != null">and i_User_SaleID = #{iUserSaleid}</if> 
+	    		       <if test="iUserSalecompanyid != null">and i_User_SaleCompanyID = #{iUserSalecompanyid}</if> 
+	    		       <if test="iUserCompanyid != null">and i_User_CompanyID = #{iUserCompanyid}</if> 
+	    		       <if test="iUserCompanyroleid != null">and i_User_CompanyRoleID = #{iUserCompanyroleid}</if> 
+	    		       <if test="iUserCustomcompanys != null">and i_User_CustomCompanys = #{iUserCustomcompanys}</if> 
+	    		       <if test="iUserClassid != null">and i_User_ClassID = #{iUserClassid}</if> 
+	    		       <if test="iUserTypeid != null">and i_User_TypeID = #{iUserTypeid}</if> 
+	    		       <if test="iUserNickname != null">and i_User_NickName = #{iUserNickname}</if> 
+	    		       <if test="iUserRealname != null">and i_User_RealName = #{iUserRealname}</if> 
+	    		       <if test="iUserSex != null">and i_User_Sex = #{iUserSex}</if> 
+	    		       <if test="iUserQq != null">and i_User_QQ = #{iUserQq}</if> 
+	    		       <if test="iUserTel != null">and i_User_Tel = #{iUserTel}</if> 
+	    		       <if test="iUserAdd != null">and i_User_Add = #{iUserAdd}</if> 
+	    		       <if test="iUserBirthday != null">and i_User_Birthday = #{iUserBirthday}</if> 
+	    		       <if test="iUserProfession != null">and i_User_Profession = #{iUserProfession}</if> 
+	    		       <if test="iUserFace != null">and i_User_Face = #{iUserFace}</if> 
+	    		       <if test="iUserAbout != null">and i_User_About = #{iUserAbout}</if> 
+	    		       <if test="iUserFaction != null">and i_User_Faction = #{iUserFaction}</if> 
+	    		       <if test="iUserInvest != null">and i_User_Invest = #{iUserInvest}</if> 
+	    		       <if test="iUserEra != null">and i_User_Era = #{iUserEra}</if> 
+	    		       <if test="iUserLabel != null">and i_User_Label = #{iUserLabel}</if> 
+	    		       <if test="iUserTags != null">and i_User_Tags = #{iUserTags}</if> 
+	    		       <if test="iUserScore != null">and i_User_Score = #{iUserScore}</if> 
+	    		       <if test="iUserMoney != null">and i_User_Money = #{iUserMoney}</if> 
+	    		       <if test="iUserLiveness != null">and i_User_LiveNess = #{iUserLiveness}</if> 
+	    		       <if test="iUserViewnum != null">and i_User_ViewNum = #{iUserViewnum}</if> 
+	    		       
+	    		       <if test="iUserRegtime != null">and i_User_RegTime = #{iUserRegtime}</if> 
+	    		       <if test="startTime!= null">and (i_User_RegTime &gt; #{startTime} or i_User_RegTime = #{startTime})</if> 
+	    		       <if test="endTime!= null">and (i_User_RegTime &lt;#{endTime} or i_User_RegTime = #{endTime})</if> 
+	    		       
+	    		       <if test="iUserLastlogintime != null">and i_User_LastLoginTime = #{iUserLastlogintime}</if> 
+	    		       <if test="iUserLoginip != null">and i_User_LoginIP = #{iUserLoginip}</if> 
+	    		       <if test="iUserIslock != null">and i_User_IsLock = #{iUserIslock}</if> 
+	    		       <if test="iUserMailvalidKey != null">and i_User_MailValid_Key = #{iUserMailvalidKey}</if> 
+	    		       <if test="iUserMailvalid != null">and i_User_MailValid = #{iUserMailvalid}</if> 
+	    		       <if test="iUserQuestion != null">and i_User_Question = #{iUserQuestion}</if> 
+	    		       <if test="iUserAnswer != null">and i_User_Answer = #{iUserAnswer}</if> 
+	    		       <if test="iUserOpenid != null">and i_User_OpenID = #{iUserOpenid}</if> 
+	    		       <if test="iUserUcid != null">and i_User_UCID = #{iUserUcid}</if> 
+	    		       <if test="iUserIsrobot != null">and i_User_IsRobot = #{iUserIsrobot}</if> 
+	    		       <if test="iUserRedbagnum != null">and i_User_RedBagNum = #{iUserRedbagnum}</if> 
+	    		       <if test="iUserIncomenum != null">and i_User_IncomeNum = #{iUserIncomenum}</if> 
+	    		       <if test="iUserRoomid != null">and i_User_RoomID = #{iUserRoomid}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM i_User_Info 
+		 <where> 
+		       <if test="iUserId != null">i_User_ID = #{iUserId}</if>
+        		       <if test="iUserName != null">and i_User_Name = #{iUserName}</if> 
+	    		       <if test="iUserMail != null">and i_User_Mail = #{iUserMail}</if> 
+	    		       <if test="iUserPass != null">and i_User_Pass = #{iUserPass}</if> 
+	    		       <if test="iUserRoleid != null">and i_User_RoleID = #{iUserRoleid}</if> 
+	    		       <if test="iUserSaleid != null">and i_User_SaleID = #{iUserSaleid}</if> 
+	    		       <if test="iUserSalecompanyid != null">and i_User_SaleCompanyID = #{iUserSalecompanyid}</if> 
+	    		       <if test="iUserCompanyid != null">and i_User_CompanyID = #{iUserCompanyid}</if> 
+	    		       <if test="iUserCompanyroleid != null">and i_User_CompanyRoleID = #{iUserCompanyroleid}</if> 
+	    		       <if test="iUserCustomcompanys != null">and i_User_CustomCompanys = #{iUserCustomcompanys}</if> 
+	    		       <if test="iUserClassid != null">and i_User_ClassID = #{iUserClassid}</if> 
+	    		       <if test="iUserTypeid != null">and i_User_TypeID = #{iUserTypeid}</if> 
+	    		       <if test="iUserNickname != null">and i_User_NickName = #{iUserNickname}</if> 
+	    		       <if test="iUserRealname != null">and i_User_RealName = #{iUserRealname}</if> 
+	    		       <if test="iUserSex != null">and i_User_Sex = #{iUserSex}</if> 
+	    		       <if test="iUserQq != null">and i_User_QQ = #{iUserQq}</if> 
+	    		       <if test="iUserTel != null">and i_User_Tel = #{iUserTel}</if> 
+	    		       <if test="iUserAdd != null">and i_User_Add = #{iUserAdd}</if> 
+	    		       <if test="iUserBirthday != null">and i_User_Birthday = #{iUserBirthday}</if> 
+	    		       <if test="iUserProfession != null">and i_User_Profession = #{iUserProfession}</if> 
+	    		       <if test="iUserFace != null">and i_User_Face = #{iUserFace}</if> 
+	    		       <if test="iUserAbout != null">and i_User_About = #{iUserAbout}</if> 
+	    		       <if test="iUserFaction != null">and i_User_Faction = #{iUserFaction}</if> 
+	    		       <if test="iUserInvest != null">and i_User_Invest = #{iUserInvest}</if> 
+	    		       <if test="iUserEra != null">and i_User_Era = #{iUserEra}</if> 
+	    		       <if test="iUserLabel != null">and i_User_Label = #{iUserLabel}</if> 
+	    		       <if test="iUserTags != null">and i_User_Tags = #{iUserTags}</if> 
+	    		       <if test="iUserScore != null">and i_User_Score = #{iUserScore}</if> 
+	    		       <if test="iUserMoney != null">and i_User_Money = #{iUserMoney}</if> 
+	    		       <if test="iUserLiveness != null">and i_User_LiveNess = #{iUserLiveness}</if> 
+	    		       <if test="iUserViewnum != null">and i_User_ViewNum = #{iUserViewnum}</if> 
+	    		       <if test="iUserRegtime != null">and i_User_RegTime = #{iUserRegtime}</if> 
+	    		       <if test="iUserLastlogintime != null">and i_User_LastLoginTime = #{iUserLastlogintime}</if> 
+	    		       <if test="iUserLoginip != null">and i_User_LoginIP = #{iUserLoginip}</if> 
+	    		       <if test="iUserIslock != null">and i_User_IsLock = #{iUserIslock}</if> 
+	    		       <if test="iUserMailvalidKey != null">and i_User_MailValid_Key = #{iUserMailvalidKey}</if> 
+	    		       <if test="iUserMailvalid != null">and i_User_MailValid = #{iUserMailvalid}</if> 
+	    		       <if test="iUserQuestion != null">and i_User_Question = #{iUserQuestion}</if> 
+	    		       <if test="iUserAnswer != null">and i_User_Answer = #{iUserAnswer}</if> 
+	    		       <if test="iUserOpenid != null">and i_User_OpenID = #{iUserOpenid}</if> 
+	    		       <if test="iUserUcid != null">and i_User_UCID = #{iUserUcid}</if> 
+	    		       <if test="iUserIsrobot != null">and i_User_IsRobot = #{iUserIsrobot}</if> 
+	    		       <if test="iUserRedbagnum != null">and i_User_RedBagNum = #{iUserRedbagnum}</if> 
+	    		       <if test="iUserIncomenum != null">and i_User_IncomeNum = #{iUserIncomenum}</if> 
+	    		       <if test="iUserRoomid != null">and i_User_RoomID = #{iUserRoomid}</if> 
+	    		</where>
+	</select>
+	
+	
+	<select id="findByDate" parameterType="Map" resultMap="iUserInfo">
+		select * from i_User_Info 
+		<where>
+			 <!-- CONVERT(CHAR(10),i_User_RegTime,23)=#{date} --> 
+			 i_User_RegTime &lt; getDate()
+		</where>
+	</select>
+	
+	<select id="findByDateAndDate" parameterType="java.lang.String" resultMap="iUserInfo">
+		select * from i_User_Info 
+		<where>
+		   CONVERT(CHAR(10),i_User_RegTime,23)=#{date}
+		</where> 
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'i_User_Info'
+	</select>
+	
+	<select id="findByMaxId" parameterType="java.lang.Long" resultMap="iUserInfo">
+		SELECT 
+			i_User_ID as "iUserId" ,			
+			i_User_Name as "iUserName" ,			
+			i_User_Mail as "iUserMail" ,			
+			i_User_Pass as "iUserPass" ,			
+			i_User_RoleID as "iUserRoleid" ,			
+			i_User_SaleID as "iUserSaleid" ,			
+			i_User_SaleCompanyID as "iUserSalecompanyid" ,			
+			i_User_CompanyID as "iUserCompanyid" ,			
+			i_User_CompanyRoleID as "iUserCompanyroleid" ,			
+			i_User_CustomCompanys as "iUserCustomcompanys" ,			
+			i_User_ClassID as "iUserClassid" ,			
+			i_User_TypeID as "iUserTypeid" ,			
+			i_User_NickName as "iUserNickname" ,			
+			i_User_RealName as "iUserRealname" ,			
+			i_User_Sex as "iUserSex" ,			
+			i_User_QQ as "iUserQq" ,			
+			i_User_Tel as "iUserTel" ,			
+			i_User_Add as "iUserAdd" ,			
+			i_User_Birthday as "iUserBirthday" ,			
+			i_User_Profession as "iUserProfession" ,			
+			i_User_Face as "iUserFace" ,			
+			i_User_About as "iUserAbout" ,			
+			i_User_Faction as "iUserFaction" ,			
+			i_User_Invest as "iUserInvest" ,			
+			i_User_Era as "iUserEra" ,			
+			i_User_Label as "iUserLabel" ,			
+			i_User_Tags as "iUserTags" ,			
+			i_User_Score as "iUserScore" ,			
+			i_User_Money as "iUserMoney" ,			
+			i_User_LiveNess as "iUserLiveness" ,			
+			i_User_ViewNum as "iUserViewnum" ,			
+			i_User_RegTime as "iUserRegtime" ,			
+			i_User_LastLoginTime as "iUserLastlogintime" ,			
+			i_User_LoginIP as "iUserLoginip" ,			
+			i_User_IsLock as "iUserIslock" ,			
+			i_User_MailValid_Key as "iUserMailvalidKey" ,			
+			i_User_MailValid as "iUserMailvalid" ,			
+			i_User_Question as "iUserQuestion" ,			
+			i_User_Answer as "iUserAnswer" ,			
+			i_User_OpenID as "iUserOpenid" ,			
+			i_User_UCID as "iUserUcid" ,			
+			i_User_IsRobot as "iUserIsrobot" ,			
+			i_User_RedBagNum as "iUserRedbagnum" ,			
+			i_User_IncomeNum as "iUserIncomenum" ,			
+			i_User_RoomID as "iUserRoomid" 			
+		FROM i_User_Info
+		WHERE 1=1
+			   <if test="_parameter!= null">and i_User_ID &gt; #{_parameter}</if>order by i_User_ID
+		</select>
+</mapper>

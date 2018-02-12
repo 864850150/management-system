@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NagDatapooluser">
+	    <resultMap id="nagDatapooluser" type="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooluser">
+                  <result column="DPU_DP_ID" property="dpuDpId" />
+ 		          <result column="DPU_U_ID" property="dpuUId" />
+ 		          <result column="DPU_AGENTID" property="dpuAgentid" />
+ 		          <result column="DPU_AGENTNAME" property="dpuAgentname" />
+ 		          <result column="DPU_DATACOUNT" property="dpuDatacount" />
+ 		          <result column="DPU_CALLDATACOUNT" property="dpuCalldatacount" />
+ 		          <result column="DPU_CALLBACKCOUNT" property="dpuCallbackcount" />
+ 		          <result column="DPU_AUTOCOUNT" property="dpuAutocount" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           DPU_DP_ID,
+ 		           DPU_U_ID,
+ 		           DPU_AGENTID,
+ 		           DPU_AGENTNAME,
+ 		           DPU_DATACOUNT,
+ 		           DPU_CALLDATACOUNT,
+ 		           DPU_CALLBACKCOUNT,
+ 		           DPU_AUTOCOUNT,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooluser">
+		INSERT INTO NAG_DATAPOOLUSER ( 
+							DPU_DP_ID ,						
+							DPU_U_ID ,						
+							DPU_AGENTID ,						
+							DPU_AGENTNAME ,						
+							DPU_DATACOUNT ,						
+							DPU_CALLDATACOUNT ,						
+							DPU_CALLBACKCOUNT ,						
+							DPU_AUTOCOUNT 						
+		) VALUES (
+							#{dpuDpId,jdbcType=NUMERIC},						
+							#{dpuUId,jdbcType=NUMERIC},						
+							#{dpuAgentid,jdbcType=VARCHAR},						
+							#{dpuAgentname,jdbcType=VARCHAR},						
+							#{dpuDatacount,jdbcType=NUMERIC},						
+							#{dpuCalldatacount,jdbcType=NUMERIC},						
+							#{dpuCallbackcount,jdbcType=NUMERIC},						
+							#{dpuAutocount,jdbcType=NUMERIC}						
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooluser">
+		UPDATE NAG_DATAPOOLUSER	
+		<set>
+			 <if test="dpuDpId != null">DPU_DP_ID=#{dpuDpId},</if>
+			 <if test="dpuUId != null">DPU_U_ID=#{dpuUId},</if>
+			 <if test="dpuAgentid != null">DPU_AGENTID=#{dpuAgentid},</if>
+			 <if test="dpuAgentname != null">DPU_AGENTNAME=#{dpuAgentname},</if>
+			 <if test="dpuDatacount != null">DPU_DATACOUNT=#{dpuDatacount},</if>
+			 <if test="dpuCalldatacount != null">DPU_CALLDATACOUNT=#{dpuCalldatacount},</if>
+			 <if test="dpuCallbackcount != null">DPU_CALLBACKCOUNT=#{dpuCallbackcount},</if>
+			 <if test="dpuAutocount != null">DPU_AUTOCOUNT=#{dpuAutocount}</if>
+ 	</set>
+		WHERE
+			DPU_DP_ID=#{dpuDpId} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Long">
+        DELETE FROM NAG_DATAPOOLUSER	 WHERE 			DPU_DP_ID=#{dpuDpId}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooluser">
+        DELETE FROM NAG_DATAPOOLUSER	 
+         <where>   
+		       <if test="dpuDpId != null">DPU_DP_ID = #{dpuDpId}</if>  
+        		       <if test="dpuUId != null">and DPU_U_ID = #{dpuUId}</if> 
+	    		       <if test="dpuAgentid != null">and DPU_AGENTID = #{dpuAgentid}</if> 
+	    		       <if test="dpuAgentname != null">and DPU_AGENTNAME = #{dpuAgentname}</if> 
+	    		       <if test="dpuDatacount != null">and DPU_DATACOUNT = #{dpuDatacount}</if> 
+	    		       <if test="dpuCalldatacount != null">and DPU_CALLDATACOUNT = #{dpuCalldatacount}</if> 
+	    		       <if test="dpuCallbackcount != null">and DPU_CALLBACKCOUNT = #{dpuCallbackcount}</if> 
+	    		       <if test="dpuAutocount != null">and DPU_AUTOCOUNT = #{dpuAutocount}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="nagDatapooluser">
+		SELECT 
+			DPU_DP_ID as "dpuDpId" ,			
+			DPU_U_ID as "dpuUId" ,			
+			DPU_AGENTID as "dpuAgentid" ,			
+			DPU_AGENTNAME as "dpuAgentname" ,			
+			DPU_DATACOUNT as "dpuDatacount" ,			
+			DPU_CALLDATACOUNT as "dpuCalldatacount" ,			
+			DPU_CALLBACKCOUNT as "dpuCallbackcount" ,			
+			DPU_AUTOCOUNT as "dpuAutocount" 			
+		FROM NAG_DATAPOOLUSER
+		WHERE
+			DPU_DP_ID=#{dpuDpId} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDatapooluser" resultMap="nagDatapooluser">
+	SELECT
+			 DPU_DP_ID as "dpuDpId" ,			
+			 DPU_U_ID as "dpuUId" ,			
+			 DPU_AGENTID as "dpuAgentid" ,			
+			 DPU_AGENTNAME as "dpuAgentname" ,			
+			 DPU_DATACOUNT as "dpuDatacount" ,			
+			 DPU_CALLDATACOUNT as "dpuCalldatacount" ,			
+			 DPU_CALLBACKCOUNT as "dpuCallbackcount" ,			
+			 DPU_AUTOCOUNT as "dpuAutocount" 			
+	FROM  NAG_DATAPOOLUSER  
+	      <where> 
+		       <if test="dpuDpId != null">DPU_DP_ID = #{dpuDpId}</if>  
+        		       <if test="dpuUId != null">and DPU_U_ID = #{dpuUId}</if> 
+	    		       <if test="dpuAgentid != null">and DPU_AGENTID = #{dpuAgentid}</if> 
+	    		       <if test="dpuAgentname != null">and DPU_AGENTNAME = #{dpuAgentname}</if> 
+	    		       <if test="dpuDatacount != null">and DPU_DATACOUNT = #{dpuDatacount}</if> 
+	    		       <if test="dpuCalldatacount != null">and DPU_CALLDATACOUNT = #{dpuCalldatacount}</if> 
+	    		       <if test="dpuCallbackcount != null">and DPU_CALLBACKCOUNT = #{dpuCallbackcount}</if> 
+	    		       <if test="dpuAutocount != null">and DPU_AUTOCOUNT = #{dpuAutocount}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM NAG_DATAPOOLUSER 
+		 <where> 
+		       <if test="dpuDpId != null">DPU_DP_ID = #{dpuDpId}</if>  
+        		       <if test="dpuUId != null">and DPU_U_ID = #{dpuUId}</if> 
+	    		       <if test="dpuAgentid != null">and DPU_AGENTID = #{dpuAgentid}</if> 
+	    		       <if test="dpuAgentname != null">and DPU_AGENTNAME = #{dpuAgentname}</if> 
+	    		       <if test="dpuDatacount != null">and DPU_DATACOUNT = #{dpuDatacount}</if> 
+	    		       <if test="dpuCalldatacount != null">and DPU_CALLDATACOUNT = #{dpuCalldatacount}</if> 
+	    		       <if test="dpuCallbackcount != null">and DPU_CALLBACKCOUNT = #{dpuCallbackcount}</if> 
+	    		       <if test="dpuAutocount != null">and DPU_AUTOCOUNT = #{dpuAutocount}</if> 
+	    		</where>
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'NAG_DATAPOOLUSER'
+	</select>
+</mapper>

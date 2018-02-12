@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TbUser">
+	    <resultMap id="tbUser" type="com.ruyu.web.portal.bi.app.domain.TbUser">
+                  <result column="id" property="id" />
+ 		          <result column="sourceId" property="sourceid" />
+ 		          <result column="userID" property="userid" />
+ 		          <result column="nickName" property="nickname" />
+ 		          <result column="roomID" property="roomid" />
+ 		          <result column="loginIP" property="loginip" />
+ 		          <result column="regTime" property="regtime" />
+ 		          <result column="userTel" property="userTel" />
+ 		          <result column="userMail" property="userMail" />
+ 		          <result column="exportFlag" property="exportFlag" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           id,
+ 		           sourceId,
+ 		           userID,
+ 		           nickName,
+ 		           roomID,
+ 		           loginIP,
+ 		           regTime,
+ 		           userTel,
+ 		           userMail,
+ 		           exportFlag
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.TbUser">
+		INSERT INTO tb_user ( 
+						
+							sourceId ,						
+							userID ,						
+							nickName ,						
+							roomID ,						
+							loginIP ,						
+							regTime ,
+							userTel,
+							userMail					
+		) VALUES (
+						
+							#{sourceid,jdbcType=VARCHAR},						
+							#{userid,jdbcType=VARCHAR},						
+							#{nickname,jdbcType=VARCHAR},						
+							#{roomid,jdbcType=NUMERIC},						
+							#{loginip,jdbcType=VARCHAR},						
+							#{regtime,jdbcType=TIMESTAMP},
+							#{userTel,jdbcType=VARCHAR},
+							#{userMail,jdbcType=VARCHAR}					
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.TbUser">
+		UPDATE tb_user	
+		<set>
+			 <if test="sourceid != null">sourceId=#{sourceid},</if>
+			 <if test="userid != null">userID=#{userid},</if>
+			 <if test="nickname != null">nickName=#{nickname},</if>
+			 <if test="roomid != null">roomID=#{roomid},</if>
+			 <if test="loginip != null">loginIP=#{loginip},</if>
+			 <if test="regtime != null">regTime=#{regtime},</if>
+			 <if test="userTel != null">userTel=#{userTel},</if>
+			 <if test="userMail != null">userMail=#{userMail},</if>
+			 <if test="exportFlag !=null">exportFlag=#{exportFlag}</if> 
+ 	</set>
+		WHERE
+			id=#{id} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Long">
+        DELETE FROM tb_user	 WHERE 			id=#{id}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.TbUser">
+        DELETE FROM tb_user	 
+         <where>   
+		       <if test="id != null">id = #{id}</if>  
+        		       <if test="sourceid != null">and sourceId = #{sourceid}</if> 
+	    		       <if test="userid != null">and userID = #{userid}</if> 
+	    		       <if test="nickname != null">and nickName = #{nickname}</if> 
+	    		       <if test="roomid != null">and roomID = #{roomid}</if> 
+	    		       <if test="loginip != null">and loginIP = #{loginip}</if> 
+	    		       <if test="regtime != null">and regTime = #{regtime}</if>
+	    		       <if test="userTel != null">and userTel=#{userTel}</if>
+			           <if test="userMail != null">and userMail=#{userMail}</if> 
+			           <if test="exportFlag !=null">and exportFlag=#{exportFlag}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="tbUser">
+		SELECT 
+			id as "id" ,			
+			sourceId as "sourceid" ,			
+			userID as "userid" ,			
+			nickName as "nickname" ,			
+			roomID as "roomid" ,			
+			loginIP as "loginip" ,			
+			regTime as "regtime",
+			userTel as "userTel",
+			userMail as "userMail",
+			exportFlag as "exportFlag"			
+		FROM tb_user
+		WHERE
+			id=#{id} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.TbUser" resultMap="tbUser">
+	SELECT
+			 id as "id" ,			
+			 sourceId as "sourceid" ,			
+			 userID as "userid" ,			
+			 nickName as "nickname" ,			
+			 roomID as "roomid" ,			
+			 loginIP as "loginip" ,	
+			 regTime as "regtime",
+			 userTel as "userTel",
+			 userMail as "userMail",
+			 exportFlag as "exportFlag"	
+	FROM  tb_user  
+	      <where> 
+	      	1=1
+		       <if test="id != null">and id = #{id}</if>  
+        		       <if test="sourceid != null">and sourceId = #{sourceid}</if> 
+	    		       <if test="userid != null">and userID = #{userid}</if> 
+	    		       <if test="nickname != null">and nickName = #{nickname}</if> 
+	    		       <if test="roomid != null">and roomID = #{roomid}</if> 
+	    		       <if test="loginip != null">and loginIP = #{loginip}</if> 
+	    		       <if test="regtime != null">and regTime = #{regtime}</if> 
+	    		       <if test="searchTime != null">and CONVERT(varchar(100),regTime,23)=#{searchTime}</if>
+	    		       <if test="userTel != null">and userTel = #{userTel}</if> 
+	    		       <if test="userMail != null">and userMail = #{userMail}</if> 
+	    		       <if test="exportFlag !=null">and exportFlag=#{exportFlag}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM tb_user 
+		 <where> 
+		       <if test="id != null">id = #{id}</if>  
+        		       <if test="sourceid != null">and sourceId = #{sourceid}</if> 
+	    		       <if test="userid != null">and userID = #{userid}</if> 
+	    		       <if test="nickname != null">and nickName = #{nickname}</if> 
+	    		       <if test="roomid != null">and roomID = #{roomid}</if> 
+	    		       <if test="loginip != null">and loginIP = #{loginip}</if> 
+	    		       <if test="regtime != null">and regTime = #{regtime}</if> 
+	    		       <if test="userTel != null">and userTel = #{userTel}</if> 
+	    		       <if test="userMail != null">and userMail = #{userMail}</if>
+	    		       <if test="exportFlag !=null">and exportFlag=#{exportFlag}</if>  
+	    		</where>
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'tb_user'
+	</select>
+</mapper>

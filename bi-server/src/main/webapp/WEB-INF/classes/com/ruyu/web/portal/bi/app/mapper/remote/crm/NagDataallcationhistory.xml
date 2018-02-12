@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NagDataallcationhistory">
+	    <resultMap id="nagDataallcationhistory" type="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDataallcationhistory">
+                  <result column="DAH_ID" property="dahId" />
+ 		          <result column="DAH_OUTCALLID" property="dahOutcallid" />
+ 		          <result column="DAH_OUTCALLNAME" property="dahOutcallname" />
+ 		          <result column="DAH_CUSTOMERID" property="dahCustomerid" />
+ 		          <result column="DAH_AGENTID" property="dahAgentid" />
+ 		          <result column="DAH_AGENTNAME" property="dahAgentname" />
+ 		          <result column="DAH_ISDELETE" property="dahIsdelete" />
+ 		          <result column="DAH_CREATEDATETIME" property="dahCreatedatetime" />
+ 		          <result column="DAH_CREATEBY" property="dahCreateby" />
+ 		          <result column="DAH_TYPE" property="dahType" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           DAH_ID,
+ 		           DAH_OUTCALLID,
+ 		           DAH_OUTCALLNAME,
+ 		           DAH_CUSTOMERID,
+ 		           DAH_AGENTID,
+ 		           DAH_AGENTNAME,
+ 		           DAH_ISDELETE,
+ 		           DAH_CREATEDATETIME,
+ 		           DAH_CREATEBY,
+ 		           DAH_TYPE,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDataallcationhistory">
+		INSERT INTO NAG_DATAALLCATIONHISTORY ( 	
+							DAH_OUTCALLID ,						
+							DAH_OUTCALLNAME ,						
+							DAH_CUSTOMERID ,						
+							DAH_AGENTID ,						
+							DAH_AGENTNAME ,		
+							DAH_CREATEBY 					
+												
+		) VALUES (
+													
+							#{dahOutcallid,jdbcType=VARCHAR},						
+							#{dahOutcallname,jdbcType=VARCHAR},						
+							#{dahCustomerid,jdbcType=VARCHAR},						
+							#{dahAgentid,jdbcType=VARCHAR},						
+							#{dahAgentname,jdbcType=VARCHAR},
+							#{dahCreateby,jdbcType=VARCHAR}				
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDataallcationhistory">
+		UPDATE NAG_DATAALLCATIONHISTORY	
+		<set>
+			 <if test="dahId != null">DAH_ID=#{dahId},</if>
+			 <if test="dahOutcallid != null">DAH_OUTCALLID=#{dahOutcallid},</if>
+			 <if test="dahOutcallname != null">DAH_OUTCALLNAME=#{dahOutcallname},</if>
+			 <if test="dahCustomerid != null">DAH_CUSTOMERID=#{dahCustomerid},</if>
+			 <if test="dahAgentid != null">DAH_AGENTID=#{dahAgentid},</if>
+			 <if test="dahAgentname != null">DAH_AGENTNAME=#{dahAgentname},</if>
+			 <if test="dahIsdelete != null">DAH_ISDELETE=#{dahIsdelete},</if>
+			 <if test="dahCreatedatetime != null">DAH_CREATEDATETIME=#{dahCreatedatetime},</if>
+			 <if test="dahCreateby != null">DAH_CREATEBY=#{dahCreateby},</if>
+			 <if test="dahType != null">DAH_TYPE=#{dahType}</if>
+ 	</set>
+		WHERE
+	</update>
+	
+
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDataallcationhistory">
+        DELETE FROM NAG_DATAALLCATIONHISTORY	 
+         <where>   
+		       <if test="dahId != null">DAH_ID = #{dahId}</if>  
+        		       <if test="dahOutcallid != null">and DAH_OUTCALLID = #{dahOutcallid}</if> 
+	    		       <if test="dahOutcallname != null">and DAH_OUTCALLNAME = #{dahOutcallname}</if> 
+	    		       <if test="dahCustomerid != null">and DAH_CUSTOMERID = #{dahCustomerid}</if> 
+	    		       <if test="dahAgentid != null">and DAH_AGENTID = #{dahAgentid}</if> 
+	    		       <if test="dahAgentname != null">and DAH_AGENTNAME = #{dahAgentname}</if> 
+	    		       <if test="dahIsdelete != null">and DAH_ISDELETE = #{dahIsdelete}</if> 
+	    		       <if test="dahCreatedatetime != null">and DAH_CREATEDATETIME = #{dahCreatedatetime}</if> 
+	    		       <if test="dahCreateby != null">and DAH_CREATEBY = #{dahCreateby}</if> 
+	    		       <if test="dahType != null">and DAH_TYPE = #{dahType}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="nagDataallcationhistory">
+		SELECT 
+			DAH_ID as "dahId" ,			
+			DAH_OUTCALLID as "dahOutcallid" ,			
+			DAH_OUTCALLNAME as "dahOutcallname" ,			
+			DAH_CUSTOMERID as "dahCustomerid" ,			
+			DAH_AGENTID as "dahAgentid" ,			
+			DAH_AGENTNAME as "dahAgentname" ,			
+			DAH_ISDELETE as "dahIsdelete" ,			
+			DAH_CREATEDATETIME as "dahCreatedatetime" ,			
+			DAH_CREATEBY as "dahCreateby" ,			
+			DAH_TYPE as "dahType" 			
+		FROM NAG_DATAALLCATIONHISTORY
+		WHERE
+	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.crm.NagDataallcationhistory" resultMap="nagDataallcationhistory">
+	SELECT
+			 DAH_ID as "dahId" ,			
+			 DAH_OUTCALLID as "dahOutcallid" ,			
+			 DAH_OUTCALLNAME as "dahOutcallname" ,			
+			 DAH_CUSTOMERID as "dahCustomerid" ,			
+			 DAH_AGENTID as "dahAgentid" ,			
+			 DAH_AGENTNAME as "dahAgentname" ,			
+			 DAH_ISDELETE as "dahIsdelete" ,			
+			 DAH_CREATEDATETIME as "dahCreatedatetime" ,			
+			 DAH_CREATEBY as "dahCreateby" ,			
+			 DAH_TYPE as "dahType" 			
+	FROM  NAG_DATAALLCATIONHISTORY  
+	      <where> 
+		       <if test="dahId != null">DAH_ID = #{dahId}</if>  
+        		       <if test="dahOutcallid != null">and DAH_OUTCALLID = #{dahOutcallid}</if> 
+	    		       <if test="dahOutcallname != null">and DAH_OUTCALLNAME = #{dahOutcallname}</if> 
+	    		       <if test="dahCustomerid != null">and DAH_CUSTOMERID = #{dahCustomerid}</if> 
+	    		       <if test="dahAgentid != null">and DAH_AGENTID = #{dahAgentid}</if> 
+	    		       <if test="dahAgentname != null">and DAH_AGENTNAME = #{dahAgentname}</if> 
+	    		       <if test="dahIsdelete != null">and DAH_ISDELETE = #{dahIsdelete}</if> 
+	    		       <if test="dahCreatedatetime != null">and DAH_CREATEDATETIME = #{dahCreatedatetime}</if> 
+	    		       <if test="dahCreateby != null">and DAH_CREATEBY = #{dahCreateby}</if> 
+	    		       <if test="dahType != null">and DAH_TYPE = #{dahType}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM NAG_DATAALLCATIONHISTORY 
+		 <where> 
+		       <if test="dahId != null">DAH_ID = #{dahId}</if>  
+        		       <if test="dahOutcallid != null">and DAH_OUTCALLID = #{dahOutcallid}</if> 
+	    		       <if test="dahOutcallname != null">and DAH_OUTCALLNAME = #{dahOutcallname}</if> 
+	    		       <if test="dahCustomerid != null">and DAH_CUSTOMERID = #{dahCustomerid}</if> 
+	    		       <if test="dahAgentid != null">and DAH_AGENTID = #{dahAgentid}</if> 
+	    		       <if test="dahAgentname != null">and DAH_AGENTNAME = #{dahAgentname}</if> 
+	    		       <if test="dahIsdelete != null">and DAH_ISDELETE = #{dahIsdelete}</if> 
+	    		       <if test="dahCreatedatetime != null">and DAH_CREATEDATETIME = #{dahCreatedatetime}</if> 
+	    		       <if test="dahCreateby != null">and DAH_CREATEBY = #{dahCreateby}</if> 
+	    		       <if test="dahType != null">and DAH_TYPE = #{dahType}</if> 
+	    		</where>
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'NAG_DATAALLCATIONHISTORY'
+	</select>
+</mapper>

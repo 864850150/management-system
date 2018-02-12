@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Userlist">
+	    <resultMap id="userlist" type="com.ruyu.web.portal.bi.app.domain.remote.room2.Userlist">
+                  <result column="mid" property="id" />
+ 		          <result column="username" property="username" />
+ 		          <result column="nickname" property="nickname" />
+ 		          <result column="password" property="password" />
+ 		          <result column="adminid" property="adminid" />
+ 		          <result column="fangxiang" property="fangxiang" />
+ 		          <result column="fenxifa" property="fenxifa" />
+ 		          <result column="gender" property="gender" />
+ 		          <result column="email" property="email" />
+ 		          <result column="telephone" property="telephone" />
+ 		          <result column="qq" property="qq" />
+ 		          <result column="logintime" property="logintime" />
+ 		          <result column="dateline" property="dateline" />
+ 		          <result column="updatetime" property="updatetime" />
+ 		          <result column="create_time" property="createTime" />
+ 		          <result column="flowers" property="flowers" />
+ 		          <result column="flowerstime" property="flowerstime" />
+ 		          <result column="tuijianmid" property="tuijianmid" />
+ 		          <result column="jianjin_flag" property="jianjinFlag" />
+ 		          <result column="fid" property="fid" />
+ 		          <result column="reg_IP" property="regIp" />
+ 		          <result column="login_IP" property="loginIp" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           mid,
+ 		           username,
+ 		           nickname,
+ 		           password,
+ 		           adminid,
+ 		           fangxiang,
+ 		           fenxifa,
+ 		           gender,
+ 		           email,
+ 		           telephone,
+ 		           qq,
+ 		           logintime,
+ 		           dateline,
+ 		           updatetime,
+ 		           create_time,
+ 		           flowers,
+ 		           flowerstime,
+ 		           tuijianmid,
+ 		           jianjin_flag,
+ 		           fid,
+ 		           reg_IP,
+ 		           login_IP,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.Userlist">
+		INSERT INTO userlist ( 
+							mid ,						
+							username ,						
+							nickname ,						
+							password ,						
+							adminid ,						
+							fangxiang ,						
+							fenxifa ,						
+							gender ,						
+							email ,						
+							telephone ,						
+							qq ,						
+							logintime ,						
+							dateline ,						
+							updatetime ,						
+							create_time ,						
+							flowers ,						
+							flowerstime ,						
+							tuijianmid ,						
+							jianjin_flag ,						
+							fid ,						
+							reg_IP ,						
+							login_IP 						
+		) VALUES (
+							#{id,jdbcType=NUMERIC},						
+							#{username,jdbcType=VARCHAR},						
+							#{nickname,jdbcType=VARCHAR},						
+							#{password,jdbcType=VARCHAR},						
+							#{adminid,jdbcType=NUMERIC},						
+							#{fangxiang,jdbcType=VARCHAR},						
+							#{fenxifa,jdbcType=VARCHAR},						
+							#{gender,jdbcType=VARCHAR},						
+							#{email,jdbcType=VARCHAR},						
+							#{telephone,jdbcType=VARCHAR},						
+							#{qq,jdbcType=VARCHAR},						
+							#{logintime,jdbcType=NUMERIC},						
+							#{dateline,jdbcType=NUMERIC},						
+							#{updatetime,jdbcType=NUMERIC},						
+							#{createTime,jdbcType=NUMERIC},						
+							#{flowers,jdbcType=NUMERIC},						
+							#{flowerstime,jdbcType=NUMERIC},						
+							#{tuijianmid,jdbcType=NUMERIC},						
+							#{jianjinFlag,jdbcType=VARCHAR},						
+							#{fid,jdbcType=NUMERIC},						
+							#{regIp,jdbcType=VARCHAR},						
+							#{loginIp,jdbcType=VARCHAR}						
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.Userlist">
+		UPDATE userlist	
+		<set>
+			 <if test="id != null">mid=#{id},</if>
+			 <if test="username != null">username=#{username},</if>
+			 <if test="nickname != null">nickname=#{nickname},</if>
+			 <if test="password != null">password=#{password},</if>
+			 <if test="adminid != null">adminid=#{adminid},</if>
+			 <if test="fangxiang != null">fangxiang=#{fangxiang},</if>
+			 <if test="fenxifa != null">fenxifa=#{fenxifa},</if>
+			 <if test="gender != null">gender=#{gender},</if>
+			 <if test="email != null">email=#{email},</if>
+			 <if test="telephone != null">telephone=#{telephone},</if>
+			 <if test="qq != null">qq=#{qq},</if>
+			 <if test="logintime != null">logintime=#{logintime},</if>
+			 <if test="dateline != null">dateline=#{dateline},</if>
+			 <if test="updatetime != null">updatetime=#{updatetime},</if>
+			 <if test="createTime != null">create_time=#{createTime},</if>
+			 <if test="flowers != null">flowers=#{flowers},</if>
+			 <if test="flowerstime != null">flowerstime=#{flowerstime},</if>
+			 <if test="tuijianmid != null">tuijianmid=#{tuijianmid},</if>
+			 <if test="jianjinFlag != null">jianjin_flag=#{jianjinFlag},</if>
+			 <if test="fid != null">fid=#{fid},</if>
+			 <if test="regIp != null">reg_IP=#{regIp},</if>
+			 <if test="loginIp != null">login_IP=#{loginIp}</if>
+ 	</set>
+		WHERE
+			mid=#{mid} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Integer">
+        DELETE FROM userlist	 WHERE 			mid=#{id}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.Userlist">
+        DELETE FROM userlist	 
+         <where>   
+		       <if test="id != null">mid = #{id}</if>  
+        		       <if test="username != null">and username = #{username}</if> 
+	    		       <if test="nickname != null">and nickname = #{nickname}</if> 
+	    		       <if test="password != null">and password = #{password}</if> 
+	    		       <if test="adminid != null">and adminid = #{adminid}</if> 
+	    		       <if test="fangxiang != null">and fangxiang = #{fangxiang}</if> 
+	    		       <if test="fenxifa != null">and fenxifa = #{fenxifa}</if> 
+	    		       <if test="gender != null">and gender = #{gender}</if> 
+	    		       <if test="email != null">and email = #{email}</if> 
+	    		       <if test="telephone != null">and telephone = #{telephone}</if> 
+	    		       <if test="qq != null">and qq = #{qq}</if> 
+	    		       <if test="logintime != null">and logintime = #{logintime}</if> 
+	    		       <if test="dateline != null">and dateline = #{dateline}</if> 
+	    		       <if test="updatetime != null">and updatetime = #{updatetime}</if> 
+	    		       <if test="createTime != null">and create_time = #{createTime}</if> 
+	    		       <if test="flowers != null">and flowers = #{flowers}</if> 
+	    		       <if test="flowerstime != null">and flowerstime = #{flowerstime}</if> 
+	    		       <if test="tuijianmid != null">and tuijianmid = #{tuijianmid}</if> 
+	    		       <if test="jianjinFlag != null">and jianjin_flag = #{jianjinFlag}</if> 
+	    		       <if test="fid != null">and fid = #{fid}</if> 
+	    		       <if test="regIp != null">and reg_IP = #{regIp}</if> 
+	    		       <if test="loginIp != null">and login_IP = #{loginIp}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="userlist">
+		SELECT 
+			mid as "id" ,			
+			username as "username" ,			
+			nickname as "nickname" ,			
+			password as "password" ,			
+			adminid as "adminid" ,			
+			fangxiang as "fangxiang" ,			
+			fenxifa as "fenxifa" ,			
+			gender as "gender" ,			
+			email as "email" ,			
+			telephone as "telephone" ,			
+			qq as "qq" ,			
+			logintime as "logintime" ,			
+			dateline as "dateline" ,			
+			updatetime as "updatetime" ,			
+			create_time as "createTime" ,			
+			flowers as "flowers" ,			
+			flowerstime as "flowerstime" ,			
+			tuijianmid as "tuijianmid" ,			
+			jianjin_flag as "jianjinFlag" ,			
+			fid as "fid" ,			
+			reg_IP as "regIp" ,			
+			login_IP as "loginIp" 			
+		FROM userlist
+		WHERE
+			mid=#{id} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.Userlist" resultMap="userlist">
+	SELECT
+			 mid as "id" ,			
+			 username as "username" ,			
+			 nickname as "nickname" ,			
+			 password as "password" ,			
+			 adminid as "adminid" ,			
+			 fangxiang as "fangxiang" ,			
+			 fenxifa as "fenxifa" ,			
+			 gender as "gender" ,			
+			 email as "email" ,			
+			 telephone as "telephone" ,			
+			 qq as "qq" ,			
+			 logintime as "logintime" ,			
+			 dateline as "dateline" ,			
+			 updatetime as "updatetime" ,			
+			 create_time as "createTime" ,			
+			 flowers as "flowers" ,			
+			 flowerstime as "flowerstime" ,			
+			 tuijianmid as "tuijianmid" ,			
+			 jianjin_flag as "jianjinFlag" ,			
+			 fid as "fid" ,			
+			 reg_IP as "regIp" ,			
+			 login_IP as "loginIp" 			
+	FROM  userlist  
+	      <where> 
+	       		telephone!=''
+	    		     <if test="startTime!=null"> and (create_time &gt;#{startTime} or create_time= #{startTime})</if>
+	    		     <if test="endTime!=null">and (create_time &lt;#{endTime} or create_time = #{endTime})</if>
+	    		     <if test="maxId !=null"> mid &gt; #{maxId} </if>
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM userlist 
+		 <where> 
+		       <if test="id != null">mid = #{id}</if>  
+        		       <if test="username != null">and username = #{username}</if> 
+	    		       <if test="nickname != null">and nickname = #{nickname}</if> 
+	    		       <if test="password != null">and password = #{password}</if> 
+	    		       <if test="adminid != null">and adminid = #{adminid}</if> 
+	    		       <if test="fangxiang != null">and fangxiang = #{fangxiang}</if> 
+	    		       <if test="fenxifa != null">and fenxifa = #{fenxifa}</if> 
+	    		       <if test="gender != null">and gender = #{gender}</if> 
+	    		       <if test="email != null">and email = #{email}</if> 
+	    		       <if test="telephone != null">and telephone = #{telephone}</if> 
+	    		       <if test="qq != null">and qq = #{qq}</if> 
+	    		       <if test="logintime != null">and logintime = #{logintime}</if> 
+	    		       <if test="dateline != null">and dateline = #{dateline}</if> 
+	    		       <if test="updatetime != null">and updatetime = #{updatetime}</if> 
+	    		       <if test="createTime != null">and create_time = #{createTime}</if> 
+	    		       <if test="flowers != null">and flowers = #{flowers}</if> 
+	    		       <if test="flowerstime != null">and flowerstime = #{flowerstime}</if> 
+	    		       <if test="tuijianmid != null">and tuijianmid = #{tuijianmid}</if> 
+	    		       <if test="jianjinFlag != null">and jianjin_flag = #{jianjinFlag}</if> 
+	    		       <if test="fid != null">and fid = #{fid}</if> 
+	    		       <if test="regIp != null">and reg_IP = #{regIp}</if> 
+	    		       <if test="loginIp != null">and login_IP = #{loginIp}</if> 
+	    		</where>
+	</select>
+	
+	<select id="findByDateAndDate" resultType="userlist" parameterType="java.lang.String">
+	  SELECT
+			 mid as "id" ,			
+			 username as "username" ,			
+			 nickname as "nickname" ,			
+			 password as "password" ,			
+			 adminid as "adminid" ,			
+			 fangxiang as "fangxiang" ,			
+			 fenxifa as "fenxifa" ,			
+			 gender as "gender" ,			
+			 email as "email" ,			
+			 telephone as "telephone" ,			
+			 qq as "qq" ,			
+			 logintime as "logintime" ,			
+			 dateline as "dateline" ,			
+			 updatetime as "updatetime" ,			
+			 create_time as "createTime" ,			
+			 flowers as "flowers" ,			
+			 flowerstime as "flowerstime" ,			
+			 tuijianmid as "tuijianmid" ,			
+			 jianjin_flag as "jianjinFlag" ,			
+			 fid as "fid" ,			
+			 reg_IP as "regIp" ,			
+			 login_IP as "loginIp" 			
+	FROM  userlist   where  FROM_UNIXTIME(create_time,'%Y-%m-%d')=#{date} and telephone!='';
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'userlist'
+	</select>
+	
+	<select id="findByMaxId" parameterType="java.lang.Long" resultMap="userlist">
+	  SELECT 
+			mid as "id" ,			
+			username as "username" ,			
+			nickname as "nickname" ,			
+			password as "password" ,			
+			adminid as "adminid" ,			
+			fangxiang as "fangxiang" ,			
+			fenxifa as "fenxifa" ,			
+			gender as "gender" ,			
+			email as "email" ,			
+			telephone as "telephone" ,			
+			qq as "qq" ,			
+			logintime as "logintime" ,			
+			dateline as "dateline" ,			
+			updatetime as "updatetime" ,			
+			create_time as "createTime" ,			
+			flowers as "flowers" ,			
+			flowerstime as "flowerstime" ,			
+			tuijianmid as "tuijianmid" ,			
+			jianjin_flag as "jianjinFlag" ,			
+			fid as "fid" ,			
+			reg_IP as "regIp" ,			
+			login_IP as "loginIp" 			
+		FROM userlist
+		WHERE  nickname !='' 
+			 <if test="_parameter!= null">and mid &gt; #{_parameter}</if>  order by mid
+	</select>
+</mapper>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ClickQqLog">
+	    <resultMap id="clickQqLog" type="com.ruyu.web.portal.bi.app.domain.remote.room2.ClickQqLog">
+                  <result column="i_User_QkfID" property="id" />
+ 		          <result column="i_User_RoomID" property="iUserRoomid" />
+ 		          <result column="i_User_UID" property="iUserUid" />
+ 		          <result column="i_User_UName" property="iUserUname" />
+ 		          <result column="i_User_Laoshi" property="iUserLaoshi" />
+ 		          <result column="i_User_Ip" property="iUserIp" />
+ 		          <result column="i_User_Time" property="iUserTime" />
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           i_User_QkfID,
+ 		           i_User_RoomID,
+ 		           i_User_UID,
+ 		           i_User_UName,
+ 		           i_User_Laoshi,
+ 		           i_User_Ip,
+ 		           i_User_Time,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.ClickQqLog">
+		INSERT INTO click_qq_log ( 
+							i_User_QkfID ,						
+							i_User_RoomID ,						
+							i_User_UID ,						
+							i_User_UName ,						
+							i_User_Laoshi ,						
+							i_User_Ip ,						
+							i_User_Time 						
+		) VALUES (
+							#{iUserQkfid,jdbcType=NUMERIC},						
+							#{iUserRoomid,jdbcType=NUMERIC},						
+							#{iUserUid,jdbcType=NUMERIC},						
+							#{iUserUname,jdbcType=VARCHAR},						
+							#{iUserLaoshi,jdbcType=VARCHAR},						
+							#{iUserIp,jdbcType=VARCHAR},						
+							#{iUserTime,jdbcType=DATE}						
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.ClickQqLog">
+		UPDATE click_qq_log	
+		<set>
+			 <if test="id != null">i_User_QkfID=#{iUserQkfid},</if>
+			 <if test="iUserRoomid != null">i_User_RoomID=#{iUserRoomid},</if>
+			 <if test="iUserUid != null">i_User_UID=#{iUserUid},</if>
+			 <if test="iUserUname != null">i_User_UName=#{iUserUname},</if>
+			 <if test="iUserLaoshi != null">i_User_Laoshi=#{iUserLaoshi},</if>
+			 <if test="iUserIp != null">i_User_Ip=#{iUserIp},</if>
+			 <if test="iUserTime != null">i_User_Time=#{iUserTime}</if>
+ 	</set>
+		WHERE
+			i_User_QkfID=#{iUserQkfid} 				
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Integer">
+        DELETE FROM click_qq_log	 WHERE 			i_User_QkfID=#{iUserQkfid}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.ClickQqLog">
+        DELETE FROM click_qq_log	 
+         <where>   
+		       <if test="id != null">i_User_QkfID = #{iUserQkfid}</if>  
+        		       <if test="iUserRoomid != null">and i_User_RoomID = #{iUserRoomid}</if> 
+	    		       <if test="iUserUid != null">and i_User_UID = #{iUserUid}</if> 
+	    		       <if test="iUserUname != null">and i_User_UName = #{iUserUname}</if> 
+	    		       <if test="iUserLaoshi != null">and i_User_Laoshi = #{iUserLaoshi}</if> 
+	    		       <if test="iUserIp != null">and i_User_Ip = #{iUserIp}</if> 
+	    		       <if test="iUserTime != null">and i_User_Time = #{iUserTime}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="clickQqLog">
+		SELECT 
+			i_User_QkfID as "id" ,			
+			i_User_RoomID as "iUserRoomid" ,			
+			i_User_UID as "iUserUid" ,			
+			i_User_UName as "iUserUname" ,			
+			i_User_Laoshi as "iUserLaoshi" ,			
+			i_User_Ip as "iUserIp" ,			
+			i_User_Time as "iUserTime" 			
+		FROM click_qq_log
+		WHERE
+			i_User_QkfID=#{iUserQkfid} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.remote.room2.ClickQqLog" resultMap="clickQqLog">
+	SELECT
+			 i_User_QkfID as "id" ,			
+			 i_User_RoomID as "iUserRoomid" ,			
+			 i_User_UID as "iUserUid" ,			
+			 i_User_UName as "iUserUname" ,			
+			 i_User_Laoshi as "iUserLaoshi" ,			
+			 i_User_Ip as "iUserIp" ,			
+			 i_User_Time as "iUserTime" 			
+	FROM  click_qq_log  
+	      <where> 
+		       <if test="id != null">i_User_QkfID = #{iUserQkfid}</if>  
+        		       <if test="iUserRoomid != null">and i_User_RoomID = #{iUserRoomid}</if> 
+	    		       <if test="iUserUid != null">and i_User_UID = #{iUserUid}</if> 
+	    		       <if test="iUserUname != null">and i_User_UName = #{iUserUname}</if> 
+	    		       <if test="iUserLaoshi != null">and i_User_Laoshi = #{iUserLaoshi}</if> 
+	    		       <if test="iUserIp != null">and i_User_Ip = #{iUserIp}</if> 
+	    		       <if test="iUserTime != null">and i_User_Time = #{iUserTime}</if> 
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM click_qq_log 
+		 <where> 
+		       <if test="id != null">i_User_QkfID = #{iUserQkfid}</if>  
+        		       <if test="iUserRoomid != null">and i_User_RoomID = #{iUserRoomid}</if> 
+	    		       <if test="iUserUid != null">and i_User_UID = #{iUserUid}</if> 
+	    		       <if test="iUserUname != null">and i_User_UName = #{iUserUname}</if> 
+	    		       <if test="iUserLaoshi != null">and i_User_Laoshi = #{iUserLaoshi}</if> 
+	    		       <if test="iUserIp != null">and i_User_Ip = #{iUserIp}</if> 
+	    		       <if test="iUserTime != null">and i_User_Time = #{iUserTime}</if> 
+	    		</where>
+	</select>
+	<select id="findByDateAndDate" resultType="clickQqLog" parameterType="java.lang.String">
+	   	SELECT 
+			i_User_QkfID as "id" ,			
+			i_User_RoomID as "iUserRoomid" ,			
+			i_User_UID as "iUserUid" ,			
+			i_User_UName as "iUserUname" ,			
+			i_User_Laoshi as "iUserLaoshi" ,			
+			i_User_Ip as "iUserIp" ,			
+			i_User_Time as "iUserTime" 	
+		 from click_qq_log where date(i_User_Time)=#{date} 
+	</select>
+ 
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'click_qq_log'
+	</select>
+</mapper>

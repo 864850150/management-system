@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TbLog">
+	    <resultMap id="tbLog" type="com.ruyu.web.portal.bi.app.domain.TbLog">
+                  <result column="id" property="id" />
+ 		          <result column="excepDate" property="excepdate" />
+ 		          <result column="tableName" property="tablename" />
+ 		          <result column="status" property="status" />
+ 		          <result column="times" property="times" />
+ 		          <result column="time" property="time" />
+ 		          <result column="maxId" property="maxId"/>
+ 		          <result column="description" property="description"/>
+ 		</resultMap>
+
+     <sql id="Column_List">
+		           id,
+ 		           excepDate,
+ 		           tableName,
+ 		           status,
+ 		           times,
+ 		           time,
+ 		           maxId,
+ 		           description,
+ 		    </sql>
+    
+    	
+	<insert id="insert" parameterType="com.ruyu.web.portal.bi.app.domain.TbLog">
+		INSERT INTO tb_log ( 
+						
+							excepDate ,						
+							tableName ,						
+							status ,						
+							times ,						
+							time ,
+							maxId,
+							description						
+		) VALUES (
+						
+							#{excepdate,jdbcType=VARCHAR},						
+							#{tablename,jdbcType=VARCHAR},						
+							#{status,jdbcType=NUMERIC},						
+							#{times,jdbcType=NUMERIC},						
+							#{time,jdbcType=TIMESTAMP},
+							#{maxId,jdbcType=NUMERIC},
+							#{description,jdbcType=VARCHAR}							
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.ruyu.web.portal.bi.app.domain.TbLog">
+		UPDATE tb_log	
+		<set>
+			 <if test="excepdate != null">excepDate=#{excepdate},</if>
+			 <if test="tablename != null">tableName=#{tablename},</if>
+			 <if test="status != null">status=#{status},</if>
+			 <if test="times != null">times=#{times},</if>
+			 <if test="time != null">time=#{time},</if>
+			 <if test="maxId !=null">maxId=#{maxId},</if>
+			 <if test="description !=null">description=#{description}</if>
+ 	   </set>
+ 	   <where> 
+	         <if test="id != null">id = #{id}</if>  
+       </where> 		
+	</update>
+	
+	<delete id="deleteByPrimaryKey" parameterType="Long">
+        DELETE FROM tb_log	 WHERE 			id=#{id}      </delete>
+	
+	<delete id="deleteBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.TbLog">
+        DELETE FROM tb_log	 
+         <where>   
+		       <if test="id != null">id = #{id}</if>  
+        		       <if test="excepdate != null">and excepDate = #{excepdate}</if> 
+	    		       <if test="tablename != null">and tableName = #{tablename}</if> 
+	    		       <if test="status != null">and status = #{status}</if> 
+	    		       <if test="times != null">and times = #{times}</if> 
+	    		       <if test="time != null">and time = #{time}</if> 
+	    	</where>
+    </delete>
+    
+	<select id="findById" parameterType="java.lang.Long" resultMap="tbLog">
+		SELECT 
+			id as "id" ,			
+			excepDate as "excepdate" ,			
+			tableName as "tablename" ,			
+			status as "status" ,			
+			times as "times" ,			
+			time as "time",
+			maxId as "maxId",
+			description as "description" 		
+		FROM tb_log
+		WHERE
+			id=#{id} 	</select>
+	
+	<select id="findBySelective" parameterType="com.ruyu.web.portal.bi.app.domain.TbLog" resultMap="tbLog">
+	SELECT
+			 id as "id" ,			
+			 excepDate as "excepdate" ,			
+			 tableName as "tablename" ,			
+			 status as "status" ,			
+			 times as "times" ,			
+			 time as "time",
+			 maxId as "maxId" ,
+			 description as "description" 			
+	FROM  tb_log  
+	      <where> 
+		       <if test="id != null">id = #{id}</if>  
+        		       <if test="excepdate != null">and excepDate = #{excepdate}</if> 
+	    		       <if test="tablename != null">and tableName = #{tablename}</if> 
+	    		       <if test="status != null">and status = #{status}</if> 
+	    		       <if test="times != null">and times = #{times}</if> 
+	    		       <if test="time != null">and time = #{time}</if> 
+	    		       <if test="maxId !=null">and maxId=#{maxId}</if>
+	    		       <if test="description !=null">and description=#{description}</if>
+	    		</where>
+	</select>
+
+	<select id="findBySelectiveCount"  resultType="java.lang.Integer">
+		SELECT count(1) 
+		FROM tb_log 
+		 <where> 
+		       <if test="id != null">id = #{id}</if>  
+        		       <if test="excepdate != null">and excepDate = #{excepdate}</if> 
+	    		       <if test="tablename != null">and tableName = #{tablename}</if> 
+	    		       <if test="status != null">and status = #{status}</if> 
+	    		       <if test="times != null">and times = #{times}</if> 
+	    		       <if test="time != null">and time = #{time}</if> 
+	    		       <if test="maxId !=null">and maxId=#{maxId}</if>
+	    		       <if test="description !=null">and description=#{description}</if>
+	    		</where>
+	</select>
+	
+	<select id="findBySelectDate" resultType="java.lang.String">
+		select distinct excepDate from tb_log where status=0 and tableName like 'tb%'
+	</select>
+	
+	<select id="findTwoSelectDate" resultType="java.lang.String">
+		select distinct excepDate from tb_log where status=0 and tableName like 'user%'
+	</select>
+	
+	<select id="findBySelectTableName" resultType="java.lang.String" parameterType="map">
+		select tableName from tb_log where excepDate=#{date} and status=0 and tableName like 'tb%'
+	</select>
+	
+	<select id="findTwoSelectTableName" resultType="java.lang.String" parameterType="map">
+		select tableName from tb_log where excepDate=#{date} and status=0 and tableName like 'user%'
+	</select>
+ 
+    <select id="nextpk" resultType="java.lang.Integer" parameterType="java.lang.String">
+        SELECT Auto_increment FROM information_schema.`TABLES`
+		WHERE Table_Schema='${dbName}' AND table_name = 'tb_log'
+	</select>
+	
+	<select id="selectVinMaxId" resultType="java.lang.Long"> 
+        select max(maxId) from tb_log where tableName like '%vinv18%' and maxId is not null
+	</select>
+	
+	<select id="selectZhi2MaxId" resultType="java.lang.Long"> 
+        select max(maxId) from tb_log where tableName like '%zhiboshi2%' and maxId is not null
+	</select>
+	
+	<select id="selectbystatus" resultType="tbLog"> 
+        select * from tb_log where status=2
+	</select>
+    <select id="selectNoData" resultType="tbLog" parameterType="java.lang.String">
+        SELECT * FROM tb_log where excepDate=#{excepDate} and description='nodata'
+    </select>
+</mapper>
