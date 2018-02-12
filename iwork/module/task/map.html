@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			.mui-content{
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">任务地图</h1>
+		</header>
+		<div class="mui-content">
+			<div style="height: 500px;">
+				fdsakfjlas
+			</div>
+			<div id="allmap" style="width: 100%;height: 50%;">
+				地图加载中...
+			</div>
+			<div style="height: 500px;">
+				fdsakfjlas
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=AvwEQQcmQGVk7q9ri7KKebCbHZayHqvr"></script>
+		<!--<script type="text/javascript"  src="http://api.map.baidu.com/place/v2/search?query=酒店&page_size=10&page_num=0&scope=1&location=39.915,116.404&radius=2000&output=json&ak=AvwEQQcmQGVk7q9ri7KKebCbHZayHqvr"></script>-->
+		<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				plus.geolocation.getCurrentPosition(translatePoint, function(e) {
+					mui.toast("异常:" + e.message);
+				});
+			});
+
+			function translatePoint(position) {
+				var currentLon = position.coords.longitude;
+				var currentLat = position.coords.latitude;
+				var gpsPoint = new BMap.Point(currentLon, currentLat);
+				BMap.Convertor.translate(gpsPoint, 2, initMap); //坐标转换
+			}
+
+			function initMap(point) {
+				map = new BMap.Map("allmap"); //创建地图
+				map.addControl(new BMap.NavigationControl());
+				map.addControl(new BMap.ScaleControl());
+				map.addControl(new BMap.OverviewMapControl());
+				map.centerAndZoom(point, 15);
+				map.addOverlay(new BMap.Marker(point));
+			}
+//			(function($) {
+//				/**
+//				 * @description 获取百度定位信息
+//				 * @param {Function} callback
+//				 */
+//				function getPosition(callback) {
+//					try {
+//						plus.geolocation.getCurrentPosition(function(position) {
+//							console.log(JSON.stringify(position));
+//							var codns = position.coords; //获取地理坐标信息；
+//							//	var geoc = new BMap.Geocoder();
+//							//	var pt = new BMap.Point(codns.longitude, codns.latitude);
+//							//	geoc.getLocation(pt, function(rs) {
+//							//	var addComp = rs.addressComponents;
+//							//	console.log(JSON.stringify(addComp));
+//							//	var lo =addComp.province+','+addComp.city;
+//							//	callback(lo);
+//							//	});
+//							var req = 'http://api.map.baidu.com/geocoder/v2/';
+//							var parms = {
+//								ak: 'AvwEQQcmQGVk7q9ri7KKebCbHZayHqvr',
+//								callback: 'renderReverse',
+//								output: 'json',
+//								location: codns.latitude + ',' + codns.longitude
+//									//,pois:1（周边poi数组） //不建议要，周边数据太杂，不需要
+//							};
+//							mui.ajax(req, {
+//								data: parms,
+//								dataType: 'json', //服务器返回json格式数据
+//								type: 'post', //HTTP请求类型
+//								timeout: 10000, //超时时间设置为10秒；
+//								success: function(data) {
+//									console.log(JSON.stringify(data));
+//									myStorage.setItem('geolocation', data);
+//									if(data.status == 0) {
+//										var lo = data.result.addressComponent.province + ',' + data.result.addressComponent.city;
+//										callback(lo);
+//									} else {
+//										callback(false);
+//									}
+//								},
+//								error: function(xhr, type, errorThrown) {
+//									callback(false);
+//								}
+//							});
+//						}, function(e) {
+//							console.log("获取定位位置信息失败：" + e.message);
+//							callback(false);
+//						}, {
+//							provider: 'baidu'
+//						});
+//
+//					} catch(e) {
+//						callback(false);
+//						console.error(e.message);
+//					}
+//				}
+//				$.getbaiduposition = getPosition;
+//			}(mui));
+		</script>
+	</body>
+
+</html>
